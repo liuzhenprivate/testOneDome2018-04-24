@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CategoryLabelMapper">
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into CATEGORY_LABEL(
+			LABEL_ID,	
+			LABEL_CATEGORY_ID
+		) values (
+			#{LABEL_ID},	
+			#{LABEL_CATEGORY_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from CATEGORY_LABEL
+		where 
+			CATEGORYLABEL_ID = #{CATEGORYLABEL_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  CATEGORY_LABEL
+			set 
+				LABEL_ID = #{LABEL_ID},
+				LABEL_CATEGORY_ID = #{LABEL_CATEGORY_ID}
+			where 
+				CATEGORYLABEL_ID = #{CATEGORYLABEL_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			CATEGORYLABEL_ID,	
+			LABEL_ID,	
+			LABEL_CATEGORY_ID
+		from 
+			CATEGORY_LABEL
+		where 
+			CATEGORYLABEL_ID = #{CATEGORYLABEL_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.CATEGORYLABEL_ID,	
+				a.LABEL_ID,	
+				a.LABEL_CATEGORY_ID
+		from 
+				CATEGORY_LABEL a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				cl.CATEGORYLABEL_ID CATEGORYLABEL_ID,
+				cl.LABEL_ID LABEL_ID,
+				cl.LABEL_CATEGORY_ID LABEL_CATEGORY_ID,
+				tl.LABEL_NAME LABEL_NAME,
+				tlc.CATEGORY_NAME CATEGORY_NAME
+		from 
+				category_label cl
+		 		LEFT JOIN tb_label tl on cl.LABEL_ID = tl.LABEL_ID
+		 		LEFT JOIN tb_label_category tlc on cl.LABEL_CATEGORY_ID = tlc.LABEL_CATEGORY_ID
+		 		GROUP BY cl.LABEL_ID
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from CATEGORY_LABEL
+		where 
+			CATEGORYLABEL_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 列表(Data) -->
+	<select id="listData" parameterType="pd" resultType="pd">
+		select
+				cl.CATEGORYLABEL_ID CATEGORYLABEL_ID,
+				cl.LABEL_ID LABEL_ID,
+				cl.LABEL_CATEGORY_ID LABEL_CATEGORY_ID,
+				tl.LABEL_NAME LABEL_NAME,
+				tlc.CATEGORY_NAME CATEGORY_NAME
+		from 
+				category_label cl
+		 		LEFT JOIN tb_label tl on cl.LABEL_ID = tl.LABEL_ID
+		 		LEFT JOIN tb_label_category tlc on cl.LABEL_CATEGORY_ID = tlc.LABEL_CATEGORY_ID
+		 		
+		where  cl.LABEL_CATEGORY_ID  is not null
+				<if test="LABEL_NAME!=null and LABEL_NAME!=''">
+					and tl.LABEL_NAME LIKE CONCAT(CONCAT('%', #{LABEL_NAME}),'%')
+				</if>
+				<if test="LABEL_CATEGORY_ID!=null and LABEL_CATEGORY_ID!=''">
+					and cl.LABEL_CATEGORY_ID = #{LABEL_CATEGORY_ID}
+				</if>
+				GROUP BY cl.LABEL_ID	
+	</select>
+	
+	<!-- 移除标签分类-->
+	<delete id="delLabelId" parameterType="String">
+		delete from CATEGORY_LABEL
+		where 
+			LABEL_ID in (#{LABEL_ID})
+	</delete>
+	
+	<!-- 给标签添加标签类前判断是否已经存在 -->
+	<select id="findByLabelandCategoryId" parameterType="pd" resultType="pd">
+		select 
+			CATEGORYLABEL_ID,	
+			LABEL_ID,	
+			LABEL_CATEGORY_ID
+		from 
+			CATEGORY_LABEL
+		where 
+			LABEL_ID = #{LABEL_ID} 
+			and LABEL_CATEGORY_ID = #{LABEL_CATEGORY_ID}
+	</select>
+</mapper>

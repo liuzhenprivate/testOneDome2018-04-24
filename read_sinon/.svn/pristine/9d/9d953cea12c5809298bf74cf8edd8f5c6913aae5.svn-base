@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HtmlmodleMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_HTMLMODLE(
+			HTML_ID,	
+			DIV_CLASS,	
+			MODLE_TYPE,	
+			CREATE_TIME,
+			PLACE
+		) values (
+			#{HTML_ID},	
+			#{DIV_CLASS},	
+			#{MODLE_TYPE},	
+			#{CREATE_TIME},
+			#{PLACE}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_HTMLMODLE
+		where 
+			HTMLMODLE_ID = #{HTMLMODLE_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_HTMLMODLE
+			set 
+				HTML_ID = #{HTML_ID},
+				DIV_CLASS = #{DIV_CLASS},
+				MODLE_TYPE = #{MODLE_TYPE},
+				PLACE = #{PLACE},
+			    HTMLMODLE_ID = HTMLMODLE_ID
+			where 
+				HTMLMODLE_ID = #{HTMLMODLE_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			HTML_ID,	
+			DIV_CLASS,	
+			MODLE_TYPE,	
+			CREATE_TIME,	
+			HTMLMODLE_ID,
+			PLACE
+		from 
+			TB_HTMLMODLE
+		where 
+			HTMLMODLE_ID = #{HTMLMODLE_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.HTML_ID,	
+				a.DIV_CLASS,	
+				a.MODLE_TYPE,	
+				a.CREATE_TIME,	
+				a.HTMLMODLE_ID,
+				a.PLACE
+		from 
+				TB_HTMLMODLE a,TB_HTML b
+		where   a.HTML_ID=b.HTML_ID
+		<if test="pd.HTML_ID != null and  pd.HTML_ID!= ''">
+			AND a.HTML_ID = ${pd.HTML_ID}
+		</if>
+		order by a.PLACE asc
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.HTML_ID,	
+				a.DIV_CLASS,	
+				a.MODLE_TYPE,	
+				a.CREATE_TIME,	
+				a.HTMLMODLE_ID,
+				a.PLACE
+		from 
+				TB_HTMLMODLE a,TB_HTML b
+		where   a.HTML_ID=b.HTML_ID
+		<if test="HTML_ID != null and  HTML_ID!= ''">
+			AND a.HTML_ID = ${HTML_ID}
+		</if>
+		order by a.PLACE asc
+		
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_HTMLMODLE
+		where 
+			HTMLMODLE_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

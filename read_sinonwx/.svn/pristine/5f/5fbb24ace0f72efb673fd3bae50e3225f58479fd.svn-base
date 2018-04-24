@@ -1,0 +1,101 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="java.io.*" %>
+<%@ page import="com.sinontech.modle.*" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	String openid = String.valueOf(request.getAttribute("openid"));
+	System.out.println("openid="+openid);
+	if(null==openid || "".equals(openid) || "null".equals(openid)){
+		openid = request.getParameter("openid");
+	}
+	if(null==openid || "".equals(openid) || "null".equals(openid)){
+		//response.sendRedirect("");
+	}
+	List<Signset> list = (List<Signset>)request.getAttribute("setlist");
+	List<Signset> varlist = (List<Signset>)request.getAttribute("varlist");
+	Object counts =  request.getAttribute("counts");
+	UserInfo user = (UserInfo)request.getAttribute("user");
+%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="<%=basePath%>">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>签到奖励</title>
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/base.css">
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/index.css">
+    <script src='pages/home/read/js/jquery-1.12.4.min.js'></script>
+</head>
+<body>
+	<div class="signBonusTop clearfix">
+		<div class="signBonusTopL clearfix">
+			<img src="pages/home/read/images/myPic16.png" alt="" />
+			<div>
+				<h1>本月共签到 <span><%=user.getSigntimes() %></span> 次</h1>
+				<h2>获得阅读币<%=counts %></h2>
+			</div>
+		</div>
+		<a href="sign/list/<%=user.getWebchatId()%>/<%=user.getId() %>">奖励记录</a>
+	</div>
+	<div class="signBonusItem">奖励专区</div>
+	<div class="signBonusAll">
+		<ul>
+		<% 
+		if(null!=varlist && varlist.size()>0){
+		for(Signset set:varlist){ %>
+			<li class="clearfix">
+				<img src="pages/home/read/images/myPic17.png" alt="" />
+				<div>
+					<h1><%=set.getBookCurrency() %>阅读币</h1>
+					<h2>签到<%=set.getTimes() %>次可领取</h2>
+				</div>
+				<span class="alReceive">已领取</span>
+			</li>
+			<%}} %>
+			<% 
+		if(null!=list && list.size()>0){
+		for(Signset set:list){ %>
+			<li class="clearfix">
+				<img src="pages/home/read/images/myPic17.png" alt="" />
+				<div>
+					<h1><%=set.getBookCurrency() %>阅读币</h1>
+					<h2>签到<%=set.getTimes() %>次可领取</h2>
+				</div>
+				<%if(set.getTimes()>user.getSigntimes()){ %>
+				<span class="noReceive">领取</span>
+				<%}else{ %>
+				<span class="receiveing" onclick="sign(<%=set.getId() %>)">领取</span>
+				<%} %>
+			</li>
+			<%}} %>
+			 
+			 
+		</ul>
+	</div>
+	<script>
+		$('.receiveing').click(function(){
+			
+			$(this).text('已领取');
+			$(this).removeClass('receiveing').addClass('alReceive');
+		})
+		function sign(id){
+			var url = "<%=basePath%>sign/getbonus/<%=user.getWebchatId() %>/<%=user.getId()%>/"+id;
+			alert(url);
+			$.get(url,function(data){
+				alert(data);
+			});
+		}
+	</script>
+	<script src="pages/home/read/js/rem.js"></script>
+</body>
+</html>
+
+
+

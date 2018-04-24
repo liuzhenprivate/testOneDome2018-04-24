@@ -1,0 +1,442 @@
+/*数字阅读*/
+.publicTop{ width: 100%; height: 60px; background: #f37526;}
+.publicTopL{ float: left; font-size: 16px; color: #ffffff; height: 60px; line-height: 60px; padding-left: 68px; background: url(../images/myPic1.png) left center no-repeat;}
+.publicTopR{ float: right;}
+.publicTopR p{ font-size: 14px; color: #ffffff; height: 60px; line-height: 60px; float: left; margin-right: 23px;}
+.publicTopR span{ display: inline-block; font-size: 14px; color: #ffffff; height: 60px; line-height: 60px; float: left; cursor: pointer;}
+.publicDe{ margin: 20px auto 0;}
+.publicDeL{ float: left; width: 160px; background: #ffffff; padding-bottom: 200px;}
+.publicDeL ul li{ padding-top: 10px;}
+.publicDeL ul li p{ height: 31px; border-left: 2px solid #ffffff; position: relative;}
+.publicDeL ul li p.publicDeLActp{ border-left: 2px solid #f37526;}
+.publicDeL ul li p a{ display: inline-block; font-size: 14px; color: #333333; height: 31px; line-height: 31px; text-align: left; padding-left: 42px; width: 115px; position: absolute; left: 0; top: 0; z-index: 10;}
+.publicDeL ul li p img{ position: absolute; top: 9px; right: 10px;}
+.publicDeL ul li p.publicDeLActp img{ top: 12px; right: 12px;}
+.publicDeL1{ background: url(../images/myPic2.png) no-repeat; background-position: 18px 8px;}
+.publicDeL2{ background: url(../images/myPic3.png) no-repeat; background-position: 18px 8px;}
+.publicDeL3{ background: url(../images/myPic4.png) no-repeat; background-position: 18px 8px;}
+.publicDeL4{ background: url(../images/myPic5.png) no-repeat; background-position: 18px 10px;}
+.publicDeL5{ background: url(../images/myPic6.png) no-repeat; background-position: 17px 10px;}
+.publicDeL6{ background: url(../images/myPic7.png) no-repeat; background-position: 18px 8px;}
+.publicDeL7{ background: url(../images/myPic8.png) no-repeat; background-position: 17px 9px;}
+.publicDeL8{ background: url(../images/myPic9.png) no-repeat; background-position: 17px 10px;}
+.publicDeL9{ background: url(../images/myPic10.png) no-repeat; background-position: 19px 9px;}
+.publicDeL10{ background: url(../images/myPic11.png) no-repeat; background-position: 17px 6px;}
+.publicDeL ul li div{ display: none; margin-top: 10px; width: 100%; background: #f8fbfd;}
+.publicDeL ul li div a{ display: inline-block; font-size: 14px; color: #666666; height: 40px; line-height: 40px; width: 100%;}
+.publicDeL ul li div a.publicDeLa{ color: #f37427;}
+.publicDeR{ float: right; width: 1020px; overflow-x: scroll;}
+
+/*各种弹出框*/
+/*数据统计公告管理编辑公告*/
+.editorialNoticeAlert{/* display: none;*//* width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;*/}
+.editorialNotice{ width: 560px; background: #f7f7f7; border-radius: 2px; position: relative; margin: 0 auto;}
+.editorialNotice h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; background: #f37526; text-align: left; padding-left: 19px;}
+.announcementTitle{ margin-top: 20px; margin-left: 38px;}
+.announcementTitle span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.announcementTitle div{ width: 408px; height: 34px; border: 1px solid #e4e4e4; float: left; margin-left: 15px;}
+.announcementTitle div input{ font-size: 12px; color: #666666; height: 16px; line-height: 16px; float: left; margin-left: 10px; margin-top: 9px; width: 375px;}
+.announcementContent{ margin-top: 20px; margin-left: 38px;}
+.announcementContent span{ display: inline-block; font-size: 12px; color: #666666; height: 38px; line-height: 38px; float: left;}
+.announcementContent div{ width: 408px; height: 78px; border: 1px solid #e4e4e4; float: left; margin-left: 15px;}
+.announcementContent div textarea{ font-size: 12px; color: #666666; height: 72px; line-height: 24px; float: left; margin-left: 10px; margin-top: 4px; width: 385px;}
+.pushMode{ margin-top: 20px; margin-left: 38px;}
+.pushMode span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.pushMode div{ width: 148px; height: 34px; border: 1px solid #e4e4e4; float: left; margin-left: 15px; position: relative; cursor: pointer;}
+.pushMode div p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.pushMode div img{ float: right; margin-top: 15px; margin-right: 11px;}
+.pushMode div ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 10;}
+.pushMode div ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 10px;}
+.pushMode div ul li:hover{ color: #f37427;}
+.pushTime{ margin-top: 20px; margin-left: 38px;}
+.pushTime span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.pushTime div{ float: left; margin-left: 15px; width: 148px; height: 34px; border: 1px solid #cccccc; position: relative; cursor: pointer;}
+.pushTime div img{ position: absolute; top: 15px; right: 11px;}
+.pushTime div input{ font-size: 12px; color: #666666; height: 18px; line-height: 18px; float: left; margin-top: 8px; margin-left: 10px; width: 135px;}
+.pushSure{ height: 48px; padding-top: 12px; margin-top: 20px; background: #f7f7f7;}
+.pushSure span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 4px; background: #f37526; cursor: pointer;}
+.editorialNotice>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*资源管理编辑标签添加分类*/
+.editTagPlusAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.editTagPlus{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.editTagPlus h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.editTagPlusDe{ padding: 30px 0; background: #ffffff;}
+.editTagPlusDe>span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left; margin-left: 30px;}
+.editTagPlusDeSel{ float: left; margin-left: 10px; width: 148px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.editTagPlusDeSel p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.editTagPlusDeSel img{ float: right; margin-top: 15px; margin-right: 10px;}
+.editTagPlusDeSel ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5; height: 90px; overflow-y: scroll;}
+.editTagPlusDeSel ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.editTagPlusDeSel ul li:hover{ color: #f37427;}
+.editTagPlusDeInp{ width: 150px; height: 34px; border: 1px solid #e4e4e4; float: left; margin-left: 10px; position: relative;}
+.editTagPlusDeInp input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 130px;}
+.editTagPlusDeInp p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 135px; text-align: left;}
+.editTagPlusDe>a{ display: inline-block; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; float: left; margin-left: 10px;}
+.editTagPlusDe>a i{ font-style: normal; display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic25.png) right center no-repeat;}
+.editTagPlus h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; margin: 12px auto 0; cursor: pointer;}
+.editTagPlus>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*资源管理编辑标签添加分类*/
+.labelManagementPlusAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.labelManagementPlus{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.labelManagementPlus h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.labelManagementPlusDe{ padding: 30px 0; background: #ffffff;}
+.labelManagementPlusDe>span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left; margin-left: 30px;}
+.labelManagementPlusDeSel{ float: left; margin-left: 10px; width: 148px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.labelManagementPlusDeSel p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.labelManagementPlusDeSel img{ float: right; margin-top: 15px; margin-right: 10px;}
+.labelManagementPlusDeSel ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.labelManagementPlusDeSel ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.labelManagementPlusDeSel ul li:hover{ color: #f37427;}
+.labelManagementPlusDeInp{ width: 150px; height: 34px; border: 1px solid #e4e4e4; float: left; margin-left: 10px; position: relative;}
+.labelManagementPlusDeInp input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 130px;}
+.labelManagementPlusDeInp p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 135px; text-align: left;}
+.labelManagementPlusDe>a{ display: inline-block; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; float: left; margin-left: 10px;}
+.labelManagementPlusDe>a i{ font-style: normal; display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic25.png) right center no-repeat;}
+.labelManagementPlus h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; margin: 12px auto 0; cursor: pointer;}
+.labelManagementPlus>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+.labelManagementPlusLine{ width: 500px; margin-left: 30px; margin-top: 20px; border-top: 1px solid #cccccc;}
+.labelManagementPlusTex{ margin-top: 20px;}
+.labelManagementPlusTex span{ display: inline-block; font-size: 12px; color: #666666; height: 38px; line-height: 38px; float: left; margin-left: 30px;}
+.labelManagementPlusTex div{ width: 439px; height: 78px; border: 1px solid #e4e4e4; float: left; margin-left: 10px;}
+.labelManagementPlusTex div textarea{ font-size: 12px; color: #323232; line-height: 30px; float: left; margin-left: 10px; margin-top: 1px; width: 425px;}
+
+/*添加书籍（单本）标签编辑*/
+.labelEditingAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.labelEditing{ width: 560px; background: #f7f7f7; padding-bottom: 10px; border-radius: 2px; position: relative; margin: 0 auto;}
+.labelEditing>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.labelEditingSeled span{ display: inline-block; font-size: 14px; color: #333333; height: 34px; line-height: 34px; float: left; margin-left: 30px;}
+.labelEditingSeled p{ font-size: 12px; color: #999999; height: 34px; line-height: 34px; float: right; margin-right: 30px;}
+.labelEditingSeled p i{ font-style: normal; margin: 0 4px;}
+.labelEditingSeledDe{ width: 500px; padding-bottom: 10px; margin-left: 30px; border-bottom: 1px solid #cccccc;}
+.labelEditingSeledDe ul li{ font-size: 14px; color: #333333; width: 88px; height: 34px; line-height: 34px; border: 1px solid #cccccc; background: #ededed; float: left; margin-right: 10px; margin-top: 10px; position: relative;}
+.labelEditingSeledDe ul li img{ position: absolute; top: -6px; right: -6px; cursor: pointer;}
+.labelEditing>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+.labelEditingSeling{ margin-top: 10px; margin-left: 30px;}
+.labelEditingSeling p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; text-align: left;}
+.labelEditingSeling ul{ width: 520px; height: 140px; overflow-y: scroll;}
+.labelEditingSeling ul li{ font-size: 14px; color: #666666; float: left; width: 88px; height: 34px; line-height: 34px; border: 1px solid #cccccc; margin-right: 10px; margin-top: 10px; background: url(../images/myPic23.png) no-repeat; background-position:73px 18px; cursor: pointer;}
+.labelEditingSeling ul li.labelEditingSelingAct{ border: 1px solid #f17526; background: url(../images/myPic24.png) no-repeat; background-position:73px 18px; color: #f37427;}
+.labelEditing>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; margin: 12px auto 0; cursor: pointer;}
+
+/*资源管理书籍管理批量编辑（价格）*/
+.batchEditingPrice{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.batchEditingPriceDe{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.batchEditingPriceDe>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.batchEditingPriceDeSection{ font-size: 14px; color: #333333; height: 34px; line-height: 34px; margin-left: 30px; text-align: left;}
+.batchEditingPriceDeUl{ padding-bottom: 20px; border-bottom: 1px solid #cccccc; width: 500px; margin-left: 30px;}
+.batchEditingPriceDeUl ul li{ margin-top: 10px;}
+.batchEditingPriceDeUl ul li i{ display: inline-block; font-style: normal; font-size: 12px; color: #fffefe; height: 24px; line-height: 24px; width: 24px; background: #f37526; float: left; margin-top: 6px;}
+.batchEditingPriceDeUl ul li span{ display: inline-block; font-size: 14px; color: #999999; height: 36px; line-height: 36px; float: left;}
+.batchEditingPriceDeUl ul li div{ width: 78px; height: 34px; border: 1px solid #e4e4e4; float: left;}
+.batchEditingPriceDeUl ul li div input{ font-size: 14px; color: #999999; height: 20px; line-height: 20px; float: left; width: 100%; text-align: center; margin-top: 7px;}
+.batchEditingPriceDeUl ul li img{ float: right; margin-top: 11px; cursor: pointer;}
+.batchEditingPriceDePlus a{ display: inline-block; width: 118px; height: 34px; float: left; margin-left: 30px; margin-top: 20px; border: 1px solid #f37526; border-radius: 3px;}
+.batchEditingPriceDePlus a span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic25.png) right center no-repeat;}
+.batchEditingPriceDe>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; margin: 12px auto 0; cursor: pointer;}
+.batchEditingPriceDe>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*添加书籍（批量）编辑*/
+.addBookBatchAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.addBookBatchDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto; border-radius: 2px; position: relative;}
+.addBookBatchDe>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.addBookBatchDeInp{ margin-top: 20px;}
+.addBookBatchDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 98px; text-align: right; float: left;}
+.addBookBatchDeInp div{ float: left; width: 408px; height: 34px; border: 1px solid #cccccc; margin-left: 15px;}
+.addBookBatchDeInp div input{ font-size: 12px; color: #666666; height: 18px; line-height: 18px; float: left; margin-left: 11px; margin-top: 8px; width: 380px;}
+.addBookBatchDeRemind{ font-size: 12px; color: #999999; height: 32px; line-height: 32px; text-align: left; margin-left: 125px;}
+.addBookBatchDeTex{ margin-top: 20px;}
+.addBookBatchDeTex span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 98px; text-align: right; float: left;}
+.addBookBatchDeTex div{ float: left; width: 408px; height: 78px; border: 1px solid #cccccc; margin-left: 15px;}
+.addBookBatchDeTex div textarea{ font-size: 12px; color: #666666; float: left; margin-left: 11px; width: 390px; height: 66px; line-height: 22px; margin-top: 5px;}
+.addBookBatchDe>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; margin: 12px auto 0; cursor: pointer;}
+.addBookBatchDe>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*添加章节（批量）插入*/
+.chapterAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.chapterAlertDe{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.chapterAlertDe>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.chapterAlertDeInp{ margin-top: 20px;}
+.chapterAlertDeInp span{ display: inline-block; width: 100px; height: 36px; line-height: 36px; font-size: 12px; color: #666666; text-align: right; float: left;}
+.chapterAlertDeInp div{ float: left; margin-left: 15px; width: 408px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.chapterAlertDeInp div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 370px;}
+.chapterAlertDeInp div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 380px; text-align: left;}
+.chapterAlertDeTex{ margin-top: 20px;}
+.chapterAlertDeTex span{ display: inline-block; width: 100px; height: 36px; line-height: 36px; font-size: 12px; color: #666666; text-align: right; float: left;}
+.chapterAlertDeTex div{ float: left; margin-left: 15px; width: 408px; height: 78px; border: 1px solid #cccccc; position: relative;}
+.chapterAlertDeTex div textarea{ font-size: 12px; color: #666666; height: 72px; line-height: 24px; float: left; margin-left: 11px; margin-top: 4px; width: 375px;}
+.chapterAlertDeTex div p{ font-size: 12px; color: #cccccc; height: 76px; line-height: 32px; position: absolute; left: 0; top: 2px; padding-left: 11px; width: 380px; text-align: left;}
+.chapterAlertDe>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; margin: 12px auto 0; cursor: pointer;}
+.chapterAlertDe>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*添加章节（新增章节）匹配书籍*/
+.seMatchBooksAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.seMatchBooks{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.seMatchBooks>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.seMatchBooksTex{ padding-top: 22px; background: #ffffff; height: 265px; overflow-y: scroll;}
+.seMatchBooksTex h3{ font-weight: normal; font-size: 14px; color: #666666; height: 28px; line-height: 28px; text-align: left; margin-left: 30px;}
+.seMatchBooksTex p{ padding-bottom: 12px; font-size: 14px; color: #666666; line-height: 28px; text-align: left; margin-left: 30px; text-indent: 28px; width: 500px;}
+.seMatchBooks>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; margin: 12px auto 0; cursor: pointer;}
+.seMatchBooks>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+
+/*添加章节（新增章节）匹配书籍*/
+.newMatchBooksAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.newMatchBooks{ width: 560px; background: #f7f7f7; padding-bottom: 12px; border-radius: 2px; position: relative; margin: 0 auto;}
+.newMatchBooks>h1{ font-weight: normal; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; text-align: left; padding-left: 19px; background: #f37526;}
+.newMatchBooks>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; margin: 12px auto 0; cursor: pointer;}
+.newMatchBooks>img{ position: absolute; top: 14px; right: 20px; cursor: pointer;}
+.newMatchBooksAll{ padding: 30px 0 0 30px; background: #ffffff; height: 290px; overflow-y: scroll;}
+.newMatchBooksTit{ width: 490px; height: 50px; background: #f7f7f7;}
+.newMatchBooksTit a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 10px; margin-top: 19px; background: #ffffff;}
+.newMatchBooksTit a i{ display: block; width: 10px; height: 10px;}
+.newMatchBooksTit a i.newMatchBooksTitAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.newMatchBooksTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; text-align: left; float: left;}
+.newMatchBooksTex{ width: 490px; padding-bottom: 20px;}
+.newMatchBooksTex ul li{ width: 100%; height: 80px;}
+.newMatchBooksTex ul li:hover{ background: #faf5ef;}
+.newMatchBooksTex ul li a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 10px; margin-top: 34px; background: #ffffff;}
+.newMatchBooksTex ul li a i{ display: block; width: 10px; height: 10px;}
+.newMatchBooksTex ul li a i.newMatchBooksTexAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.newMatchBooksTex ul li span{ display: inline-block; font-size: 14px; color: #333333; height: 80px; line-height: 80px; text-align: left; float: left;}
+.newMatchBooksTex ul li span img{ width: 45px; height: 60px; display: block; margin-top: 10px;}
+
+/*读者管理渠道信息*/
+.RmciAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.RmciDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.RmciDeTop{ width: 100%; height: 40px; background: #f37526;}
+.RmciDeTop span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.RmciDeTop img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.RmciDeAll{ padding: 30px 0; background: #ffffff;}
+.RmciDeTit{ width: 500px; height: 50px; background: #f7f7f7; margin-left: 30px;}
+.RmciDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.RmciDeTex{ width: 500px; margin-left: 30px;}
+.RmciDeTex ul li{ width: 100%; height: 50px;}
+.RmciDeTex ul li span{ display: inline-block; font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left; text-align: left;}
+.RmciDeTex1{ width: 97px; margin-left: 21px;}
+.RmciDeTex2{ width: 145px;}
+.RmciDeTex3{ width: 117px;}
+.RmciDeFlip{ margin-top: 6px;}
+.RmciDeFlipL{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; float: left; margin-left: 30px;}
+.RmciDeFlipR{ float: right; margin-right: 30px;}
+.RmciDeFlipR p{ float: left; font-size: 12px; color: #666666; height: 32px; line-height: 32px;}
+.RmciDeFlipR p span{ color: #f37427;}
+.RmciDeFlipR p i{ font-style: normal;}
+.RmciDeFlipR1{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #e8e8e8; position: relative; cursor: pointer; margin-left: 10px;}
+.RmciDeFlipR1 img{ position: absolute; top: 11px; left: 12px;}
+.RmciDeFlipR2{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative; cursor: pointer; margin-left: 10px;}
+.RmciDeFlipR2 img{ position: absolute; top: 11px; left: 12px;}
+.RmciDe>h2{ font-weight: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; margin: 12px auto 0; cursor: pointer;}
+
+/*模板配置标题库查看*/
+.titleLibraryViewAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.titleLibraryViewDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.titleLibraryViewDeT{ width: 100%; height: 40px; background: #f37526;}
+.titleLibraryViewDeT span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.titleLibraryViewDeT img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.titleLibraryViewDeC{ padding: 22px 0 12px; background: #ffffff;}
+.titleLibraryViewDeC p{ font-size: 14px; color: #666666; height: 270px; line-height: 28px; width: 500px; text-align: left; margin-left: 30px; overflow-y: scroll;}
+.titleLibraryViewDeB{ width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; font-size: 14px; color: #ffffff; margin: 12px auto 0;}
+
+/*模板配置标题库编辑*/
+.titleLibrarySingleAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.titleLibrarySingleDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.titleLibrarySingleDeT{ width: 100%; height: 40px; background: #f37526;}
+.titleLibrarySingleDeT span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.titleLibrarySingleDeT img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.titleLibrarySingleDeC{ padding: 20px 0 30px; background: #ffffff;}
+.titleLibrarySingleDeCInp{ margin-left: 38px;}
+.titleLibrarySingleDeCInp i{ font-style: normal; display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.titleLibrarySingleDeCInp div{ float: left; margin-left: 15px; width: 148px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer; text-align: left;}
+.titleLibrarySingleDeCInp div span{ display: inline-block; font-size: 12px; color: #666666; height: 34px; line-height: 34px; width: 128px; padding-left: 10px; background: url(../images/myPic13.png) right center no-repeat;}
+.titleLibrarySingleDeCInp div ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.titleLibrarySingleDeCInp div ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 10px;}
+.titleLibrarySingleDeCInp div ul li:hover{ color: #f37427;}
+.titleLibrarySingleDeCTex{ margin-top: 20px; margin-left: 38px;}
+.titleLibrarySingleDeCTex span{ display: inline-block; font-size: 12px; color: #666666; height: 38px; line-height: 38px; float: left;}
+.titleLibrarySingleDeCTex div{ float: left; margin-left: 15px; width: 408px; height: 78px; border: 1px solid #cccccc; position: relative;}
+.titleLibrarySingleDeCTex div textarea{ font-size: 12px; color: #666666; line-height: 24px; float: left; margin-left: 10px; margin-top: 4px; width: 394px; height: 72px;}
+.titleLibrarySingleDeCTex div p{ font-size: 12px; color: #cccccc; height: 78px; line-height: 36px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 400px; text-align: left;}
+.titleLibrarySingleDeB{ width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; font-size: 14px; color: #ffffff; margin: 12px auto 0; cursor: pointer;}
+
+/*模板配置图片库新增图片*/
+.libraryNewPicturesAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.libraryNewPicturesDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.libraryNewPicturesDeT{ width: 100%; height: 40px; background: #f37526;}
+.libraryNewPicturesDeT span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.libraryNewPicturesDeT img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.libraryNewPicturesDeC{ background: #ffffff; padding-bottom: 20px;}
+.libraryNewPicturesDeCT{ width: 500px; padding: 30px 0 20px 0; margin-left: 30px; border-bottom: 1px solid #cccccc;}
+.libraryNewPicturesDeCT>div{ float: left;}
+.libraryNewPicturesDeCT1{ font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.libraryNewPicturesDeCT2{ margin-left: 10px; width: 148px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.libraryNewPicturesDeCT2 span{ display: inline-block; font-size: 12px; color: #666666; height: 34px; line-height: 34px; width: 128px; text-align: left; background: url(../images/myPic15.png) right center no-repeat;}
+.libraryNewPicturesDeCT2 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.libraryNewPicturesDeCT2 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 10px;}
+.libraryNewPicturesDeCT2 ul li:hover{ color: #f37427;}
+.libraryNewPicturesDeCT3{ margin-left: 10px; width: 150px; height: 34px; border: 1px solid #e4e4e4; position: relative;}
+.libraryNewPicturesDeCT3 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 130px;}
+.libraryNewPicturesDeCT3 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 135px; text-align: left;}
+.libraryNewPicturesDeCT>div.libraryNewPicturesDeCT4{ float: right; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; cursor: pointer;}
+.libraryNewPicturesDeCT4 span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic25.png) right center no-repeat;}
+.libraryNewPicturesDeCB h2{ margin-top: 6px; margin-left: 30px; font-weight: normal; font-size: 12px; color: #666666; height: 40px; line-height: 40px; text-align: left;}
+.libraryNewPicturesDeCBPic{ margin-left: 20px; width: 500px; height: 215px; overflow-y: scroll;}
+.libraryNewPicturesDeCBPic1{ float: left; margin-left: 10px; margin-bottom: 10px; width: 110px; height: 61px; position: relative;}
+.libraryNewPicturesDeCBPic1 img{ width: 110px; height: 61px; display: block;}
+.libraryNewPicturesDeCBPic1 p{ font-size: 12px; color: #ffffff; height: 24px; line-height: 24px; width: 100%; background: #5c5c5c; position: absolute; left: 0; bottom: 1px;}
+.libraryNewPicturesDeCBPic1 input{ height: 24px; width: 100%; position: absolute; left: 0; bottom: 1px; z-index: 10; opacity: 0; filter:alpha(opacity:0);}
+.libraryNewPicturesDeCBPic2{ float: left; margin-left: 10px; margin-bottom: 10px; width: 108px; height: 59px; border: 1px solid #cccccc; position: relative; cursor: pointer;}
+.libraryNewPicturesDeCBPic2 img{ display: block; width: 108px; height: 59px;}
+.libraryNewPicturesDeCBPic2 span{ display: none; width: 58px; height: 28px; border: 1px solid #333333; border-radius: 3px; background: #464643; position: absolute; top: 0; right: 0;}
+.libraryNewPicturesDeCBPic2 span i{ font-style: normal; display: inline-block; font-size: 12px; color: #ffffff; height: 28px; line-height: 28px; padding-left: 16px; background: url(../images/myPic53.png) left center no-repeat;}
+.libraryNewPicturesDeB{ width: 120px; height: 36px; border-radius: 3px; background: #f37526; margin: 12px auto 0;}
+.libraryNewPicturesDeB a{ display: inline-block; width: 120px; height: 36px; line-height: 36px; font-size: 14px; color: #ffffff;}
+
+/*图片库（编辑信息）更改分类*/
+.changeClassifiAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.changeClassifiDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.changeClassifiDeT{ width: 100%; height: 40px; background: #f37526;}
+.changeClassifiDeT span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.changeClassifiDeT img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.changeClassifiDeC{ background: #ffffff; padding-bottom: 30px;}
+.changeClassifiDeCT{ width: 500px; padding-top: 30px; margin-left: 30px;}
+.changeClassifiDeCT>div{ float: left;}
+.changeClassifiDeCT1{ font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.changeClassifiDeCT2{ margin-left: 10px; width: 148px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.changeClassifiDeCT2 span{ display: inline-block; font-size: 12px; color: #666666; height: 34px; line-height: 34px; width: 128px; text-align: left; background: url(../images/myPic15.png) right center no-repeat;}
+.changeClassifiDeCT2 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.changeClassifiDeCT2 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 10px;}
+.changeClassifiDeCT2 ul li:hover{ color: #f37427;}
+.changeClassifiDeCT3{ margin-left: 10px; width: 150px; height: 34px; border: 1px solid #e4e4e4; position: relative;}
+.changeClassifiDeCT3 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 130px;}
+.changeClassifiDeCT3 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 135px; text-align: left;}
+.changeClassifiDeCT>div.changeClassifiDeCT4{ float: right; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; cursor: pointer;}
+.changeClassifiDeCT4 span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic25.png) right center no-repeat;}
+.changeClassifiDeB{ width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; margin: 12px auto 0; font-size: 14px; color: #ffffff; cursor: pointer;}
+
+/*消费管理渠道消费信息*/
+.consumptionInformationAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.consumptionInformationDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.consumptionInformationDeT{ width: 100%; height: 40px; background: #f37526;}
+.consumptionInformationDeT span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.consumptionInformationDeT img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.consumptionInformationDeC{ background: #ffffff; padding: 30px 0;}
+.consumptionInformationDeCTit{ margin-left: 30px; width: 500px; height: 50px; background: #f7f7f7;}
+.consumptionInformationDeCTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.consumptionInformationDeCTex{ width: 500px; margin-left: 30px;}
+.consumptionInformationDeCTex ul li{ width: 100%; height: 50px;}
+.consumptionInformationDeCTex ul li span{ display: inline-block; font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left; text-align: left;}
+.consumptionInformationDeB{ width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; margin: 12px auto 0; font-size: 14px; color: #ffffff; cursor: pointer;}
+
+/*重置密码*/
+.resetPasswordAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.resetPasswordDe{ width: 300px; padding-bottom: 10px; background: #f7f7f7; margin: 0 auto; position: relative;}
+.resetPasswordDeT{ background: #ffffff; padding: 20px 0;}
+.resetPasswordDeT img{ float: left; margin-left: 20px;}
+.resetPasswordDeT div{ float: left; text-align: left; margin-left: 9px;}
+.resetPasswordDeT div h2{ font-weight: normal; font-size: 14px; color: #666666; height: 24px; line-height: 24px;}
+.resetPasswordDeT div p{ font-size: 12px; color: #999999; height: 22px; line-height: 22px;}
+.resetPasswordDeB{ margin-top: 10px;}
+.resetPasswordDeB a{ display: inline-block; font-size: 14px; color: #ffffff; width: 60px; height: 26px; line-height: 26px; border-radius: 3px; background: #f37526; float: left; margin-left: 86px;}
+.resetPasswordDeB span{ display: inline-block; font-size: 14px; color: #666666; height: 24px; line-height: 24px; width: 58px; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+.resetPasswordDe>img{ cursor: pointer; position: absolute; top: 10px; right: 10px;}
+
+/*无法使用*/
+.unavailableAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.unavailableDe{ width: 300px; padding-bottom: 10px; background: #f7f7f7; margin: 0 auto; position: relative;}
+.unavailableDeT{ background: #ffffff; padding: 20px 0;}
+.unavailableDeT img{ float: left; margin-left: 20px;}
+.unavailableDeT div{ float: left; text-align: left; margin-left: 9px;}
+.unavailableDeT div h2{ font-weight: normal; font-size: 14px; color: #666666; height: 24px; line-height: 24px;}
+.unavailableDeT div p{ font-size: 12px; color: #999999; height: 22px; line-height: 22px;}
+.unavailableDeB{ width: 60px; height: 26px; line-height: 26px; border-radius: 3px; background: #f37526; margin: 10px auto 0; font-size: 14px; color: #ffffff; cursor: pointer;}
+.unavailableDe>img{ cursor: pointer; position: absolute; top: 10px; right: 10px;}
+
+/*新增渠道*/
+.newChannelsAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.newChannelsDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.newChannelsDeTop{ width: 100%; height: 40px; background: #f37526;}
+.newChannelsDeTop span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.newChannelsDeTop img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.newChannelsDeInpAll{ padding-top: 20px; padding-bottom: 10px; background: #ffffff;}
+.newChannelsDeInp{ margin-bottom: 20px; margin-left: 38px;}
+.newChannelsDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.newChannelsDeInp div{ float: left; margin-left: 15px; width: 408px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.newChannelsDeInp div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 12px; margin-top: 7px; width: 370px;}
+.newChannelsDeInp div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 12px; width: 375px; text-align: left; z-index: 1;}
+.newChannelsDeInp div img{ position: absolute; top: 14px; right: 10px; z-index: 2; cursor: pointer;}
+.newChannelsDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f17526; border-radius: 3px; float: left; margin-left: 156px; margin-top: 12px;}
+.newChannelsDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-top: 12px; margin-left: 10px; cursor: pointer; background: #f5f5f5;}
+
+/*充值记录vip*/
+.rechargeRecordAlert{ display: none; width: 100%; height: 2000px; background: url(../images/myPic20.png); position: fixed; top: 0; left: 0; z-index: 100;}
+.rechargeRecordDe{ width: 560px; padding-bottom: 12px; background: #f7f7f7; margin: 0 auto;}
+.rechargeRecordDeTop{ height: 40px; width: 100%; background: #f37526;}
+.rechargeRecordDeTop span{ display: inline-block; font-size: 14px; color: #ffffff; height: 40px; line-height: 40px; float: left; margin-left: 19px;}
+.rechargeRecordDeTop p{ font-size: 12px; color: #fffd61; height: 40px; line-height: 40px; float: left; margin-left: 18px;}
+.rechargeRecordDeTop img{ float: right; margin-right: 20px; margin-top: 14px; cursor: pointer;}
+.rechargeRecordDeC{ padding: 20px 0 30px; background: #ffffff;}
+.rechargeRecordDeC ul{ width: 498px; margin: 0 auto; border: 1px solid #e4e4e4; border-bottom: none;}
+.rechargeRecordDeC ul li{ height: 48px; border-bottom: 1px solid #e4e4e4;}
+.rechargeRecordDeC ul li span{ display: inline-block; font-size: 14px; color: #999999; height: 48px; line-height: 48px; float: left; margin-left: 20px; text-align: left; width: 79px;}
+.rechargeRecordDeC ul li p{ font-size: 14px; color: #333333; height: 48px; line-height: 48px; float: left; margin-left: 10px; text-align: left;}
+.rechargeRecordDeB{ width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; margin: 12px auto 0; font-size: 14px; color: #ffffff; cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

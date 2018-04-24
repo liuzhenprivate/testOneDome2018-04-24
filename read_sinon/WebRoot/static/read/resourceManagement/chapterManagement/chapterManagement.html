@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>资源管理书籍管理</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">章节管理</a>
+	</div>
+	<div class="bookManagementDe">
+		<div class="bookManagementDeTop clearfix">
+			<div class="labelManagementTopL clearfix">
+				<div class="labelManagementTopL1 clearfix">
+					<input type="text" />
+					<p>输入书籍名称或作者搜索</p>
+					<img src="../../images/myPic26.png" alt="" />
+				</div>
+				<div class="bookManagementTopL2 clearfix">
+					<input id="test6" readonly="readonly" />
+					<img src="../../images/myPic13.png" alt="" />
+				</div>
+			</div>
+			<div class="labelManagementTopR clearfix">
+				<a class="labelManagementTopR1" href="batchEditing.html" title=""><i>批量编辑</i></a>
+				<span class="labelManagementTopR2">
+					<i>添加章节</i>
+					<ul>
+						<li><a href="newChapter.html" title="">新增章节</a></li>
+						<li><a href="addBatchSection.html" title="">批量章节</a></li>
+					</ul>
+				</span>
+			</div>
+		</div>
+		<div class="bookManagementDeClickdown">
+			<span>展开搜索条件</span>
+		</div>
+		<div class="bookManagementDeClickup">
+			<ul class="clearfix">
+				<li style="margin-left: 19px;" class="clearfix">
+					<span>章节类型</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部章节</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部章节</li>
+							<li>部分章节</li>
+							<li>少数章节</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>章节状态</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部章节</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部章节</li>
+							<li>部分章节</li>
+							<li>少数章节</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>是否收费</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部章节</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部章节</li>
+							<li>部分章节</li>
+							<li>少数章节</li>
+						</ul>
+					</div>
+				</li>
+				<li style="margin-left: 19px;" class="clearfix">
+					<span>男女频道</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部章节</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部章节</li>
+							<li>部分章节</li>
+							<li>少数章节</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="bookManagementDeClickupKey clearfix">
+				<a href="javascript:void" title="">查&nbsp;&nbsp;询</a>
+				<span>重&nbsp;&nbsp;置</span>
+			</div>
+			<div class="bookManagementDeClickupBtn">
+				<span>收起</span>
+			</div>
+		</div>
+		<div class="chapterManagementTit clearfix">
+				<span style="margin-left: 20px; width: 80px;">序号</span>
+				<span style="width: 225px;">章节名称</span>
+				<span style="width: 87px;">章节状态</span>
+				<span style="width: 87px;">章节字数</span>
+				<span style="width: 95px;">章节价格</span>
+				<span style="width: 149px;">添加日期</span>
+				<span style="width: 141px;">管理操作</span>
+				<span>管理操作</span>
+			</div>
+			<div class="chapterManagementTex">
+				<ul>
+					<li class="clearfix">
+						<div class="chapterManagementTexOn">最强大圣人</div>
+						<div class="chapterManagementTexTw">第一章 会做提拉米苏的古怪小招待</div>
+						<div class="chapterManagementTexTh">玄幻</div>
+						<div class="chapterManagementTexFo">显示</div>
+						<div class="chapterManagementTexFi">男频</div>
+						<div class="chapterManagementTexSi">
+							<span>免费</span>
+							<div class="chapterManagementTexSiInp clearfix">
+								<input value="" />
+							</div>
+						</div>
+						<div class="chapterManagementTexSe">2017-14-14 09:74</div>
+						<div class="chapterManagementTexEi">
+							<span>操作</span>
+							<div class="chapterManagementTexEiDiv">
+								<a>预览</a>
+								<a>编辑</a>
+								<a>隐藏</a>
+								<a>删除</a>
+							</div>
+						</div>
+					</li>
+					<li style="background: #fafafa;" class="clearfix">
+						<div class="chapterManagementTexOn">最强大圣人</div>
+						<div class="chapterManagementTexTw">第一章 会做提拉米苏的古怪小招待</div>
+						<div class="chapterManagementTexTh">玄幻</div>
+						<div class="chapterManagementTexFo">显示</div>
+						<div class="chapterManagementTexFi">男频</div>
+						<div class="chapterManagementTexSi">
+							<span>免费</span>
+							<div class="chapterManagementTexSiInp clearfix">
+								<input value="" />
+							</div>
+						</div>
+						<div class="chapterManagementTexSe">2017-14-14 09:74</div>
+						<div class="chapterManagementTexEi">
+							<span>操作</span>
+							<div class="chapterManagementTexEiDiv">
+								<a>预览</a>
+								<a>编辑</a>
+								<a>隐藏</a>
+								<a>删除</a>
+							</div>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="chapterManagementTexOn">最强大圣人</div>
+						<div class="chapterManagementTexTw">第一章 会做提拉米苏的古怪小招待</div>
+						<div class="chapterManagementTexTh">玄幻</div>
+						<div class="chapterManagementTexFo">显示</div>
+						<div class="chapterManagementTexFi">男频</div>
+						<div class="chapterManagementTexSi">
+							<span>免费</span>
+							<div class="chapterManagementTexSiInp chapterManagementTexSiErr clearfix">
+								<input value="" />
+							</div>
+						</div>
+						<div class="chapterManagementTexSe">2017-14-14 09:74</div>
+						<div class="chapterManagementTexEi">
+							<span>操作</span>
+							<div class="chapterManagementTexEiDiv">
+								<a>预览</a>
+								<a>编辑</a>
+								<a>隐藏</a>
+								<a>删除</a>
+							</div>
+						</div>
+					</li>
+					<li style="background: #fafafa;" class="clearfix">
+						<div class="chapterManagementTexOn">最强大圣人</div>
+						<div class="chapterManagementTexTw">第一章 会做提拉米苏的古怪小招待</div>
+						<div class="chapterManagementTexTh">玄幻</div>
+						<div class="chapterManagementTexFo">显示</div>
+						<div class="chapterManagementTexFi">男频</div>
+						<div class="chapterManagementTexSi">
+							<span>免费</span>
+							<div class="chapterManagementTexSiInp clearfix">
+								<input value="" />
+							</div>
+						</div>
+						<div class="chapterManagementTexSe">2017-14-14 09:74</div>
+						<div class="chapterManagementTexEi">
+							<span>操作</span>
+							<div class="chapterManagementTexEiDiv">
+								<a>预览</a>
+								<a>编辑</a>
+								<a>隐藏</a>
+								<a>删除</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<div style="margin-left: 50px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoC clearfix">
+				<span>5条/页</span>
+				<div>
+					<img class="flipTwoC1" src="../../images/myPic31.png" alt="" />
+					<img class="flipTwoC2" src="../../images/myPic32.png" alt="" />
+				</div>
+			</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../layDate-v5.0.8/laydate/laydate.js"></script>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		
+		$('.labelManagementTopL1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.labelManagementTopL1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.labelManagementTopL1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$('.labelManagementTopR2').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		
+		$(window).click(function(){
+			$('.bookManagementDeClickupDiv').find('ul').hide();
+			$('.labelManagementTopR2 ul').hide();
+			$('.chapterManagementTexEi div').hide();
+		})
+		$('.bookManagementDeClickupDiv').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.bookManagementDeClickupDiv ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$(this).parent().siblings('p').text(val);
+			e.stopPropagation();
+		})
+		
+		$('.bookManagementDeClickdown span').click(function(){
+			$('.bookManagementDeClickdown').hide();
+			$('.bookManagementDeClickup').show();
+		})
+		$('.bookManagementDeClickupBtn span').click(function(){
+			$('.bookManagementDeClickdown').show();
+			$('.bookManagementDeClickup').hide();
+		})
+		
+		$('.chapterManagementTexSi span').click(function(){
+			var spanVal=$(this).text();
+			$(this).siblings('.chapterManagementTexSiInp').show().find('input').val(spanVal);
+			$(this).siblings('.chapterManagementTexSiInp').find('input').focus();
+		})
+		$('.chapterManagementTexSiInp input').blur(function(){
+			var inpVal=$(this).val();
+			$(this).parent().siblings('span').text(inpVal);
+			$(this).parent('.chapterManagementTexSiInp').hide();
+		})
+		
+		$('.chapterManagementTexEi span').click(function(e){
+			if($(this).siblings('div').css('display')=="none"){
+				$(this).siblings('div').show();
+			}else{
+				$(this).siblings('div').hide();
+			}
+			$(this).parents('li').siblings().find('.chapterManagementTexEiDiv').hide();
+			e.stopPropagation();
+		})
+		$('.chapterManagementTexEi div a').click(function(e){
+			$(this).parent('div').hide();
+			e.stopPropagation();
+		})
+		
+		$('.flipTwoC1').click(function(){
+			var spanVal=parseInt($('.flipTwoC span').text());
+			spanVal++;
+			$('.flipTwoC span').text(spanVal+'条/页');
+		})
+		$('.flipTwoC2').click(function(){
+			var spanVal=parseInt($('.flipTwoC span').text());
+			if(spanVal>0){
+				spanVal--;
+			}
+			$('.flipTwoC span').text(spanVal+'条/页');
+		})
+		
+		
+	</script>
+</body>
+</html>

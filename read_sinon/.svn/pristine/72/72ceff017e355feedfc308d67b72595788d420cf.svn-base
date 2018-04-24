@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HtmlMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_HTML(
+			PLACE_TYPE,	
+			NAME,	
+			HTML_TYPE,	
+			STATE,	
+			HTML_URL,	
+			PVS,	
+			MEMO,	
+			CREATE_TIME 
+		) values (
+			#{PLACE_TYPE},	
+			#{NAME},	
+			#{HTML_TYPE},	
+			#{STATE},	
+			#{HTML_URL},	
+			#{PVS},	
+			#{MEMO},	
+			#{CREATE_TIME} 
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_HTML
+		where 
+			HTML_ID = #{HTML_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_HTML
+			set 
+				PLACE_TYPE = #{PLACE_TYPE},
+				NAME = #{NAME},
+				HTML_TYPE = #{HTML_TYPE},
+				STATE = #{STATE},
+				HTML_URL = #{HTML_URL},
+				PVS = #{PVS},
+				MEMO = #{MEMO},
+			HTML_ID = HTML_ID
+			where 
+				HTML_ID = #{HTML_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			PLACE_TYPE,	
+			NAME,	
+			HTML_TYPE,	
+			STATE,	
+			HTML_URL,	
+			PVS,	
+			MEMO,	
+			CREATE_TIME,	
+			HTML_ID
+		from 
+			TB_HTML
+		where 
+			HTML_ID = #{HTML_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.PLACE_TYPE,	
+				a.NAME,	
+				a.HTML_TYPE,	
+				a.STATE,	
+				a.HTML_URL,	
+				a.PVS,	
+				a.MEMO,	
+				a.CREATE_TIME,	
+				a.HTML_ID
+		from 
+				TB_HTML a
+		where   1=1
+		<if test="pd.STATE != null and  pd.STATE != ''">
+			AND a.STATE = ${pd.STATE}
+		</if>
+		<if test="pd.HTML_TYPE != null and  pd.HTML_TYPE != ''">
+			AND a.HTML_TYPE = ${pd.HTML_TYPE}
+		</if>
+		order by a.HTML_ID asc
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.PLACE_TYPE,	
+				a.NAME,	
+				a.HTML_TYPE,	
+				a.STATE,	
+				a.HTML_URL,	
+				a.PVS,	
+				a.MEMO,	
+				a.CREATE_TIME,	
+				a.HTML_ID
+		from 
+				TB_HTML a
+		where   1=1
+		<if test="STATE != null and  STATE != ''">
+			AND a.STATE = ${STATE}
+		</if>
+		<if test="HTML_TYPE != null and  HTML_TYPE != ''">
+			AND a.HTML_TYPE = ${HTML_TYPE}
+		</if>
+		order by a.HTML_ID asc
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_HTML
+		where 
+			HTML_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

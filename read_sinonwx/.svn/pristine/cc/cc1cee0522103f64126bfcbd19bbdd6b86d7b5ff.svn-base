@@ -1,0 +1,8 @@
+package com.sinontech.service;
+
+import com.sinontech.modle.ExtensionContent;
+
+public interface ExtensionContentService {
+	
+	public ExtensionContent selectFindById(long EXTENSION_CONTENT_ID);
+}

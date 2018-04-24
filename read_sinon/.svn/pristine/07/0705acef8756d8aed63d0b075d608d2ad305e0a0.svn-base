@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WXUserMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_USER(
+			USER_ID,	
+			WEBCHAT_ID,	
+			USER_CODE,	
+			OPENID,	
+			NICKNAME,	
+			RECHARGE_MONEY,	
+			SEX,	
+			PROVINCE,	
+			CITY,	
+			COUNTRY,	
+			HEADIMGURL,	
+			PRIVILEGE,	
+			UNIONID,	
+			CTIME,	
+			BOOK_CURRENCY,	
+			LEVEL,
+			CUMULATIVE_CURRENCY,
+			CREATE_TIME,
+			SOURCE,
+			LOGIN_TIME,
+			FOLLOWSTATE,
+			ISVIP,
+			PHONE
+		) values (
+			#{USER_ID},	
+			#{WEBCHAT_ID},	
+			#{USER_CODE},	
+			#{OPENID},	
+			#{NICKNAME},	
+			#{RECHARGE_MONEY},	
+			#{SEX},	
+			#{PROVINCE},	
+			#{CITY},	
+			#{COUNTRY},	
+			#{HEADIMGURL},	
+			#{PRIVILEGE},	
+			#{UNIONID},	
+			#{CTIME},	
+			#{BOOK_CURRENCY},	
+			#{LEVEL},
+			#{CUMULATIVE_CURRENCY},
+			#{CREATE_TIME},
+			#{SOURCE},
+			#{LOGIN_TIME},
+			#{FOLLOWSTATE},
+			#{ISVIP},
+			#{PHONE}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_USER
+		where 
+			USERID = #{USERID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_USER
+			set 
+				USER_ID = #{USER_ID},
+				WEBCHAT_ID = #{WEBCHAT_ID},
+				USER_CODE = #{USER_CODE},
+				OPENID = #{OPENID},
+				NICKNAME = #{NICKNAME},
+				RECHARGE_MONEY = #{RECHARGE_MONEY},
+				SEX = #{SEX},
+				PROVINCE = #{PROVINCE},
+				CITY = #{CITY},
+				COUNTRY = #{COUNTRY},
+				HEADIMGURL = #{HEADIMGURL},
+				PRIVILEGE = #{PRIVILEGE},
+				UNIONID = #{UNIONID},
+				CTIME = #{CTIME},
+				BOOK_CURRENCY = #{BOOK_CURRENCY},
+				LEVEL = #{LEVEL},
+				CUMULATIVE_CURRENCY = #{CUMULATIVE_CURRENCY},
+				LOGIN_TIME = #{LOGIN_TIME},
+				FOLLOWSTATE = #{FOLLOWSTATE}
+				ISVIP = #{ISVIP},
+				PHONE = #{PHONE}
+			where 
+				USERID = #{USERID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			USERID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			USER_CODE,	
+			OPENID,	
+			NICKNAME,	
+			RECHARGE_MONEY,	
+			SEX,	
+			PROVINCE,	
+			CITY,	
+			COUNTRY,	
+			HEADIMGURL,	
+			PRIVILEGE,	
+			UNIONID,	
+			CTIME,	
+			BOOK_CURRENCY,	
+			LEVEL,
+			CUMULATIVE_CURRENCY,
+			CREATE_TIME,
+			SOURCE,
+			LOGIN_TIME,
+			FOLLOWSTATE,
+			ISVIP,
+			PHONE
+		from 
+			TB_USER
+		where 
+			USERID = #{USERID}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USER_CODE,	
+				a.OPENID,	
+				a.NICKNAME,	
+				a.RECHARGE_MONEY,	
+				a.SEX,	
+				a.PROVINCE,	
+				a.CITY,	
+				a.COUNTRY,	
+				a.HEADIMGURL,	
+				a.PRIVILEGE,	
+				a.UNIONID,	
+				a.CTIME,	
+				a.BOOK_CURRENCY,	
+				a.LEVEL,
+				a.CUMULATIVE_CURRENCY,
+				a.CREATE_TIME,
+				su.NAME,
+				a.SOURCE,
+				a.LOGIN_TIME,
+				a.FOLLOWSTATE,
+				a.ISVIP,
+				a.PHONE
+		from 
+				TB_USER a 
+				LEFT JOIN SYS_USER su on a.USER_ID = su.USER_ID
+		where 1=1
+				<if test="pd.STATE!=null and pd.STATE!=''">
+					AND a.USERID in(
+						select 
+							USERID 
+						from 
+							TB_RECHARGE_LOG
+						where STATE = #{pd.STATE}
+					)
+				</if>
+				<if test="pd.FOLLOWSTATE!=null and pd.FOLLOWSTATE!=''">
+					AND a.FOLLOWSTATE = #{pd.FOLLOWSTATE}
+				</if>		
+	</select>
+	
+	<!-- 累计/当月/当天 读者数-->
+	<select id="countUsers" parameterType="pd" resultType="pd">
+			select
+				count(USERID) USERID
+			from
+				TB_USER
+			where 1 = 1
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USER_CODE,	
+				a.OPENID,	
+				a.NICKNAME,	
+				a.RECHARGE_MONEY,	
+				a.SEX,	
+				a.PROVINCE,	
+				a.CITY,	
+				a.COUNTRY,	
+				a.HEADIMGURL,	
+				a.PRIVILEGE,	
+				a.UNIONID,	
+				a.CTIME,	
+				a.BOOK_CURRENCY,	
+				a.LEVEL,
+				a.CUMULATIVE_CURRENCY,
+				a.CREATE_TIME,
+				a.SOURCE,
+				a.LOGIN_TIME,
+				a.FOLLOWSTATE,
+				a.ISVIP,
+				a.PHONE
+		from 
+				TB_USER a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_USER
+		where 
+			USERID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 统计渠道粉丝 -->
+	<select id="countUserFans" parameterType="pd" resultType="pd">
+		select 
+			COUNT(USERID) UsersFans
+		from 
+			TB_USER 
+		where 
+			FOLLOWSTATE = 1
+	</select>
+	
+	<!-- 统计渠道付费粉丝 -->
+	<select id="countUserFansFee" parameterType="pd" resultType="pd">
+		select 
+			COUNT(USERID) UsersFansFee
+		from 
+			TB_USER
+		where
+			RECHARGE_MONEY > 0
+	</select>
+	
+	<!-- 统计今天付费用户数 -->
+	<select id="countUserFansFeeDay" parameterType="pd" resultType="pd">
+		select 
+			COUNT(USERID) UserFansFeeDay
+		from 
+			TB_USER
+		where
+			RECHARGE_MONEY > 0
+			AND CREATE_TIME like CONCAT(CONCAT('', #{CREATE_TIME}),'%')
+	</select>
+	
+	<!-- 统计本月付费用户数 -->
+	<select id="countUserFansFeeMonth" parameterType="pd" resultType="pd">
+		select 
+			COUNT(USERID) UserFansFeeMonth
+		from 
+			TB_USER
+		where
+			RECHARGE_MONEY > 0 AND FOLLOWSTATE = 1
+			AND CREATE_TIME like CONCAT(CONCAT('', #{CREATE_TIME}),'%')
+	</select>
+	
+	
+	
+	<!-- 统计 付费用户数 -->
+	<select id="countUserPay" parameterType="pd" resultType="pd">
+		select 
+			COUNT(USERID) UsersFee
+		from 
+			TB_USER
+		where
+			RECHARGE_MONEY > 0
+			<if test="TIME!=null and TIME!=''">
+				AND CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+			</if>
+	</select>
+	
+	
+	<!--  获取指定平台id的用户的渠道信息 -->
+	<select id="UserlistPage" parameterType="page" resultType="pd">
+		select
+				a.USER_CODE,
+				su.NAME,
+				su.USER_ID,
+				a.FOLLOWSTATE,
+				a.CREATE_TIME,
+				a.ISVIP,
+				a.RECHARGE_MONEY,
+				a.CUMULATIVE_CURRENCY,
+				a.CUMULATIVE_CURRENCY-a.BOOK_CURRENCY SURPLS,
+				a.BOOK_CURRENCY,
+				sl.SLYDB,
+				a.PHONE
+		from 
+				TB_USER a LEFT JOIN SYS_USER su ON a.USER_ID = su.USER_ID
+				LEFT JOIN(
+					select
+						sum(BOOK_CURRENCY) SLYDB,
+						USER_ID
+					from
+						tb_sign_log
+					where USERID in(
+						select USERID from tb_user where USER_CODE = #{pd.USER_CODE}
+					) GROUP BY USER_ID 
+				) sl ON a.USER_ID = sl.USER_ID
+		where 
+				a.USER_CODE = #{pd.USER_CODE}
+	</select>
+	
+	<!-- 读者管理：获取指定读者的渠道 -->
+	<select id="readlist" parameterType="page" resultType="pd">
+		select 
+			su.NAME
+		from  tb_user a
+			LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID
+		WHERE
+			a.USER_CODE = (
+				select USER_CODE from tb_user where USERID = #{pd.USERID}
+			)
+	</select>
+	
+	<!--  渠道读者列表 -->
+	<select id="sysuserReadlistPage" parameterType="page" resultType="pd">
+		select	
+				a.HEADIMGURL,
+				a.NICKNAME,
+				a.USER_CODE,
+				a.USERID,
+				su.NAME,
+				a.USER_ID,
+				a.FOLLOWSTATE,
+				a.CREATE_TIME,
+				a.ISVIP,
+				a.RECHARGE_MONEY,
+				a.CUMULATIVE_CURRENCY,
+				a.CUMULATIVE_CURRENCY-a.BOOK_CURRENCY SURPLUS_CURRENCY,
+				a.BOOK_CURRENCY,
+				a.PHONE
+		from 
+				TB_USER a LEFT JOIN SYS_USER su ON a.USER_ID = su.USER_ID
+		where   a.USER_ID =  #{pd.USER_ID}
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+							a.NICKNAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+							or
+							a.USER_ID LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						)
+				</if>
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.FOLLOWSTATE!=null and pd.FOLLOWSTATE!=''">
+					AND a.FOLLOWSTATE = #{pd.FOLLOWSTATE}
+				</if>
+	</select>
+	
+	<!--  导出渠道读者列表到excel -->
+	<select id="listsysuserReadExce" parameterType="pd" resultType="pd">
+		select	
+				a.HEADIMGURL,
+				a.NICKNAME,
+				a.USER_CODE,
+				su.NAME,
+				a.USER_ID,
+				a.FOLLOWSTATE,
+				a.CREATE_TIME,
+				a.ISVIP,
+				a.RECHARGE_MONEY,
+				a.CUMULATIVE_CURRENCY,
+				a.CUMULATIVE_CURRENCY-a.BOOK_CURRENCY SURPLUS_CURRENCY,
+				a.BOOK_CURRENCY,
+				a.PHONE
+		from 
+				TB_USER a LEFT JOIN SYS_USER su ON a.USER_ID = su.USER_ID
+		where   a.USER_ID =  #{USER_ID}
+				<if test="names!=null and names!=''">
+					AND (
+							a.NICKNAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+							or
+							a.USER_ID LIKE CONCAT(CONCAT('%', #{names}),'%')
+						)
+				</if>
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="FOLLOWSTATE!=null and FOLLOWSTATE!=''">
+					AND a.FOLLOWSTATE = #{FOLLOWSTATE}
+				</if>
+	</select>
+	
+	<!--  渠道读者 累计/当月/当天 信息-->
+	<select id="sysUserRead" parameterType="pd" resultType="pd">
+			select
+				count(USERID) USERID
+			from
+				TB_USER
+			where USER_ID = #{USER_ID}
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!--  渠道粉丝   累计/当月/当天 信息-->
+	<select id="sysUserFans" parameterType="pd" resultType="pd">
+			select
+				count(USERID) USERID
+			from
+				TB_USER
+			where USER_ID = #{USER_ID} AND FOLLOWSTATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!-- ====渠道端==== -->
+	
+	<!--  渠道端：渠道读者列表 -->
+	<select id="sysuserReadChannellistPage" parameterType="page" resultType="pd">
+		select	
+				a.HEADIMGURL,
+				a.NICKNAME,
+				a.USER_CODE,
+				a.USERID,
+				su.NAME,
+				a.USER_ID,
+				a.FOLLOWSTATE,
+				a.CREATE_TIME,
+				a.ISVIP,
+				a.RECHARGE_MONEY,
+				a.CUMULATIVE_CURRENCY,
+				a.CUMULATIVE_CURRENCY-a.BOOK_CURRENCY SURPLUS_CURRENCY,
+				a.BOOK_CURRENCY,
+				a.PHONE
+		from 
+				TB_USER a LEFT JOIN SYS_USER su ON a.USER_ID = su.USER_ID
+		where   a.USER_ID =  #{pd.USER_ID}
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+							a.NICKNAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+							or
+							a.USER_ID LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						)
+				</if>
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.FOLLOWSTATE!=null and pd.FOLLOWSTATE!=''">
+					AND a.FOLLOWSTATE = #{pd.FOLLOWSTATE}
+				</if>
+	</select>
+	
+	<!--  渠道端：导出渠道读者列表到excel -->
+	<select id="ReadExceChannel" parameterType="pd" resultType="pd">
+		select	
+				a.HEADIMGURL,
+				a.NICKNAME,
+				a.USERID,
+				su.NAME,
+				a.USER_ID,
+				a.FOLLOWSTATE,
+				a.CREATE_TIME,
+				a.ISVIP,
+				a.RECHARGE_MONEY,
+				a.CUMULATIVE_CURRENCY,
+				a.CUMULATIVE_CURRENCY-a.BOOK_CURRENCY SURPLUS_CURRENCY,
+				a.BOOK_CURRENCY,
+				a.PHONE
+		from 
+				TB_USER a LEFT JOIN SYS_USER su ON a.USER_ID = su.USER_ID
+		where   a.USER_ID =  #{USER_ID}
+				<if test="names!=null and names!=''">
+					AND (
+							a.NICKNAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+							or
+							a.USER_ID LIKE CONCAT(CONCAT('%', #{names}),'%')
+						)
+				</if>
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="FOLLOWSTATE!=null and FOLLOWSTATE!=''">
+					AND a.FOLLOWSTATE = #{FOLLOWSTATE}
+				</if>
+	</select>
+	
+	
+	<!--  渠道端：渠道读者 累计/当月/当天 信息-->
+	<select id="sysUserReadChannel" parameterType="pd" resultType="pd">
+			select
+				count(USERID) USERID
+			from
+				TB_USER
+			where USER_ID = #{USER_ID}
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!--  渠道端：渠道粉丝   累计/当月/当天 信息-->
+	<select id="sysUserFansChannel" parameterType="pd" resultType="pd">
+			select
+				count(USERID) USERID
+			from
+				TB_USER
+			where USER_ID = #{USER_ID} AND FOLLOWSTATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!-- 渠道端：通过ID获取数据 -->
+	<select id="findByIdChannel" parameterType="pd" resultType="pd">
+		select 
+			USERID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			USER_CODE,	
+			OPENID,	
+			NICKNAME,	
+			RECHARGE_MONEY,	
+			SEX,	
+			PROVINCE,	
+			CITY,	
+			COUNTRY,	
+			HEADIMGURL,	
+			PRIVILEGE,	
+			UNIONID,	
+			CTIME,	
+			BOOK_CURRENCY,	
+			LEVEL,
+			CUMULATIVE_CURRENCY,
+			CREATE_TIME,
+			SOURCE,
+			LOGIN_TIME,
+			FOLLOWSTATE,
+			ISVIP,
+			PHONE
+		from 
+			TB_USER
+		where 
+			USERID = #{USERID}
+	</select>
+	
+	<!-- 渠道端：统计渠道付费读者-->
+	<select id="countUsersumfee" parameterType="pd" resultType="pd">
+		select 
+				COUNT(USERID) UsersSumFee
+		from 
+				TB_USER
+		where
+				USER_ID = #{USER_ID}
+				and
+				RECHARGE_MONEY > 0
+	</select>
+	
+</mapper>

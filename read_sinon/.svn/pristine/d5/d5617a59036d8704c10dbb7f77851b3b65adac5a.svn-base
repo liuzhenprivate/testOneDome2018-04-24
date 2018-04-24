@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>账户信息</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/channelList.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body style="background: #fff;" onload="myTab()">
+	<div class="accountInformationAll">
+		<div class="channelDetailsDeInfor clearfix">
+			<h2 style="margin-top: 0;">账户信息</h2>
+		</div>
+		<div class="channelDetailsDeAll clearfix">
+			<ul>
+				<li class="clearfix">
+					<span>姓名</span>
+					<p>杭州沂滨科技有限公司</p>
+				</li>
+				<li class="clearfix">
+					<span>账号</span>
+					<p>571906066710703</p>
+				</li>
+				<li class="clearfix">
+					<span>开户行</span>
+					<p>招商银行股份有限公司杭州武林支行</p>
+				</li>
+				<li class="clearfix">
+					<span>绑定手机</span>
+					<p>18745455241</p>
+				</li>
+			</ul>
+		</div>
+		<div class="channelDetailsDeInfor clearfix">
+			<h2>收款信息</h2>
+		</div>
+		<div style="margin-top: 20px;" class="channelListDeSel clearfix">
+			<div class="channelListDeSelL clearfix">
+				<div class="channelListDeSelL1 clearfix">
+					<input type="text" />
+					<p>输入书籍名称或作者搜索</p>
+					<img src="../images/myPic26.png" alt="" />
+				</div>
+				<div class="channelListDeSelL3 clearfix">
+					<p>打款状态</p>
+					<img src="../images/myPic13.png" alt="" />
+					<ul>
+						<li>已打款</li>
+						<li>未打款</li>
+						<li>已打款</li>
+					</ul>
+				</div>
+			</div>
+			<a href="javascript:void(0)" title=""><span style=" background: url(../images/myPic49.png) right center no-repeat;">导出列表</span></a>
+		</div>
+		<div class="accountInformationTit clearfix">
+			<span style="margin-left: 19px; width: 47px;">序号</span>
+			<span style="width: 125px;">结算单号</span>
+			<span style="width: 107px;">结算开始</span>
+			<span style="width: 96px;">结算结束</span>
+			<span style="width: 72px;">总笔数</span>
+			<span style="width: 73px;">总金额</span>
+			<span style="width: 58px;">费率</span>
+			<span style="width: 95px;">渠道打款</span>
+			<span style="width: 82px;">平台收益</span>
+			<span style="width: 130px;">付款时间</span>
+			<span>状态</span>
+		</div>
+		<div class="accountInformationTex">
+			<ul>
+				<li class="clearfix">
+					<span style="margin-left: 19px; width: 47px;">1</span>
+					<span style="width: 125px;">854245124578</span>
+					<span style="width: 107px;">2017-11-12</span>
+					<span style="width: 96px;">2017-11-12</span>
+					<span style="width: 72px;">541235</span>
+					<span style="width: 73px;">541235</span>
+					<span style="width: 58px;">300</span>
+					<span style="width: 95px;">230</span>
+					<span style="width: 82px;">230</span>
+					<span style="width: 130px;">2017-12-23 09:12</span>
+					<span style="color: #f14530;">未打款</span>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<span style="margin-left: 19px; width: 47px;">2</span>
+					<span style="width: 125px;">854245124578</span>
+					<span style="width: 107px;">2017-11-12</span>
+					<span style="width: 96px;">2017-11-12</span>
+					<span style="width: 72px;">541235</span>
+					<span style="width: 73px;">541235</span>
+					<span style="width: 58px;">300</span>
+					<span style="width: 95px;">230</span>
+					<span style="width: 82px;">230</span>
+					<span style="width: 130px;">2017-12-23 09:12</span>
+					<span>已打款</span>
+				</li>
+				<li class="clearfix">
+					<span style="margin-left: 19px; width: 47px;">3</span>
+					<span style="width: 125px;">854245124578</span>
+					<span style="width: 107px;">2017-11-12</span>
+					<span style="width: 96px;">2017-11-12</span>
+					<span style="width: 72px;">541235</span>
+					<span style="width: 73px;">541235</span>
+					<span style="width: 58px;">300</span>
+					<span style="width: 95px;">230</span>
+					<span style="width: 82px;">230</span>
+					<span style="width: 130px;">2017-12-23 09:12</span>
+					<span style="color: #f14530;">未打款</span>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<span style="margin-left: 19px; width: 47px;">4</span>
+					<span style="width: 125px;">854245124578</span>
+					<span style="width: 107px;">2017-11-12</span>
+					<span style="width: 96px;">2017-11-12</span>
+					<span style="width: 72px;">541235</span>
+					<span style="width: 73px;">541235</span>
+					<span style="width: 58px;">300</span>
+					<span style="width: 95px;">230</span>
+					<span style="width: 82px;">230</span>
+					<span style="width: 130px;">2017-12-23 09:12</span>
+					<span>已打款</span>
+				</li>
+				<li class="clearfix">
+					<span style="margin-left: 19px; width: 47px;">5</span>
+					<span style="width: 125px;">854245124578</span>
+					<span style="width: 107px;">2017-11-12</span>
+					<span style="width: 96px;">2017-11-12</span>
+					<span style="width: 72px;">541235</span>
+					<span style="width: 73px;">541235</span>
+					<span style="width: 58px;">300</span>
+					<span style="width: 95px;">230</span>
+					<span style="width: 82px;">230</span>
+					<span style="width: 130px;">2017-12-23 09:12</span>
+					<span style="color: #f14530;">未打款</span>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-left: 30px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("faker"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+	</script>
+</body>
+</html>

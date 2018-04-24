@@ -1,0 +1,484 @@
+/*充值配置*/
+/*vip充值（充值设置）*/
+.announcementManagementTop{ padding-left: 14px; height: 40px; background: #ffffff;}
+.announcementManagementTop a{ display :inline-block; font-size: 14px; color: #333333; height: 40px; line-height: 40px; float: left;}
+.announcementManagementTop img{ float: left; margin: 15px 12px 0;}
+.vipRechargeDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 20px;}
+.vipRechargeTopL{ float: left; margin-left: 20px;}
+.vipRechargeTopL1{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; position: relative; cursor: pointer;}
+.vipRechargeTopL1:hover{ background: #fff;}
+.vipRechargeTopL1 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 19px; background: url(../images/myPic13.png) right center no-repeat;}
+.vipRechargeTopL1 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.vipRechargeTopL1 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.vipRechargeTopL1 ul li:hover{ color: #f37427;}
+.vipRechargeTop>a{ display: inline-block; width: 120px; height: 36px; line-height: 36px; background: #f37526; border-radius: 3px; float: right; margin-right: 30px;}
+.vipRechargeTop>a span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; padding-right: 21px; background: url(../images/myPic14.png) right center no-repeat;}
+.vipRechargeTit{ margin-top: 20px; margin-left: 30px; width: 960px; height: 50px; background: #f7f7f7; text-align: left;}
+.vipRechargeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.vipRechargeTex{ width: 960px; margin-left: 30px; text-align: left;}
+.vipRechargeTex ul li{ width: 100%; height: 50px;}
+.vipRechargeTex ul li>div{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left;}
+.vipRechargeTexOn{ width: 136px; margin-left: 19px;}
+.vipRechargeTexTw{ width: 134px;}
+.vipRechargeTexTh{ width: 125px;}
+.vipRechargeTexFo{ width: 131px;}
+.vipRechargeTexFi{ width: 95px;}
+.vipRechargeTexSi{ width: 116px;}
+.vipRechargeTexSe{ width: 126px;}
+.vipRechargeTexEi{ position: relative;}
+.vipRechargeTexEi span{ display: inline-block; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.vipRechargeTexEi div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 33px; left: -24px; z-index: 10; border: 1px solid #e7e7e7;}
+.vipRechargeTexEi div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.vipRechargeTexEi div a:hover{ background: #f37526; color: #ffffff;}
+.flipTwo{ margin-top: 20px; margin-left: 60px;}
+.flipTwoL{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; float: left;}
+.flipTwoR{ float: right; margin-right: 30px; cursor: pointer;}
+.flipTwoPrev{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoPrev img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoDe{ float: left;}
+.flipTwoDe span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 13px;}
+.flipTwoDe span.flipTwoDeSpan{ color: #f37427;}
+.flipTwoNext{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoNext img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoSkip{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 10px; float: left;}
+.flipTwoInp{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #ffffff;}
+.flipTwoInp input{ font-size: 12px; color: #666666; height: 16px; line-height: 16px; float: left; width: 30px; margin-top: 7px; text-align: center;}
+.flipTwoSure{ font-size: 12px; color: #666666; height: 30px; line-height: 30px; border: 1px solid #dbdbdb; border-radius: 2px; background: #f5f5f5; float: left; width: 62px;}
+
+/*普通充值*/
+.generalRechargeTit{ margin-top: 20px; margin-left: 30px; width: 960px; height: 50px; background: #f7f7f7; text-align: left;}
+.generalRechargeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.generalRechargeTex{ width: 960px; margin-left: 30px; text-align: left;}
+.generalRechargeTex ul li{ width: 100%; height: 50px;}
+.generalRechargeTex ul li>div{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left;}
+.generalRechargeTexOn{ width: 116px; margin-left: 19px;}
+.generalRechargeTexTw{ width: 103px;}
+.generalRechargeTexTh{ width: 95px;}
+.generalRechargeTexFo{ width: 126px;}
+.generalRechargeTexFi{ width: 116px;}
+.generalRechargeTexSi{ width: 96px;}
+.generalRechargeTexSe{ width: 106px;}
+.generalRechargeTexEi{ width: 106px;}
+.generalRechargeTexNi{ position: relative;}
+.generalRechargeTexNi span{ display: inline-block; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.generalRechargeTexNi div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 33px; left: -24px; z-index: 10; border: 1px solid #e7e7e7;}
+.generalRechargeTexNi div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.generalRechargeTexNi div a:hover{ background: #f37526; color: #ffffff;}
+
+/*普通充值（充值设置）*/
+.generalRechargeSetDe{ background: #ffffff; margin-top: 20px; padding: 30px 0;}
+.generalRechargeSetDe h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.generalRechargeSetDeInp{ margin-top: 20px;}
+.generalRechargeSetDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.generalRechargeSetDeInp div{ width: 498px; height: 34px; border: 1px solid #cccccc; position: relative; float: left; margin-left: 9px; cursor: pointer;}
+.generalRechargeSetDeInp div input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 470px;}
+.generalRechargeSetDeInp div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; text-align: left; width: 475px;}
+.generalRechargeSetDeNor{ margin-top: 12px;}
+.generalRechargeSetDeNor span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.generalRechargeSetDeNor p{ font-size: 20px; color: #f37427; height: 36px; line-height: 36px; float: left; margin-left: 10px;}
+.generalRechargeSetDeNor p i{ font-style: normal; color: #999999; font-size: 12px;}
+.generalRechargeSetDeSel{ margin-top: 20px;}
+.generalRechargeSetDeSel span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.generalRechargeSetDeSelDiv{ width: 498px; height: 34px; border: 1px solid #cccccc; position: relative; float: left; margin-left: 9px; cursor: pointer;}
+.generalRechargeSetDeSelDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.generalRechargeSetDeSelDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.generalRechargeSetDeSelDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.generalRechargeSetDeSelDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.generalRechargeSetDeSelDiv ul li:hover{ color: #f37427;}
+.generalRechargeSetDeTex{ margin-top: 20px;}
+.generalRechargeSetDeTex span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.generalRechargeSetDeTex div{ float: left; margin-left: 9px; width: 648px; height: 130px; border: 1px solid #cccccc; position: relative;}
+.generalRechargeSetDeTex div textarea{ font-size: 12px; color: #323232; line-height: 20px; float: left; margin-left: 11px; margin-top: 8px; width: 620px; height: 100px;}
+.generalRechargeSetDeTex div p{ font-size: 12px; color: #cccccc; height: 120px; line-height: 36px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 620px; text-align: left;}
+.generalRechargeSetDeBtn{ margin-top: 20px; margin-left: 86px;}
+.generalRechargeSetDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left;}
+.generalRechargeSetDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+
+/*vip充值（充值设置）*/
+.vipRechargeSetDe{ background: #ffffff; margin-top: 20px; padding: 30px 0;}
+.vipRechargeSetDe h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.vipRechargeSetDeSel{ margin-top: 20px;}
+.vipRechargeSetDeSel span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.vipRechargeSetDeSelDiv{ width: 498px; height: 34px; border: 1px solid #cccccc; position: relative; float: left; margin-left: 9px; cursor: pointer;}
+.vipRechargeSetDeSelDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.vipRechargeSetDeSelDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.vipRechargeSetDeSelDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.vipRechargeSetDeSelDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.vipRechargeSetDeSelDiv ul li:hover{ color: #f37427;}
+.vipRechargeSetDeInp{ margin-top: 20px;}
+.vipRechargeSetDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.vipRechargeSetDeInp div{ width: 498px; height: 34px; border: 1px solid #cccccc; position: relative; float: left; margin-left: 9px; cursor: pointer;}
+.vipRechargeSetDeInp div input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 470px;}
+.vipRechargeSetDeInp div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; text-align: left; width: 475px;}
+.vipRechargeSetDeInp i{ font-style: normal; display: inline-block; font-size: 12px; color: #999999; height: 36px; line-height: 36px; float: left; margin-left: 10px;}
+.vipRechargeSetDeTex{ margin-top: 20px;}
+.vipRechargeSetDeTex span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.vipRechargeSetDeTex div{ float: left; margin-left: 9px; width: 648px; height: 130px; border: 1px solid #cccccc; position: relative;}
+.vipRechargeSetDeTex div textarea{ font-size: 12px; color: #323232; line-height: 20px; float: left; margin-left: 11px; margin-top: 8px; width: 620px; height: 100px;}
+.vipRechargeSetDeTex div p{ font-size: 12px; color: #cccccc; height: 120px; line-height: 36px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 620px; text-align: left;}
+.vipRechargeSetDeBtn{ margin-top: 20px; margin-left: 86px;}
+.vipRechargeSetDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left;}
+.vipRechargeSetDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+.vipRechargeSetDeTim{ margin-top: 20px;}
+.vipRechargeSetDeTim span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; width: 77px; float: left; text-align: right;}
+.vipRechargeSetDeTim div{ width: 238px; height: 34px; border: 1px solid #cccccc; position: relative; float: left; margin-left: 9px; cursor: pointer;}
+.vipRechargeSetDeTim div input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 225px;}
+.vipRechargeSetDeTim div img{ position: absolute; right: 10px; top: 15px;}
+.vipRechargeSetDeTim i{ font-style: normal; display: inline-block; font-size: 14px; color: #999999; height: 36px; line-height: 36px; margin: 0 6px; float: left;}
+
+/*读者管理*/
+.readerManagementDe{ background: #ffffff; margin-top: 20px; padding: 30px 0;}
+.readerManagementDeTop{ margin-left: 10px;}
+.readerManagementDeIn{ width: 304px; padding: 20px 0 23px 0; border: 1px solid #e4e4e4; text-align: left; float: left; margin-left: 20px; position: relative;}
+.readerManagementDeIn>p{ font-size: 14px; color: #666666; height: 32px; line-height: 32px; margin-left: 28px;}
+.readerManagementDeIn>h2{ font-size: 32px; color: #f37427; height: 52px; line-height: 52px; margin-left: 28px;}
+.readerManagementDeIn1 a{ display: inline-block; font-size: 14px; color: #666666; padding-right: 14px; height: 32px; line-height: 32px; position: absolute; top: 90px; left: 28px; background: url(../images/myPic12.png) right center no-repeat;}
+.readerManagementDeIn2{ margin-top: 37px; margin-left: 28px;}
+.readerManagementDeIn2 div{ float: left;}
+.readerManagementDeIn2 div p{ font-size: 14px; color: #999999; height: 24px; line-height: 24px;}
+.readerManagementDeIn2 div h3{ font-weight: normal; font-size: 24px; color: #666666; height: 34px; line-height: 34px;}
+.readerManagementDeSelL{ float: left; margin-top: 30px;}
+.readerManagementDeSelL1{ float: left; margin-left: 30px; width: 228px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.readerManagementDeSelL1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 180px;}
+.readerManagementDeSelL1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 185px; text-align: left;}
+.readerManagementDeSelL1 img{ width: 12px; float: right; margin-right: 10px; margin-top: 11px; cursor: pointer;}
+.readerManagementDeSelL2{ float: left; margin-left: 10px; width: 235px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.readerManagementDeSelL2 input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 19px; margin-top: 7px; width: 180px;}
+.readerManagementDeSelL2 img{ float: right; margin-right: 19px; margin-top: 14px;}
+.readerManagementDeSel>a{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; background: #f37526; float: right; margin-top: 30px; margin-right: 30px;}
+.readerManagementDeSel>a span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic49.png) right center no-repeat;}
+.readerManagementDeClickdown{ margin-top: 10px; width: 960px; margin-left: 30px; border-bottom: 1px solid #cccccc;}
+.readerManagementDeClickdown span{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-right: 16px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.readerManagementDeClickup{ display: none; margin-top: 20px; width: 960px; margin-left: 30px; background: #fafafa; padding-bottom: 10px;}
+.readerManagementDeClickup>ul>li{ float: left; margin-left: 28px; margin-top: 20px;}
+.readerManagementDeClickup>ul>li>span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.readerManagementDeClickupDiv{ float: left; margin-left: 10px; width: 228px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.readerManagementDeClickupDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.readerManagementDeClickupDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.readerManagementDeClickupDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.readerManagementDeClickupDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.readerManagementDeClickupDiv ul li:hover{ color: #f37427;}
+.readerManagementDeClickupKey{ margin-top: 20px;}
+.readerManagementDeClickupKey a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left; margin-left: 354px;}
+.readerManagementDeClickupKey span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+.readerManagementDeClickupBtn{ margin-top: 10px;}
+.readerManagementDeClickupBtn span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding-right: 15px; background: url(../images/myPic28.png) right center no-repeat; cursor: pointer;}
+.readerManagementDeTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.readerManagementDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.readerManagementDeTex{ width: 960px; margin-left: 30px;}
+.readerManagementDeTex ul li{ width: 100%; height: 60px;}
+.readerManagementDeTex ul li img{ width: 48px; height: 48px; float: left; margin-left: 14px; margin-top: 6px;}
+.readerManagementDeTex ul li p{ font-size: 12px; color: #666666; height: 60px; line-height: 60px; float: left; text-align: left;}
+.readerManagementDeTex1{ width: 105px; margin-left: 19px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.readerManagementDeTex2{ width: 105px; margin-left: 20px;}
+.readerManagementDeTex3{ width: 76px;}
+.readerManagementDeTex4{ width: 131px;}
+.readerManagementDeTex5{ width: 76px;}
+.readerManagementDeTex6{ width: 121px;}
+.readerManagementDeTex7{ width: 90px;}
+.readerManagementDeTex8{ width: 76px;}
+
+/*读者详情*/
+.readerDetailsDe{ background: #ffffff; margin-top: 20px; padding-bottom: 30px;}
+.readerDetailsDeTop{ width: 50px; width: 100%; background: #f7f7f7;}
+.readerDetailsDeTop span{ display: inline-block; font-size: 14px; color: #666666; height: 47px; line-height: 47px; border-top: 3px solid #f7f7f7; width: 150px; float: left; cursor: pointer;}
+.readerDetailsDeTop span.readerDetailsDeTopAct{ color: #333333; border-top: 3px solid #f37526; background: #ffffff;}
+/*读者信息总览*/
+.readerInformationAll{ margin-top: 30px;}
+.readerInformationAll h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.readerInformationBasic{ width: 958px; border: 1px solid #e4e4e4; border-bottom: none; margin-top: 20px; margin-left: 30px;}
+.readerInformationBasic div{ width: 100%; height: 58px; border-bottom: 1px solid #e4e4e4; text-align: left;}
+.readerInformationBasic div span{ display: inline-block; font-size: 14px; color: #999999; height: 58px; line-height: 58px; float: left; margin-left: 20px; width: 118px;}
+.readerInformationBasic div p{ font-size: 14px; color: #333333; height: 58px; line-height: 58px; float: left;}
+.readerInformationChannelTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.readerInformationChannelTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.readerInformationChannelTex{ width: 960px; margin-left: 30px;}
+.readerInformationChannelTex ul li{ width: 100%; height: 50px;}
+.readerInformationChannelTex ul li p{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left; text-align: left;}
+.readerInformationChannelTex1{ margin-left: 19px; width: 84px;}
+.readerInformationChannelTex2{ width: 114px;}
+.readerInformationChannelTex3{ width: 86px;}
+.readerInformationChannelTex4{ width: 129px;}
+.readerInformationChannelTex5{ width: 71px;}
+.readerInformationChannelTex6{ width: 86px;}
+.readerInformationChannelTex7{ width: 100px;}
+.readerInformationChannelTex8{ width: 87px;}
+.readerInformationChannelTex9{ width: 96px;}
+/*充值记录*/
+.rechargeRecordAll{ margin-top: 30px;}
+.rechargeRecordTop{ width: 960px; height: 141px; margin-left: 30px; background: #f9f9f9; position: relative;}
+.rechargeRecordTop>div{ width: 25%; float: left; padding-top: 6px;}
+.rechargeRecordTop>div h3{ font-weight: normal; font-size: 14px; color: #666666; height: 64px; line-height: 64px;}
+.rechargeRecordTop>div h2{ font-weight: normal; font-size: 30px; color: #333333; height: 40px; line-height: 40px;}
+.rechargeRecordTop>div p{ font-size: 12px; color: #666666; height: 20px; line-height: 20px;}
+.rechargeRecordTop>span{ display: inline-block; height: 81px; border-left: 1px solid #cccccc; position: absolute; top: 30px;}
+.rechargeRecordSel{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #cccccc; border-radius: 4px; background: #f5f5f5; position: relative; cursor: pointer;}
+.rechargeRecordSel:hover{ background: #fff;}
+.rechargeRecordSel p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 20px;}
+.rechargeRecordSel img{ float: right; margin-top: 14px; margin-right: 20px;}
+.rechargeRecordSel ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.rechargeRecordSel ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.rechargeRecordSel ul li:hover{ color: #f37427;}
+.rechargeRecordTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.rechargeRecordTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.rechargeRecordTex{ margin-left: 30px; width: 960px;}
+.rechargeRecordTex ul li{ width: 100%; height: 50px;}
+.rechargeRecordTex ul li p{ font-size: 12px; color: #666666; line-height: 50px; float: left; text-align: left;}
+.rechargeRecordTex1{ width: 86px; margin-left: 19px;}
+.rechargeRecordTex2{ width: 120px;}
+.rechargeRecordTex3{ width: 110px;}
+.rechargeRecordTex4{ width: 71px;}
+.rechargeRecordTex5{ width: 78px;}
+.rechargeRecordTex6{ width: 77px;}
+.rechargeRecordTex7{ width: 82px;}
+.rechargeRecordTex8{ width: 76px;}
+.rechargeRecordTex9{ width: 89px;}
+.rechargeRecordTex10{ width: 76px;}
+/*消费记录*/
+.recordsOfConsumptionAll{ margin-top: 30px;}
+.recordsOfConsumptionTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.recordsOfConsumptionTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.recordsOfConsumptionTex{ margin-left: 30px; width: 960px;}
+.recordsOfConsumptionTex ul li{ width: 100%; height: 50px;}
+.recordsOfConsumptionTex ul li p{ font-size: 12px; color: #666666; line-height: 50px; float: left; text-align: left;}
+.recordsOfConsumptionTex1{ width: 126px; margin-left: 19px;}
+.recordsOfConsumptionTex2{ width: 151px;}
+.recordsOfConsumptionTex3{ width: 159px;}
+.recordsOfConsumptionTex4{ width: 126px;}
+.recordsOfConsumptionTex5{ width: 224px;}
+/*签到记录*/
+.signInAll{ margin-top: 30px;}
+.signInTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.signInTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.signInTex{ margin-left: 30px; width: 960px;}
+.signInTex ul li{ width: 100%; height: 50px;}
+.signInTex ul li p{ font-size: 12px; color: #666666; line-height: 50px; float: left; text-align: left;}
+.signInTex1{ width: 166px; margin-left: 19px;}
+.signInTex2{ width: 204px;}
+.signInTex3{ width: 257px;}
+.signInTex4{ width: 212px;}
+
+
+/*模板配置*/
+/*模板配置标题库*/
+.titleLibraryDe{ width: 100%; padding: 30px 0 20px 0; background: #ffffff; margin-top: 20px;}
+.titleLibraryTopL{ float: left;}
+.titleLibraryTopL1{ float: left; margin-left: 30px; width: 228px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.titleLibraryTopL1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 180px;}
+.titleLibraryTopL1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 185px; text-align: left;}
+.titleLibraryTopL1 img{ width: 12px; float: right; margin-right: 10px; margin-top: 11px; cursor: pointer;}
+.titleLibraryTopL2{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.titleLibraryTopL2 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 19px; background: url(../images/myPic13.png) right center no-repeat;}
+.titleLibraryTopL2 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.titleLibraryTopL2 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.titleLibraryTopL2 ul li:hover{ color: #f37427;}
+.titleLibraryTopR{ float: right; margin-right: 30px;}
+.titleLibraryTopR1{ display: inline-block; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; float: left;}
+.titleLibraryTopR1 i{ font-style: normal; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic27.png) right center no-repeat;}
+.titleLibraryTopR2{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; float: left; margin-left: 10px; background: #f37526; cursor: pointer; position: relative;}
+.titleLibraryTopR2 i{ font-style: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic14.png) right center no-repeat;}
+.titleLibraryTopR2 ul{ display: none; width: 118px; border: 1px solid #cccccc; border-top: none; position: absolute; left: 0; top: 36px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.titleLibraryTopR2 ul li{ height: 30px; text-align: left;}
+.titleLibraryTopR2 ul li a{ width: 98px; display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.titleLibraryTopR2 ul li a:hover{ color: #f37427;}
+.titleLibraryTitle{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7;}
+.titleLibraryTitle span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.titleLibraryTex{ width: 960px; margin-left: 30px;}
+.titleLibraryTex ul li{ width: 100%; height: 50px;}
+.titleLibraryTex ul li>div{ height: 50px; line-height: 50px; float: left; text-align: left; font-size: 12px; color: #666666;}
+.titleLibraryTex1{ margin-left: 19px; width: 77px;}
+.titleLibraryTex2{ width: 599px;}
+.titleLibraryTex2 p{ float: left; width: 490px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.titleLibraryTex ul li div.titleLibraryTex2 i{ display: inline-block; font-style: normal; font-size: 12px; color: #288df0; height: 50px; line-height: 50px; float: left; margin-left: 10px; cursor: pointer;}
+.titleLibraryTex3{ width: 189px;}
+.titleLibraryTex4{ position: relative;}
+.titleLibraryTex4 span{ display: inline-block; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.titleLibraryTex4 div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 28px; left: -14px; z-index: 10; border: 1px solid #e7e7e7;}
+.titleLibraryTex4 div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.titleLibraryTex4 div a:hover{ background: #f37526; color: #ffffff;}
+
+/*模板配置标题库（标题库批量）*/
+.titleLibraryBatchDe{ margin-top: 20px; padding: 30px 0 20px; background: #ffffff;}
+.titleLibraryBatchTop{ margin-left: 30px;}
+.titleLibraryBatchTop span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; cursor: pointer;}
+.titleLibraryBatchTop a{ display: inline-block; width: 120px; height: 36px; background: #f07427; border-radius: 3px; float: right; margin-right: 30px;}
+.titleLibraryBatchTop a i{ font-style: normal; display: inline-block; font-size: 14px; color: #fffefe; height: 36px; line-height: 36px; padding-right: 22px; background: url(../images/myPic22.png) right center no-repeat;}
+.titleLibraryBatchTitle{ margin-left: 30px; margin-top: 20px; width: 960px; height: 50px; background: #f7f7f7;}
+.titleLibraryBatchTitle div{ float: left; height: 50px; line-height: 50px; font-size: 14px; color: #333333; text-align: left;}
+.titleLibraryBatchTitle1 span{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 20px; margin-top: 19px; background: #ffffff; cursor: pointer;}
+.titleLibraryBatchTitle1 span i{ display: block; width: 100%; height: 100%;}
+.titleLibraryBatchTitle1 span i.titleLibraryBatchTitleAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.titleLibraryBatchTitle2{ width: 120px; margin-left: 30px;}
+.titleLibraryBatchTitle3{ width: 658px;}
+.titleLibraryBatchTex{ margin-left: 30px; width: 960px;}
+.titleLibraryBatchTex ul li{ width: 100%; height: 50px;}
+.titleLibraryBatchTex ul li div{ float: left; height: 50px; line-height: 50px; font-size: 12px; color: #666666; text-align: left;}
+.titleLibraryBatchTex1 span{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 20px; margin-top: 19px; background: #ffffff; cursor: pointer;}
+.titleLibraryBatchTex1 span i{ display: block; width: 100%; height: 100%;}
+.titleLibraryBatchTex1 span i.titleLibraryBatchTexAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.titleLibraryBatchTex2{ width: 120px; margin-left: 30px;}
+.titleLibraryBatchTex3{ width: 658px;}
+.titleLibraryBatchTex3 p{ float: left; width: 490px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.titleLibraryBatchTex ul li div.titleLibraryBatchTex3 span{ display: inline-block; color: #288df0; float: left; margin-left: 10px; cursor: pointer;}
+
+/*模板配置图片库*/
+.configuratePictureLibraryDe{ margin-top: 20px; padding: 30px 0; background: #ffffff;}
+.configuratePictureLibraryTop{ margin-left: 30px;}
+.configuratePictureLibraryTopL{ float: left; width: 115px; height: 34px; border: 1px solid #e4e4e4; background: #f5f5f5; border-radius: 3px; position: relative; cursor: pointer;}
+.configuratePictureLibraryTopL span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 19px; background: url(../images/myPic13.png) right center no-repeat;}
+.configuratePictureLibraryTopL ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.configuratePictureLibraryTopL ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.configuratePictureLibraryTopL ul li:hover{ color: #f37427;}
+.configuratePictureLibraryTopR{ float: right; margin-right: 30px;}
+.configuratePictureLibraryTopR a{ display: inline-block; width: 118px; height: 34px; line-height: 34px; border: 1px solid #f17526; border-radius: 3px; margin-right: 10px;}
+.configuratePictureLibraryTopR a i{ display: inline-block; font-style: normal; font-size: 14px; color: #f37427; padding-right: 21px; background: url(../images/myPic27.png) right center no-repeat;}
+.configuratePictureLibraryTopR span{ display: inline-block; width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; cursor: pointer;}
+.configuratePictureLibraryTopR span i{ display: inline-block; font-style: normal; font-size: 14px; color: #ffffff; padding-right: 21px; background: url(../images/myPic14.png) right center no-repeat;}
+.configuratePictureLibraryPic{ margin-left: 10px; width: 950px; height: 560px;}
+.configuratePictureLibraryPic div{ float: left; margin-left: 20px; margin-top: 20px; width: 170px; height: 95px; position: relative;}
+.configuratePictureLibraryPic div img{ width: 170px; height: 95px; display: block;}
+.configuratePictureLibraryPic div p{ font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 168px; background: #5c5c5c; position: absolute; left: 1px; bottom: 1px; cursor: pointer;}
+.configuratePictureLibraryedPic{ margin-top: 20px; margin-left: 10px; width: 980px; height: 560px; overflow-y: scroll;}
+.configuratePictureLibraryedPic ul li{ float: left; margin-left: 20px; margin-bottom: 20px; width: 168px; height: 93px; border: 1px solid #cccccc;}
+.configuratePictureLibraryedPic ul li img{ display: block; width: 168px; height: 93px;}
+
+/*图片库（编辑信息）*/
+.libraryEditeInformationDe{ margin-top: 20px; padding: 30px 0; background: #ffffff;}
+.libraryEditeInformationDeTop{ margin-left: 20px;}
+.libraryEditeInformationDeTop span{ float: left; margin-left: 10px; display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border-radius: 3px; background: #f5f5f5; border: 1px solid #cccccc; cursor: pointer;}
+.libraryEditeInformationDeTop span:hover{ background: #fff;}
+.libraryEditeInformationDeTop a{ display: inline-block; width: 120px; height: 36px; background: #f37526; border-radius: 3px; float: right; margin-right: 30px;}
+.libraryEditeInformationDeTop a i{ font-style: normal; display: inline-block; font-size: 14px; color: #fffefe; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic22.png) right center no-repeat;}
+.libraryEditeInformationDePic{ margin-top: 20px; margin-left: 10px; width: 980px; height: 560px; overflow-y: scroll;}
+.libraryEditeInformationDePic ul li{ float: left; margin-left: 20px; margin-bottom: 20px; width: 168px; height: 93px; border: 1px solid #cccccc; position: relative; cursor: pointer;}
+.libraryEditeInformationDePic ul li.libraryEditeInformationDePicAct{ border: 1px solid #f37526;}
+.libraryEditeInformationDePic1{ display: block; width: 168px; height: 93px;}
+.libraryEditeInformationDePic2{ position: absolute; right: 0; bottom: 0;}
+
+/*新增标题（批量）*/
+.newTitleBatchDe{ margin-top: 20px; padding: 30px 0; background: #ffffff;}
+.newTitleBatchDe h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.newTitleBatchDeTop{ margin-top: 20px; margin-left: 50px;}
+.newTitleBatchDeTopL{ float: left;}
+.newTitleBatchDeTopL p{ font-size: 14px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.newTitleBatchDeTopL p i{ font-style: normal; color: #30ba78;}
+.newTitleBatchDeTopL span{ display: inline-block; font-size: 14px;color: #f37427; height: 36px; line-height: 36px; float: left; margin-left: 16px;}
+.newTitleBatchDeTopR{ float: right; margin-right: 30px;}
+.newTitleBatchDeTopR a{ display: inline-block; float: left; font-size: 14px; border-radius: 3px;}
+.newTitleBatchDeTopR1{ width: 118px; height: 34px; line-height: 34px; border: 1px solid #cccccc; background: #f5f5f5; color: #666666; margin-right: 10px;}
+.newTitleBatchDeTopR1 span{ display: inline-block; padding-right: 21px; background: url(../images/myPic41.png) right center no-repeat;}
+.newTitleBatchDeTopR2{ width: 120px; height: 36px; line-height: 36px; background: #f57525; color: #ffffff;}
+.newTitleBatchDeTopR2 span{ display: inline-block; padding-right: 21px; background: url(../images/myPic47.png) right center no-repeat;}
+.newTitleBatchDeTitle{ width: 960px; height: 50px; margin-left: 30px; background: #f7f7f7; margin-top: 20px;}
+.newTitleBatchDeTitle span{ display: inline-block; float: left; font-size: 14px; color: #333333; height: 50px; line-height: 50px; text-align: left;}
+.newTitleBatchDeTex{ width: 960px; margin-left: 30px;}
+.newTitleBatchDeTex ul li{ width: 100%; height: 50px;}
+.newTitleBatchDeTex ul li div{ float: left; text-align: left;}
+.newTitleBatchDeTex1{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; width: 168px; margin-left: 20px;}
+.newTitleBatchDeTex2{ height: 50px; line-height: 50px; width: 696px;}
+.newTitleBatchDeTex2 p{ font-size: 12px; color: #666666; width: 490px; float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.newTitleBatchDeTex2 span{ display: inline-block; font-size: 12px; color: #288df0; float: left; margin-left: 10px; cursor: pointer;}
+.newTitleBatchDeTex3{ position: relative;}
+.newTitleBatchDeTex3 span{ display: inline-block; height: 50px; line-height: 50px; font-size: 12px; color: #666666; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.newTitleBatchDeTex3 div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 28px; left: -14px; z-index: 10; border: 1px solid #e7e7e7;}
+.newTitleBatchDeTex3 div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.newTitleBatchDeTex3 div a:hover{ background: #f37526; color: #ffffff;}
+.newTitleBatchDeBot{ margin-top: 20px; margin-left: 50px;}
+.newTitleBatchDeBot a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left;}
+.newTitleBatchDeBot span{ display: inline-block; float: left; margin-left: 10px; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border-radius: 3px; background: #f5f5f5; border: 1px solid #cccccc; cursor: pointer;}
+
+/*充值管理*/
+.rechargeManagementDe{ margin-top: 20px; padding: 30px 0 20px; background: #ffffff;}
+.rechargeManagementDeTop{ width: 960px; height: 140px; background: #f9f9f9; margin-left: 30px;}
+.rechargeManagementDeTop div{ width: 238px; float: left; margin-top: 5px;}
+.rechargeManagementDeTop div h2{ font-weight: normal; font-size: 14px; color: #666666; height: 64px; line-height: 64px;}
+.rechargeManagementDeTop div h1{ font-weight: normal; font-size: 30px; color: #333333; height: 40px; line-height: 40px;}
+.rechargeManagementDeTop div p{ font-size: 12px; color: #666666; height: 22px; line-height: 22px;}
+.rechargeManagementDeTop span{ display: inline-block; height: 81px; border-left: 1px solid #cccccc; float: left; margin-left: 1px; margin-top: 30px;}
+.rechargeManagementDeSelL{ float: left; margin-top: 30px;}
+.rechargeManagementDeSelL1{ float: left; margin-left: 30px; width: 228px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.rechargeManagementDeSelL1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 180px;}
+.rechargeManagementDeSelL1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 185px; text-align: left;}
+.rechargeManagementDeSelL1 img{ width: 12px; float: right; margin-right: 10px; margin-top: 11px; cursor: pointer;}
+.rechargeManagementDeSelL2{ float: left; margin-left: 10px; width: 235px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.rechargeManagementDeSelL2 input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 19px; margin-top: 7px; width: 180px;}
+.rechargeManagementDeSelL2 img{ float: right; margin-right: 19px; margin-top: 14px;}
+.rechargeManagementDeSelL3{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #cccccc; border-radius: 4px; background: #f5f5f5; position: relative; cursor: pointer;}
+.rechargeManagementDeSelL3:hover{ background: #fff;}
+.rechargeManagementDeSelL3 p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 20px;}
+.rechargeManagementDeSelL3 img{ float: right; margin-top: 14px; margin-right: 20px;}
+.rechargeManagementDeSelL3 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.rechargeManagementDeSelL3 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.rechargeManagementDeSelL3 ul li:hover{ color: #f37427;}
+.rechargeManagementDeSel>a{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; background: #f37526; float: right; margin-top: 30px; margin-right: 30px;}
+.rechargeManagementDeSel>a span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic49.png) right center no-repeat;}
+.rechargeManagementDeTit{ width: 960px; height: 50px; margin-left: 30px; background: #f7f7f7; margin-top: 20px;}
+.rechargeManagementDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.rechargeManagementDeTex{ width: 960px; margin-left: 30px;}
+.rechargeManagementDeTex ul li{ width: 100%; height: 50px;}
+.rechargeManagementDeTex ul li div{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.rechargeManagementDeTex1{ margin-left: 20px; width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.rechargeManagementDeTex2{ margin-left: 20px; width: 106px;}
+.rechargeManagementDeTex3{ width: 78px;}
+.rechargeManagementDeTex4{ width: 100px;}
+.rechargeManagementDeTex5{ width: 70px;}
+.rechargeManagementDeTex6{ width: 78px;}
+.rechargeManagementDeTex7{ width: 77px;}
+.rechargeManagementDeTex8{ width: 82px;}
+.rechargeManagementDeTex9{ width: 76px;}
+.rechargeManagementDeTex10{ width: 89px;}
+.rechargeManagementDeTex ul li div.rechargeManagementDeTex5 h2{ font-size: 12px; font-weight: normal; height: 14px; line-height: 14px; padding-top: 12px;}
+.rechargeManagementDeTex ul li div.rechargeManagementDeTex5 p{ font-size: 10px; color: #999999; height: 12px; line-height: 12px;}
+
+/*消费管理*/
+.consumptionManagementDeTit{ width: 960px; height: 50px; margin-left: 30px; background: #f7f7f7; margin-top: 20px;}
+.consumptionManagementDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.consumptionManagementDeTex{ width: 960px; margin-left: 30px;}
+.consumptionManagementDeTex ul li{ width: 100%; height: 50px;}
+.consumptionManagementDeTex ul li div{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.consumptionManagementDeTex1{ margin-left: 19px; width: 92px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.consumptionManagementDeTex2{ margin-left: 14px; width: 97px;}
+.consumptionManagementDeTex3{ width: 147px;}
+.consumptionManagementDeTex4{ width: 175px;}
+.consumptionManagementDeTex5{ width: 75px;}
+.consumptionManagementDeTex6{ width: 149px;}
+.consumptionManagementDeTex ul li div.consumptionManagementDeTex10 h2{ font-size: 12px; font-weight: normal; height: 14px; line-height: 14px; padding-top: 12px; width: 104px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.consumptionManagementDeTex ul li div.consumptionManagementDeTex10 p{ font-size: 10px; color: #999999; height: 12px; line-height: 12px;}
+
+/*粉丝增长*/
+.vermicelliDetailsOneTit{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7;}
+.vermicelliDetailsOneTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.vermicelliDetailsOneTex{ margin-left: 30px; width: 960px;}
+.vermicelliDetailsOneTex ul li{ width: 100%; height: 50px;}
+.vermicelliDetailsOneTex ul li p{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.vermicelliDetailsOneTex1{ margin-left: 19px; width: 260px;}
+.vermicelliDetailsOneTex2{ width: 329px;}
+.vermicelliDetailsOneTex3{ width: 275px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

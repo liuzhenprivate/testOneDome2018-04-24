@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>读者管理</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/rechargeConfiguration.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">读者管理</a>
+	</div>
+	<div class="readerManagementDe clearfix">
+		<div class="readerManagementDeTop clearfix">
+			<div class="readerManagementDeIn clearfix">
+				<p>累计读者</p>
+				<h2>637288</h2>
+				<div class="readerManagementDeIn1 clearfix">
+					<a href="readerDetails.html" title="">查看详情</a>
+				</div>
+				<div class="readerManagementDeIn2">
+					<div>
+						<p>当月</p>
+						<h3>238492</h3>
+					</div>
+					<div style="float: right; margin-right: 30px;">
+						<p>今日</p>
+						<h3>849281</h3>
+					</div>
+				</div>
+			</div>
+			<div class="readerManagementDeIn clearfix">
+				<p>渠道粉丝</p>
+				<h2>637288</h2>
+				<div class="readerManagementDeIn1 clearfix">
+					<a href="javascript:void(0)" title="">查看详情</a>
+				</div>
+				<div class="readerManagementDeIn2">
+					<div>
+						<p>当月</p>
+						<h3>238492</h3>
+					</div>
+					<div style="float: right; margin-right: 30px;">
+						<p>今日</p>
+						<h3>849281</h3>
+					</div>
+				</div>
+			</div>
+			<div class="readerManagementDeIn clearfix">
+				<p>累计读者</p>
+				<h2>637288</h2>
+				<div class="readerManagementDeIn2">
+					<div>
+						<p>当月</p>
+						<h3>238492</h3>
+					</div>
+					<div style="float: right; margin-right: 30px;">
+						<p>今日</p>
+						<h3>849281</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="readerManagementDeSel clearfix">
+			<div class="readerManagementDeSelL clearfix">
+				<div class="readerManagementDeSelL1 clearfix">
+					<input type="text" />
+					<p>输入分类名称</p>
+					<img src="../images/myPic26.png" alt="" />
+				</div>
+				<div class="readerManagementDeSelL2 clearfix">
+					<input id="test6" readonly="readonly" />
+					<img src="../images/myPic13.png" alt="" />
+				</div>
+			</div>
+			<a href="javascript:void(0)" title=""><span>导出列表</span></a>
+		</div>
+		<div class="readerManagementDeClickdown">
+			<span>展开搜索条件</span>
+		</div>
+		<div class="readerManagementDeClickup">
+			<ul class="clearfix">
+				<li style="margin-left: 19px;" class="clearfix">
+					<span>关注状态</span>
+					<div class="readerManagementDeClickupDiv clearfix">
+						<p>全部</p>
+						<img src="../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部</li>
+							<li>部分</li>
+							<li>少数</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>关注状态</span>
+					<div class="readerManagementDeClickupDiv clearfix">
+						<p>全部</p>
+						<img src="../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部</li>
+							<li>部分</li>
+							<li>少数</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>关注状态</span>
+					<div class="readerManagementDeClickupDiv clearfix">
+						<p>全部</p>
+						<img src="../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部</li>
+							<li>部分</li>
+							<li>少数</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="readerManagementDeClickupKey clearfix">
+				<a href="javascript:void" title="">查&nbsp;&nbsp;询</a>
+				<span>重&nbsp;&nbsp;置</span>
+			</div>
+			<div class="readerManagementDeClickupBtn">
+				<span>收起</span>
+			</div>
+		</div>
+		<div class="readerManagementDeTit clearfix">
+			<span style="width: 62px; margin-left: 19px;">头像</span>
+			<span style="width: 125px;">昵称</span>
+			<span style="width: 105px;">平台ID</span>
+			<span style="width: 76px;">账号类型</span>
+			<span style="width: 131px;">所属渠道</span>
+			<span style="width: 76px;">关注状态</span>
+			<span style="width: 121px;">注册日期</span>
+			<span style="width: 90px;">阅读币余额</span>
+			<span style="width: 76px;">累计充值</span>
+			<span>累计阅读币</span>
+		</div>
+		<div class="readerManagementDeTex">
+			<ul>
+				<li class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<img src="../images/myPic50.png" alt="" />
+					<p class="readerManagementDeTex1">飞翔的彭琪琪嘟嘟</p>
+					<p class="readerManagementDeTex2">154785236541</p>
+					<p class="readerManagementDeTex3">微信</p>
+					<p class="readerManagementDeTex4">巴士小说等3个渠道</p>
+					<p class="readerManagementDeTex5">已关注</p>
+					<p class="readerManagementDeTex6">2017-12-12 09:45</p>
+					<p class="readerManagementDeTex7">145256</p>
+					<p class="readerManagementDeTex8">145256</p>
+					<p class="readerManagementDeTex9">145256</p>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-left: 60px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	<script src="../layDate-v5.0.8/laydate/laydate.js"></script>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		$(window).click(function(){
+			$('.readerManagementDeClickupDiv').find('ul').hide();
+		})
+		$('.readerManagementDeClickupDiv').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.readerManagementDeClickupDiv ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$(this).parent().siblings('p').text(val);
+			e.stopPropagation();
+		})
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		
+		$('.readerManagementDeSelL1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.readerManagementDeSelL1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.readerManagementDeSelL1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$('.readerManagementDeClickdown span').click(function(){
+			$('.readerManagementDeClickdown').hide();
+			$('.readerManagementDeClickup').show();
+		})
+		$('.readerManagementDeClickupBtn span').click(function(){
+			$('.readerManagementDeClickdown').show();
+			$('.readerManagementDeClickup').hide();
+		})
+		
+		$('.readerManagementDeClickupKey a').click(function(){
+			$('.RmciAlert', parent.document).show();
+			(function(Thunder){
+				$('.RmciAlert', parent.document).css('padding-top',Thunder);
+			})((parent.document.documentElement.clientHeight-$('.RmciDe', parent.document).get(0).offsetHeight)/2);
+		})
+	</script>
+</body>
+</html>

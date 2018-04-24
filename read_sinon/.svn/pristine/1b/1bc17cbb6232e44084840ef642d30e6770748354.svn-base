@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CountDayMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_COUNT_DAY(
+			USER_ID,	
+			WEBCHAT_ID,	
+			USERS,	
+			RECHARGES,	
+			RECHARGETIMES,
+			RECHARGEUSERS,
+			CONSUMES,	
+			MONEY,
+			CONSUMENUMBER,	
+			COUNT_DAY,	
+			CREATE_TIME,	
+			UPDATE_TIME,
+			BOOK_CURRENCY,
+			BOOK_CURRENCY_GIFT	
+		) values (
+			#{USER_ID},	
+			#{WEBCHAT_ID},	
+			#{USERS},	
+			#{RECHARGES},
+			#{RECHARGETIMES},
+			#{RECHARGEUSERS},		
+			#{CONSUMES},	
+			#{MONEY},
+			#{CONSUMENUMBER},		
+			#{COUNT_DAY},	
+			#{CREATE_TIME},	
+			#{UPDATE_TIME},
+			#{BOOK_CURRENCY},
+			#{BOOK_CURRENCY_GIFT}	
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_COUNT_DAY
+		where 
+			COUNT_DAY_ID = #{COUNT_DAY_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_COUNT_DAY
+			set 
+				USER_ID = #{USER_ID},
+				WEBCHAT_ID = #{WEBCHAT_ID},
+				USERS = #{USERS},
+				RECHARGES = #{RECHARGES},
+				RECHARGETIMES = #{RECHARGETIMES},
+				RECHARGEUSERS = #{RECHARGEUSERS},
+				CONSUMES = #{CONSUMES},
+				MONEY = #{MONEY},
+				CONSUMENUMBER = #{CONSUMENUMBER},
+				COUNT_DAY = #{COUNT_DAY},
+				CREATE_TIME = #{CREATE_TIME},
+				UPDATE_TIME = #{UPDATE_TIME},
+				BOOK_CURRENCY = #{BOOK_CURRENCY},
+				BOOK_CURRENCY_GIFT = #{BOOK_CURRENCY_GIFT}
+			where 
+				COUNT_DAY_ID = #{COUNT_DAY_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COUNT_DAY_ID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			USERS,	
+			RECHARGES,
+			RECHARGETIMES,
+			RECHARGEUSERS,	
+			CONSUMES,	
+			MONEY,
+			CONSUMENUMBER,	
+			COUNT_DAY,	
+			CREATE_TIME,	
+			UPDATE_TIME,
+			BOOK_CURRENCY,
+			BOOK_CURRENCY_GIFT
+		from 
+			TB_COUNT_DAY
+		where 
+			COUNT_DAY_ID = #{COUNT_DAY_ID}
+	</select>
+	
+	
+	<!-- 获取当天数据 -->
+	<select id="countDay" parameterType="pd" resultType="pd">
+		select 
+			COUNT_DAY_ID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			USERS,	
+			RECHARGES,
+			RECHARGETIMES,
+			RECHARGEUSERS,	
+			CONSUMES,	
+			MONEY,
+			CONSUMENUMBER,	
+			COUNT_DAY,	
+			CREATE_TIME,	
+			UPDATE_TIME,
+			BOOK_CURRENCY,
+			BOOK_CURRENCY_GIFT
+		from 
+			TB_COUNT_DAY
+		where 
+			COUNT_DAY = #{COUNT_DAY}
+	</select>
+	
+	<!-- 获取指定渠道当天数据 -->
+	<select id="countDayqdAll" parameterType="pd" resultType="pd">
+		select 
+			RECHARGES
+		from 
+			TB_COUNT_DAY
+		where 
+			COUNT_DAY = #{TIME}
+			AND USER_ID = #{USER_ID}
+	</select>
+	
+	<!-- 查询昨天数据 -->
+	<select id="countUserdayData" parameterType="pd" resultType="pd">
+		select
+			COUNT_DAY_ID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			USERS,	
+			RECHARGES,
+			RECHARGETIMES,
+			RECHARGEUSERS,	
+			CONSUMES,	
+			MONEY,
+			CONSUMENUMBER,	
+			COUNT_DAY,	
+			CREATE_TIME,	
+			UPDATE_TIME,
+			BOOK_CURRENCY,
+			BOOK_CURRENCY_GIFT
+		from 
+				TB_COUNT_DAY
+		where
+				 COUNT_DAY = #{COUNT_DAY}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COUNT_DAY_ID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USERS,	
+				a.RECHARGES,
+				a.RECHARGETIMES,
+				a.RECHARGEUSERS,	
+				a.CONSUMES,	
+				a.MONEY,
+				a.CONSUMENUMBER,	
+				a.COUNT_DAY,	
+				a.CREATE_TIME,	
+				a.UPDATE_TIME,
+				a.BOOK_CURRENCY,
+				a.BOOK_CURRENCY_GIFT
+		from 
+				TB_COUNT_DAY a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COUNT_DAY_ID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USERS,	
+				a.RECHARGES,
+				a.RECHARGETIMES,
+				a.RECHARGEUSERS,	
+				a.CONSUMES,	
+				a.MONEY,
+				a.CONSUMENUMBER,	
+				a.COUNT_DAY,	
+				a.CREATE_TIME,	
+				a.UPDATE_TIME,
+				a.BOOK_CURRENCY,
+				a.BOOK_CURRENCY_GIFT
+		from 
+				TB_COUNT_DAY a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_COUNT_DAY
+		where 
+			COUNT_DAY_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 统计startTime到endTime时间之内每天的数据   -->
+	<select id="countTimeData" parameterType="page" resultType="pd">
+	select 
+		cd.COUNT_DAY RECHARGETIME, 
+		cd.RECHARGEUSERS RECHARGEUSERS, 
+		cd.RECHARGETIMES RECHARGETIMES,
+		cd.RECHARGES RECHARGEDAYALL, 
+		tb_day.sres RECHARGEMONTHALL,
+ 		tb_dayall.sresall RECHARGEALL 
+	from 
+		tb_count_day cd LEFT JOIN(
+			SELECT 
+				(SUBSTRING(COUNT_DAY ,1,7)) cday,
+				SUM(RECHARGES) sres 
+			from 
+				tb_count_day 
+			GROUP BY (SUBSTRING(COUNT_DAY ,1,7))
+	)tb_day on 
+		SUBSTRING(cd.COUNT_DAY,1,7) = tb_day.cday
+		JOIN (
+			SELECT
+			SUM(RECHARGES) sresall
+			from tb_count_day
+		)tb_dayall
+	where 1=1 
+		<if test="pd.startTime!=null and pd.startTime!='' ">
+			AND COUNT_DAY >=#{pd.startTime}
+		</if>
+		<if test="pd.endTime!=null and pd.endTime!='' ">
+			<![CDATA[   
+				AND COUNT_DAY <= #{pd.endTime}
+			]]>   
+		</if>
+	</select>
+	
+	<!-- 查询图标数据（近30天） -->
+	<select id="date" parameterType="pd" resultType="pd">
+		SELECT 
+			RECHARGES,
+			COUNT_DAY
+		FROM 
+			tb_count_day 
+		where 
+			DATE_SUB(CURDATE(), INTERVAL 30 DAY) <![CDATA[ <=date(COUNT_DAY)  ]]> 
+	</select>
+	
+	<!-- 统计指定渠道充值日报 -->
+	<select id="channelcountDaylistPage" parameterType="page" resultType="pd">
+		select
+				a.COUNT_DAY_ID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USERS,	
+				a.RECHARGES,
+				a.RECHARGETIMES,
+				a.RECHARGEUSERS,	
+				a.CONSUMES,	
+				a.MONEY,
+				a.CONSUMENUMBER,	
+				a.COUNT_DAY,	
+				a.CREATE_TIME,	
+				a.UPDATE_TIME,
+				a.BOOK_CURRENCY,
+				a.BOOK_CURRENCY_GIFT
+		from 
+				TB_COUNT_DAY a
+		where 
+				a.USER_ID = #{pd.USER_ID}
+				ORDER BY a.COUNT_DAY DESC
+	</select>
+	
+	<!--  统计指定渠道充值日报导出到Excel-->
+	<select id="channelcountDaylistExcel" parameterType="pd" resultType="pd">
+		select
+				a.COUNT_DAY_ID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.USERS,	
+				a.RECHARGES,
+				a.RECHARGETIMES,
+				a.RECHARGEUSERS,	
+				a.CONSUMES,	
+				a.MONEY,
+				a.CONSUMENUMBER,	
+				a.COUNT_DAY,	
+				a.CREATE_TIME,	
+				a.UPDATE_TIME,
+				a.BOOK_CURRENCY,
+				a.BOOK_CURRENCY_GIFT
+		from 
+				TB_COUNT_DAY a
+		where 
+				a.USER_ID = #{USER_ID}
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.COUNT_DAY>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+					 <![CDATA[   
+						AND a.COUNT_DAY <= #{sendTimeEnd}
+					 ]]>   
+				</if>
+				ORDER BY a.COUNT_DAY DESC
+	</select>
+	
+	
+	<!-- 统计渠道到今天的充值总额 -->
+	<select id="channelSumToDay" parameterType="pd" resultType="pd">
+		select 
+			IFNULL(SUM(RECHARGES),0)RECHARGES
+		from 
+			TB_COUNT_DAY
+		where USER_ID = #{USER_ID}
+			<![CDATA[   
+				AND COUNT_DAY <= #{COUNT_DAY}
+			]]>   
+	</select>
+	
+</mapper>

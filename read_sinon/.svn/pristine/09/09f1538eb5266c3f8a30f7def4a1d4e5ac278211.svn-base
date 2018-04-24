@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>模板配置标题库（标题库批量）</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/rechargeConfiguration.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">模板配置</a>
+		<img src="../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop3" style="color: #999999;" href="javascript:void(0)" title="">标题库</a>
+	</div>
+	<div class="titleLibraryBatchDe">
+		<div class="titleLibraryBatchTop clearfix">
+			<span>删除</span>
+			<a href="javascript:void(0)" title=""><i>完成编辑</i></a>
+		</div>
+		<div class="titleLibraryBatchTitle clearfix">
+			<div class="titleLibraryBatchTitle1 clearfix"><span><i></i></span></div>
+			<div class="titleLibraryBatchTitle2">频道</div>
+			<div class="titleLibraryBatchTitle3">标题内容</div>
+			<div class="titleLibraryBatchTitle4">添加时间</div>
+		</div>
+		<div class="titleLibraryBatchTex">
+			<ul>
+				<li class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="titleLibraryBatchTex1 clearfix"><span><i></i></span></div>
+					<div class="titleLibraryBatchTex2">男频</div>
+					<div class="titleLibraryBatchTex3 clearfix">
+						<p>苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天苍穹之下的千年苦修只为有朝一日立身于苍穹之上位于洪武天朝和妖族七杀部咽喉要地的天</p>
+						<span>查看</span>
+					</div>
+					<div class="titleLibraryBatchTex4">2017-01-17 08:24</div>
+				</li>
+				
+			</ul>
+		</div>
+		<div style="margin-left: 30px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+		$('.titleLibraryBatchTitle1 span i').click(function(){
+			if($(this).hasClass('titleLibraryBatchTitleAct')){
+				$(this).removeClass('titleLibraryBatchTitleAct');
+				$('.titleLibraryBatchTex1 span i').removeClass('titleLibraryBatchTexAct');
+			}else{
+				$(this).addClass('titleLibraryBatchTitleAct');
+				$('.titleLibraryBatchTex1 span i').addClass('titleLibraryBatchTexAct');
+			}
+		})
+		
+		$('.titleLibraryBatchTex1 span i').click(function(){
+			if($(this).hasClass('titleLibraryBatchTexAct')){
+				$(this).removeClass('titleLibraryBatchTexAct');
+				$('.titleLibraryBatchTitle1 span i').removeClass('titleLibraryBatchTitleAct');
+			}else{
+				$(this).addClass('titleLibraryBatchTexAct');
+			}
+		})
+	</script>
+</body>
+</html>

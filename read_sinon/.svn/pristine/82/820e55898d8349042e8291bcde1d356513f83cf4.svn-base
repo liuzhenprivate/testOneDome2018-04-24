@@ -1,0 +1,174 @@
+/*基础设置*/
+/*必要设置修改*/
+.announcementManagementTop{ padding-left: 14px; height: 40px; background: #ffffff;}
+.announcementManagementTop a{ display :inline-block; font-size: 14px; color: #333333; height: 40px; line-height: 40px; float: left;}
+.announcementManagementTop img{ float: left; margin: 15px 12px 0;}
+.necessarySettingDe{ margin-top: 20px; background: #ffffff; padding: 30px 0 150px; background: #ffffff;}
+.necessarySettingDeTop{ margin-left: 30px;}
+.necessarySettingDeTop p{ font-size: 14px; color: #666666; height: 14px; line-height: 14px; padding-left: 9px; border-left: 2px solid #f07425; float: left; text-align: left; margin-top: 22px;}
+.necessarySettingDeTop a{ display: inline-block; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; float: right; margin-right: 30px;}
+.necessarySettingDeTop a span{ display: inline-block; height: 34px; line-height: 34px; font-size: 14px; color: #f37427; padding-right: 21px; background: url(../images/myPic65.png) right center no-repeat;}
+.necessarySettingDeInput{ margin-top: 20px;}
+.necessarySettingDeInput span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; text-align: right; width: 93px; float: left;}
+.necessarySettingDeInput div{ width: 498px; height: 34px; border: 1px solid #cccccc; float: left; margin-left: 9px; position: relative;}
+.necessarySettingDeInput div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 12px; margin-top: 7px; width: 450px;}
+.necessarySettingDeInput div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 12px; width: 460px; text-align: left;}
+.necessarySettingDeSel{ margin-top: 20px;}
+.necessarySettingDeSel span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; text-align: right; width: 93px; float: left;}
+.necessarySettingDeSel div{ width: 498px; height: 34px; border: 1px solid #cccccc; float: left; margin-left: 9px; position: relative;}
+.necessarySettingDeSel div p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 12px;}
+.necessarySettingDeSel div img{ float: right; margin-right: 10px; margin-top: 15px;}
+.necessarySettingDeSel div ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.necessarySettingDeSel div ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.necessarySettingDeSel div ul li:hover{ color: #f37427;}
+.necessarySettingDeFile{ margin-top: 20px;}
+.necessarySettingDeFile span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; text-align: right; width: 93px; float: left;}
+.necessarySettingDeFileC{ float: left; margin-left: 9px; width: 108px; height: 108px; border: 1px solid #cccccc; position: relative;}
+.necessarySettingDeFileC img{ width: 108px; height: 108px; display: block;}
+.necessarySettingDeFileC i{ font-style: normal; display: inline-block; width: 108px; height: 30px; line-height: 30px; font-size: 12px; color: #ffffff; background: url(../images/myPic20.png); position: absolute; left: 0; bottom: 0;}
+.necessarySettingDeFileC input{ width: 108px; height: 30px; position: absolute; left: 0; bottom: 0; opacity: 0; filter:alpha(opacity:0);}
+.necessarySettingDeFileR{ float: left; margin-left: 9px; text-align: left; margin-top: 5px;}
+.necessarySettingDeFileR p{ font-size: 12px; color: #999999; height: 22px; line-height: 22px;}
+.necessarySettingDeBot{ margin-top: 30px; margin-left: 102px;}
+.necessarySettingDeBot a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; float: left;}
+.necessarySettingDeBot span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; background: #f5f5f5; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+.channelDetailsDeAll{ margin-top: 20px; margin-left: 30px; width: 958px; border: 1px solid #e4e4e4; border-bottom: none;}
+.channelDetailsDeAll ul li{ height: 58px; border-bottom: 1px solid #e4e4e4;}
+.channelDetailsDeAll ul li span{ display: inline-block; font-size: 14px; color: #999999; height: 58px; line-height: 58px; float: left; width: 108px; margin-left: 20px; text-align: left;}
+.channelDetailsDeAll ul li p{ font-size: 14px; color: #333333; height: 58px; line-height: 58px; float: left; text-align: left; margin-left: 10px;}
+.channelDetailsDeAll ul li div{ float: left; margin-left: 10px; margin-top: 9px; cursor: pointer; width: 40px; height: 40px; position: relative;}
+.channelDetailsDeAll1{ width: 40px; height: 40px; display: block;}
+.channelDetailsDeAll2{ display: none; width: 260px; height: 260px; position: absolute; top: -220px; right: -260px;}
+.necessarySettingDeBtn{ margin-top: 30px; margin-left: 30px;}
+.necessarySettingDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; float: left;}
+
+/*基础设置（菜单设置）*/
+.menuSettingDe{ margin-left: 50px;}
+.menuSettingDeL{ float: left; width: 320px; height: 569px; background: url(../images/myPic66.png) left top no-repeat; position: relative;}
+.menuSettingDeLB{ width: 319px; padding-left: 1px; height: 46px; border-top: 1px solid #cccccc; position: absolute; bottom: 0; left: 0;}
+.menuSettingDeLB>div{ float: left; height: 46px; border-right: 1px solid #cccccc; cursor: pointer; position: relative;}
+.menuSettingDeLB>div.menuSettingDeLBPlus{ border: none; width: 100%;}
+.menuSettingDeLB>div a{ display: inline-block; font-size: 14px; color: #333333; height: 46px; line-height: 46px;}
+.menuSettingDeLB>div.menuSettingDeLBPlus a{ padding-right: 19px; background: url(../images/myPic67.png) right center no-repeat;}
+.menuSettingDeLB>div.menuSettingDeLBAct{ background: #f37526;}
+.menuSettingDeLB>div.menuSettingDeLBAct a{ color: #ffff;}
+.menuSettingDeLB>div ul{ display: none; position: absolute; left: -1px; bottom: 47px; width: 100%; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc;}
+.menuSettingDeLB>div ul li{ width: 100%; height: 46px; cursor: pointer; border-top: 1px solid #cccccc;;}
+.menuSettingDeLB>div ul li span{ display: inline-block; width: 100%; height: 46px; background: url(../images/myPic25.png) center center no-repeat;}
+.menuSettingDeLB>div ul li i{ font-style: normal; display: inline-block; width: 100%; height: 46px; line-height: 46px; font-size: 14px; color: #666666;}
+.menuSettingDeLB>div ul li.menuSettingDeLBSonAct i{ color: #ffffff; background: #f37526;}
+
+.menuSettingDeR{ float: left; margin-left: 30px; height: 569px; position: relative;}
+.menuSettingDeRNo{ font-size: 14px; color: #666666; height: 32px; line-height: 32px; margin-left: 53px; text-align: left; padding-top: 250px;}
+.menuSettingDeRBtn{ position: absolute; left: 83px; bottom: 0; width: 500px;}
+.menuSettingDeRBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left;}
+.menuSettingDeRBtn span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; width: 118px; border-radius: 3px; border: 1px solid #f17526; float: left; margin-left: 10px; cursor: pointer;}
+.menuSettingDeRBtn i{ font-style: normal; display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border-radius: 3px; border: 1px solid #cccccc; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+.menuSettingDeRYesAll{ display: none;}
+.menuSettingDeRYes h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; padding-left: 9px; text-align: left; border-left: 2px solid #f37526; margin-top: 29px;}
+.menuSettingDeRYesInput{ margin-top: 20px; margin-left: 20px;}
+.menuSettingDeRYesInput span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.menuSettingDeRYesInput div{ width: 301px; height: 34px; border: 1px solid #cccccc; float: left; margin-left: 9px; position: relative;}
+.menuSettingDeRYesInput div input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 270px;}
+.menuSettingDeRYesInput div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 280px; text-align: left;}
+.menuSettingDeRYesInput h2{ font-weight: normal; font-size: 12px; color: #999999; height: 36px; line-height: 36px; float: left; margin-left: 10px;}
+.menuSettingDeRYesInput i{ font-style: normal; display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border: 1px solid #cccccc; background: #f5f5f5; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+
+/*站点设置*/
+.siteSettingDeAll{ margin-top: 20px; margin-left: 30px; width: 958px; border: 1px solid #e4e4e4; border-bottom: none;}
+.siteSettingDeAll ul li{ border-bottom: 1px solid #e4e4e4;}
+.siteSettingDeAll ul li span{ display: inline-block; font-size: 14px; color: #999999; height: 58px; line-height: 58px; float: left; width: 108px; margin-left: 20px; text-align: left;}
+.siteSettingDeAll ul li p{ font-size: 14px; color: #333333; padding-top: 16px; line-height: 26px; float: left; text-align: left; margin-left: 10px; width: 800px;}
+
+/*站点设置修改*/
+.siteSettingModifiDe{ padding: 30px 0; background: #ffffff; margin-top: 20px;}
+.siteSettingModifiInput{ margin-top: 20px;}
+.siteSettingModifiInput span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left; text-align: right; width: 90px;}
+.siteSettingModifiInput div{ float: left; margin-left: 9px; width: 498px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.siteSettingModifiInput div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 470px;}
+.siteSettingModifiInput div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 480px; text-align: left;}
+.siteSettingModifiTxt{ margin-top: 20px;}
+.siteSettingModifiTxt span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left; text-align: right; width: 90px;}
+.siteSettingModifiTxt div{ float: left; margin-left: 9px; width: 648px; height: 130px; border: 1px solid #cccccc; position: relative;}
+.siteSettingModifiTxt div textarea{ font-size: 12px; color: #666666; line-height: 24px; float: left; margin-left: 10px; margin-top: 6px; width: 620px; height: 120px;}
+.siteSettingModifiTxt div p{ font-size: 12px; color: #cccccc; line-height: 36px; height: 130px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 630px; text-align: left;}
+.siteSettingModifiBtn{ margin-top: 30px; margin-left: 99px;}
+.siteSettingModifiBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f17526; float: left;}
+.siteSettingModifiBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+
+/*自动回复*/
+.automaticReplyDe{ padding: 30px 0; background: #ffffff; margin-top: 20px;}
+.automaticReplyDeTexed{ margin-top: 20px; margin-left: 30px;}
+.automaticReplyDeTexed1{ width: 958px; height: 84px; border: 1px solid #e4e4e4;}
+.automaticReplyDeTexed1 span{ display: inline-block; font-size: 14px; color: #999999; height: 58px; line-height: 58px; float: left; margin-left: 21px;}
+.automaticReplyDeTexed1 p{ font-size: 14px; color: #333333; line-height: 26px; float: right; margin-right: 22px; margin-top: 16px; text-align: left; width: 800px; height: 60px; overflow-y: scroll;}
+.automaticReplyDeTexed2{ margin-top: 20px;}
+.automaticReplyDeTexed2 a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; float: left; border-radius: 3px; background: #f37526;}
+.automaticReplyDeTex{ margin-top: 20px; margin-left: 30px; display: none;}
+.automaticReplyDeTex1 span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.automaticReplyDeTex1 div{ width: 648px; height: 124px; padding-top: 6px; float: left; margin-left: 9px; border: 1px solid #cccccc;}
+.automaticReplyDeTex1 div p{ font-size: 12px; color: #666666; line-height: 24px; margin-left: 11px; height: 120px; width: 620px; overflow-y: scroll; text-align: left;}
+.automaticReplyDeTex2{ margin-top: 20px; margin-left: 56px;}
+.automaticReplyDeTex2 a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; float: left; border-radius: 3px; background: #f37526;}
+.automaticReplyDeTex2 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; float: left; border-radius: 3px; background: #f5f5f5; margin-left: 10px; border: 1px solid #cccccc; cursor: pointer;}
+.automaticReplyDeTime{ margin-top: 20px;}
+.automaticReplyDeTime div{ float: left; margin-left: 30px; width: 235px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.automaticReplyDeTime div input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 19px; margin-top: 7px; width: 180px;}
+.automaticReplyDeTime div img{ float: right; margin-right: 19px; margin-top: 14px;}
+.automaticReplyDeTime a{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; background: #f37526; float: right; margin-right: 30px;}
+.automaticReplyDeTime a span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 20px; background: url(../images/myPic14.png) right center no-repeat;}
+.automaticReplyDeTit{ margin-left: 30px; margin-top: 20px; width: 960px; height: 50px; background: #f7f7f7;}
+.automaticReplyDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.automaticReplyDeAll{ margin-left: 30px;}
+.automaticReplyDeAll ul li{ width: 100%; height: 50px;}
+.automaticReplyDeAll ul li>div{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.automaticReplyDeAll1{ margin-left: 19px; width: 155px;}
+.automaticReplyDeAll2{ width: 87px;}
+.automaticReplyDeAll3{ width: 314px;}
+.automaticReplyDeAll3 p{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left; width: 205px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.automaticReplyDeAll3 a{ display: inline-block; font-size: 12px; color: #288df0; height: 50px; line-height: 50px; float: left; margin-left: 17px;}
+.automaticReplyDeAll4{ width: 179px;}
+.automaticReplyDeAll5{ width: 129px;}
+.automaticReplyDeAll6{ position: relative;}
+.automaticReplyDeAll6 i{ display: inline-block; font-style: normal; float: left; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.automaticReplyDeAll6 i:hover{ color: #f37427; background: url(../images/myPic16.png) right center no-repeat;}
+.automaticReplyDeAll6 div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 33px; left: -12px; z-index: 10; border: 1px solid #e7e7e7;}
+.automaticReplyDeAll6 a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.automaticReplyDeAll6 a:hover{ background: #f37526; color: #ffffff;}
+.flipTwo{ margin-top: 20px; margin-left: 60px;}
+.flipTwoL{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; float: left;}
+.flipTwoR{ float: right; margin-right: 30px; cursor: pointer;}
+.flipTwoPrev{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoPrev img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoDe{ float: left;}
+.flipTwoDe span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 13px;}
+.flipTwoDe span.flipTwoDeSpan{ color: #f37427;}
+.flipTwoNext{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoNext img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoSkip{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 10px; float: left;}
+.flipTwoInp{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #ffffff;}
+.flipTwoInp input{ font-size: 12px; color: #666666; height: 16px; line-height: 16px; float: left; width: 30px; margin-top: 7px; text-align: center;}
+.flipTwoSure{ font-size: 12px; color: #666666; height: 30px; line-height: 30px; border: 1px solid #dbdbdb; border-radius: 2px; background: #f5f5f5; float: left; width: 62px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

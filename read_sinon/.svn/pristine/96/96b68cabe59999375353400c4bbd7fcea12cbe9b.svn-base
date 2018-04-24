@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WebchatMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_WEBCHAT(
+			USER_ID,	
+			TYPE,	
+			NAME,	
+			WEBCHAT_CODE,	
+			APPID,	
+			APPSECRET,	
+			SHOP_KEY,	
+			MCH_ID,	
+			ACCESS_TOKEN,	
+			CREATE_TIME,	
+			SIGN_SWITCH,	
+			OPEN_DATE,
+			PIC_URL
+		) values (
+			#{USER_ID},	
+			#{TYPE},	
+			#{NAME},	
+			#{WEBCHAT_CODE},	
+			#{APPID},	
+			#{APPSECRET},	
+			#{SHOP_KEY},	
+			#{MCH_ID},	
+			#{ACCESS_TOKEN},	
+			#{CREATE_TIME},	
+			#{SIGN_SWITCH},	
+			#{OPEN_DATE},
+			#{PIC_URL}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_WEBCHAT
+		where 
+			WEBCHAT_ID = #{WEBCHAT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_WEBCHAT
+			set 
+				<if test="TYPE!=null and TYPE!='' ">
+				TYPE = #{TYPE},
+				</if>
+				<if test="NAME!=null and NAME!='' ">
+				NAME = #{NAME},
+				</if>
+				<if test="WEBCHAT_CODE!=null and WEBCHAT_CODE!='' ">
+				WEBCHAT_CODE = #{WEBCHAT_CODE},
+				</if>
+				<if test="APPID!=null and APPID!='' ">
+				APPID = #{APPID},
+				</if>
+				<if test="APPSECRET!=null and APPSECRET!='' ">
+				APPSECRET = #{APPSECRET},
+				</if>
+				<if test="SHOP_KEY!=null and SHOP_KEY!='' ">
+				SHOP_KEY = #{SHOP_KEY},
+				</if>
+				<if test="MCH_ID!=null and MCH_ID!='' ">
+				MCH_ID = #{MCH_ID},
+				</if>
+				<if test="ACCESS_TOKEN!=null and ACCESS_TOKEN!='' ">
+				ACCESS_TOKEN = #{ACCESS_TOKEN},
+				</if>
+				<if test="SIGN_SWITCH!=null and SIGN_SWITCH!='' ">
+				SIGN_SWITCH = #{SIGN_SWITCH},
+				</if>
+				<if test="OPEN_DATE!=null and OPEN_DATE!='' ">
+				OPEN_DATE = #{OPEN_DATE},
+				</if>
+				<if test="PIC_URL!=null and PIC_URL!='' ">
+				PIC_URL = #{PIC_URL},
+				</if>
+				
+				<if test="SETNAME!=null and SETNAME!='' ">
+				SETNAME = #{SETNAME},
+				</if>
+				<if test="KEYWORDS!=null and KEYWORDS!='' ">
+				KEYWORDS = #{KEYWORDS},
+				</if>
+				<if test="CUSTOM_PHONE!=null and CUSTOM_PHONE!='' ">
+				CUSTOM_PHONE = #{CUSTOM_PHONE},
+				</if>
+				<if test="CUSTOM_QQ!=null and CUSTOM_QQ!='' ">
+				CUSTOM_QQ = #{CUSTOM_QQ},
+				</if>
+				<if test="CUSTOM_EMAIL!=null and CUSTOM_EMAIL!='' ">
+				CUSTOM_EMAIL = #{CUSTOM_EMAIL},
+				</if>
+				<if test="CUSTOM_WEBCHAT!=null and CUSTOM_WEBCHAT!='' ">
+				CUSTOM_WEBCHAT = #{CUSTOM_WEBCHAT},
+				</if>
+				<if test="MEMO!=null and MEMO!='' ">
+				MEMO = #{MEMO},
+				</if>
+				WEBCHAT_ID = #{WEBCHAT_ID}
+			where 
+				WEBCHAT_ID = #{WEBCHAT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			WEBCHAT_ID,	
+			USER_ID,	
+			TYPE,	
+			NAME,	
+			WEBCHAT_CODE,	
+			APPID,	
+			APPSECRET,	
+			SHOP_KEY,	
+			MCH_ID,	
+			ACCESS_TOKEN,	
+			CREATE_TIME,	
+			SIGN_SWITCH,	
+			PIC_URL,
+			OPEN_DATE,
+			SETNAME,
+			KEYWORDS,
+			CUSTOM_PHONE,
+			CUSTOM_QQ,
+			CUSTOM_EMAIL,
+			CUSTOM_WEBCHAT,
+			MEMO
+		from 
+			TB_WEBCHAT
+		where 
+			WEBCHAT_ID = #{WEBCHAT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.WEBCHAT_ID,	
+				a.USER_ID,	
+				a.TYPE,	
+				a.NAME,	
+				a.WEBCHAT_CODE,	
+				a.APPID,	
+				a.APPSECRET,	
+				a.SHOP_KEY,	
+				a.MCH_ID,	
+				a.ACCESS_TOKEN,	
+				a.CREATE_TIME,	
+				a.SIGN_SWITCH,
+				a.PIC_URL,	
+				a.OPEN_DATE,
+				a.SETNAME,
+				a.KEYWORDS,
+				a.CUSTOM_PHONE,
+				a.CUSTOM_QQ,
+				a.CUSTOM_EMAIL,
+				a.CUSTOM_WEBCHAT,
+				a.MEMO
+		from 
+				TB_WEBCHAT a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.WEBCHAT_ID,	
+				a.USER_ID,	
+				a.TYPE,	
+				a.NAME,	
+				a.WEBCHAT_CODE,	
+				a.APPID,	
+				a.APPSECRET,	
+				a.SHOP_KEY,	
+				a.MCH_ID,	
+				a.ACCESS_TOKEN,	
+				a.CREATE_TIME,	
+				a.SIGN_SWITCH,	
+				a.PIC_URL,	
+				a.OPEN_DATE,
+				a.SETNAME,
+				a.KEYWORDS,
+				a.CUSTOM_PHONE,
+				a.CUSTOM_QQ,
+				a.CUSTOM_EMAIL,
+				a.CUSTOM_WEBCHAT,
+				a.MEMO
+		from 
+				TB_WEBCHAT a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_WEBCHAT
+		where 
+			WEBCHAT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 通过USER_ID查询微信公众号 -->
+	<select id="findWebchatUserId" parameterType="pd" resultType="pd">
+		select 
+			WEBCHAT_ID,	
+			USER_ID,	
+			TYPE,	
+			NAME,	
+			WEBCHAT_CODE,	
+			APPID,	
+			APPSECRET,	
+			SHOP_KEY,	
+			MCH_ID,	
+			ACCESS_TOKEN,	
+			CREATE_TIME,	
+			SIGN_SWITCH,	
+			OPEN_DATE,
+			PIC_URL,
+			SETNAME,
+			KEYWORDS,
+			CUSTOM_PHONE,
+			CUSTOM_QQ,
+			CUSTOM_EMAIL,
+			CUSTOM_WEBCHAT,
+			MEMO
+		from 
+			TB_WEBCHAT
+		where 
+			USER_ID = #{USER_ID}
+	</select>
+	
+</mapper>

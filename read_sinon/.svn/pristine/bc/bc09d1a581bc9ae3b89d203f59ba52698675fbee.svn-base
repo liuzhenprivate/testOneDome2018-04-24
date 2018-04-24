@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LabelMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_LABEL(
+			LABEL_NAME
+		) values (
+			#{LABEL_NAME}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_LABEL
+		where 
+			LABEL_ID = #{LABEL_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_LABEL
+			set 
+				LABEL_NAME = #{LABEL_NAME}
+			where 
+				LABEL_ID = #{LABEL_ID}
+	</update>
+	
+	
+	<!-- 移除标签的分类 -->
+	<update id="editname" parameterType="pd">
+		update  TB_LABEL
+			set 
+				LABEL_NAME = #{LABEL_NAME}
+			where 
+				LABEL_NAME = #{LABEL_NAME}
+	</update>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			LABEL_ID,	
+			LABEL_NAME
+		from 
+			TB_LABEL
+		where 
+			LABEL_ID = #{LABEL_ID}
+	</select>
+
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.LABEL_ID,	
+				a.LABEL_NAME
+		from 
+				TB_LABEL a
+		where 1=1
+				<if test="pd.LABEL_NAME!=null and pd.LABEL_NAME!=''">
+					and a.LABEL_NAME LIKE CONCAT(CONCAT('%', #{pd.LABEL_NAME}),'%')
+				</if>
+				<if test="pd.ARTICLE_ID!=null and pd.ARTICLE_ID!=''">
+					and a.LABEL_ID in (
+						select
+								LABEL_ID
+						from 
+								TB_ARTICLE_LABEL 
+						where
+								ARTICLE_ID = #{pd.ARTICLE_ID}
+					)
+				</if>
+				<if test="pd.LABEL!=null and pd.LABEL!=''">
+					and a.LABEL_NAME in(
+						 #{pd.LABEL}
+					)
+				</if>
+	</select>
+	
+	
+	<!-- 添加前确认是否重复(LABEL_NAME) -->
+	<select id="seachlabel" parameterType="pd" resultType="pd">
+		select
+				a.LABEL_ID,	
+				a.LABEL_NAME
+		from 
+				TB_LABEL a
+		where
+				a.LABEL_NAME = #{LABEL_NAME}
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.LABEL_ID,	
+				a.LABEL_NAME
+		from 
+				TB_LABEL a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_LABEL
+		where 
+			LABEL_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 根据名称查询 -->
+	<select id="listData" parameterType="String" resultType="pd">
+		select
+				a.LABEL_ID,	
+				a.LABEL_NAME
+		from 
+				TB_LABEL a
+		where
+					a.LABEL_NAME in
+					<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+		                 #{item}
+					</foreach>
+	</select>
+	
+	<!-- 查询指定书籍的标签-->
+	<select id="listfindbookid" parameterType="pd" resultType="pd">
+		select
+				a.LABEL_ID,	
+				a.LABEL_NAME
+		from 
+				TB_LABEL a
+		where 1=1
+			<if test="ARTICLE_ID!=null and ARTICLE_ID!=''">
+				and a.LABEL_ID in (
+					select
+							LABEL_ID
+					from 
+							TB_ARTICLE_LABEL 
+					where
+							ARTICLE_ID = #{ARTICLE_ID}
+					)
+				</if>
+	</select>
+	
+</mapper>

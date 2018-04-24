@@ -1,0 +1,57 @@
+/*后台*/
+.Thunder{ margin-top: 20px; width: 880px;}
+.Thunder ul li{ float: left; width: 393px; height: 166px; background: #4390b9; margin-left: 10px; margin-bottom: 10px;}
+.ThunderL{ float: left; margin-top: 19px; width: 172px;}
+.ThunderL div{ border-bottom: 1px dashed #f0f0f0;}
+.ThunderL div span{ display: inline-block; font-size: 14px; color: #ffffff; height: 46px; line-height: 46px; padding-left: 55px; background: url(../images/myPic1.png) left center no-repeat;}
+.ThunderL h1{margin:0; font-size: 18px; color: #ffffff; font-weight: normal; height: 54px; line-height: 54px;}
+.ThunderL p{ margin: 0 auto; width: 124px; height: 24px; line-height: 24px; border-radius: 10px; background: #f0f0f0; font-size: 14px; color: #438eb9;}
+.ThunderL p span{ font-size: 18px;}
+.ThunderR{ float: left; margin-top: 6px; width: 213px; height: 141px; padding-top: 14px; background: #f0f0f0;}
+.ThunderR div{ height:24px; margin-left: 29px; border-bottom: 1px dashed #21a3e7; max-width: 175px;}
+.ThunderR div span{ display: inline-block; font-size: 14px; color: #ffffff; height: 24px; line-height: 24px; width: 53px; background: #3f83ab; float: left;}
+.ThunderR div p{ float: right; font-size: 18px; color: #333333; height: 24px; line-height: 24px; width: 90px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

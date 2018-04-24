@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>添加章节（批量章节）</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" href="chapterManagement.html" title="">书籍管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="newChapter.html" title="">批量新增</a>
+	</div>
+	<div class="newChapterDe">
+		<h1>新增章节</h1>
+		<div class="newChapterDeInp clearfix">
+			<span>关联书籍</span>
+			<div class="clearfix">
+				<input readonly="readonly" value="重生八零俏佳妻" />
+				<a href="javascript:void(0)" title="">匹配书籍</a>
+			</div>
+			<p>匹配成功  （当前共254章）</p>
+		</div>
+		<div class="newChapterDeInp clearfix">
+			<span>章节序号</span>
+			<div class="clearfix">
+				<input value="255" />
+			</div>
+		</div>
+		<div class="newChapterDeInp clearfix">
+			<span>章节名称</span>
+			<div class="clearfix">
+				<input value="第31章 踏出的第一步，从文院开始！" />
+			</div>
+		</div>
+		<div class="newChapterDeTex clearfix">
+			<span>章节名称</span>
+			<div class="clearfix">
+				<textarea></textarea>
+			</div>
+			<i>共54781字</i>
+		</div>
+		<div style="margin-left: 76px;" class="AddBatchSectionBtn clearfix">
+			<a class="AddBatchSectionBtn1" href="javascript:void(0)" title="">完&nbsp;&nbsp;成</a>
+			<a class="AddBatchSectionBtn2" href="javascript:void(0)" title="">取&nbsp;&nbsp;消</a>
+		</div>
+	</div>
+	
+	<script>
+		$('.newChapterDeInp div a').click(function(){
+			$('.newMatchBooksAlert', parent.document).show();
+			(function(Thunder){
+				$('.newMatchBooksAlert', parent.document).css('padding-top',Thunder);
+			})((parent.document.documentElement.clientHeight-$('.newMatchBooks', parent.document).get(0).offsetHeight)/2);
+		})
+	</script>
+</body>
+</html>

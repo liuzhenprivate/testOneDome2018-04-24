@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>添加章节（批量）</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" href="bookManagement.html" title="">书籍管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" href="bookDetails.html" title="">书籍详情</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="batchSection.html" title="">批量章节</a>
+	</div>
+	<div class="batchSectionDe">
+		<h1>导入书籍文本</h1>
+		<div class="batchSectionDeTop clearfix">
+			<div class="batchSectionDeTopL clearfix">
+				<p>共计<i> 558 </i>章</p>
+				<span>235万字</span>
+			</div>
+			<div class="batchSectionDeTopR clearfix">
+				<a class="batchSectionDeTopR1" href="javascript:void(0)" title=""><span>查看规则</span></a>
+				<a class="batchSectionDeTopR2" href="javascript:void(0)" title=""><span>插入单章</span></a>
+				<a class="batchSectionDeTopR3" href="javascript:void(0)" title=""><span>导入文本</span></a>
+			</div>
+		</div>
+		<div class="batchSectionDeTit clearfix">
+			<span style="margin-left: 20px; width: 48px;">序号</span>
+			<span style=" width: 270px;">章节名称</span>
+			<span style=" width: 138px;">章节字数</span>
+			<span style=" width: 408px;">章节内容</span>
+			<span>管理操作</span>
+		</div>
+		<div class="batchSectionDeTex">
+			<ul>
+				<li class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix batchSectionDeTexErr">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="batchSectionDeTex1"><p>1</p></div>
+					<div class="batchSectionDeTex2"><p>第一章 会做提拉米苏的古怪小招待古怪小招待</p></div>
+					<div class="batchSectionDeTex3"><p>85741</p></div>
+					<div class="batchSectionDeTex4"><p>虫儿来向大神们学习了！努力学习，天天向上！《逆锋狂龙》期待大向大神们学习了！努力学</p></div>
+					<div class="batchSectionDeTex5">
+						<span>操作</span>
+						<div>
+							<a href="javascript:void(0)" title="">编辑</a>
+							<a href="javascript:void(0)" title="">删除</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+		<div class="batchSectionDeBtn clearfix">
+			<a href="javascript:void(0)" title="">完&nbsp;&nbsp;成</a>
+			<span>取&nbsp;&nbsp;消</span>
+		</div>
+	</div>
+	
+	<script>
+		$('.addAChapterDeInp p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.addAChapterDeInp input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.addAChapterDeInp input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		$('.addAChapterDeText p').click(function(){
+			$(this).hide();
+			$(this).siblings('textarea').focus();
+		})
+		$('.addAChapterDeText textarea').bind('textarea propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.addAChapterDeText textarea').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$(window).click(function(){
+			$('.batchSectionDeTex5 div').hide();
+		})
+		
+		$('.batchSectionDeTex5 span').click(function(e){
+			if($(this).siblings('div').css('display')=="none"){
+				$(this).siblings('div').show();
+			}else{
+				$(this).siblings('div').hide();
+			}
+			$(this).parents('li').siblings().find('.batchSectionDeTex5 div').hide();
+			e.stopPropagation();
+		})
+		$('.batchSectionDeTex5 div a').click(function(e){
+			$(this).parent('div').hide();
+			e.stopPropagation();
+		})
+		
+		
+		$('.batchSectionDeTopR2').click(function(){
+			$('.chapterAlert', parent.document).show();
+			(function(Thunder){
+				$('.chapterAlert', parent.document).css('padding-top',Thunder);
+			})((parent.document.documentElement.clientHeight-$('.chapterAlertDe', parent.document).get(0).offsetHeight)/2);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.sinontech.modle.*" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	String openid = String.valueOf(request.getAttribute("openid"));
+	System.out.println("openid="+openid);
+	if(null==openid || "".equals(openid) || "null".equals(openid)){
+		openid = request.getParameter("openid");
+	}
+	if(null==openid || "".equals(openid) || "null".equals(openid)){
+		//response.sendRedirect("");
+	}
+	String tradeno = (String)request.getAttribute("tradeno");
+	List<Rechargeset> list = (List<Rechargeset>)request.getAttribute("list");
+	UserInfo user = (UserInfo)request.getAttribute("user");
+	//System.out.println(user.toString());
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="<%=basePath%>">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>阅读币充值</title>
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/base.css">
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/index.css">
+    <script src='pages/home/read/js/jquery-1.12.4.min.js'></script>
+</head>
+<body style="background: #ffffff;">
+	<div class="rechargeDetail clearfix">
+		<ul>
+		<% 
+		if(null!=list && list.size()>0){
+		for(Rechargeset set:list){ %>
+			<li>
+			<a href="recharge/pay?rechargeid=<%=set.getId() %>&tradeno=<%=tradeno %>">
+				<h1><%=set.getMoney()/100 %>元</h1>
+				<h2><%=set.getBookCurrency() %>阅读币
+				<%if(set.getBookCurrencyGift()>0){ %>
+				<span>+<%=set.getBookCurrencyGift() %>阅读币</span>
+				<%} %>
+				</h2>
+				<%if(set.getBookCurrencyGift()>0){ %>
+				<i>送<%=set.getBookCurrencyGift()/100 %>元</i>
+				<%} %>
+			</a>
+			</li>
+			<%}} %>
+			 
+		</ul>
+	</div>
+	<div class="reminder">
+		<h1>温馨提示</h1>
+		<p>1.充值支持使用微信支付</p>
+		<p style="font-size: 0.2201rem;">2.阅读币作为代币，可在某某小说中直接用于阅读付费章节</p>
+		<p style="font-size: 0.2202rem;">3.充值过程中如有问题，或充值未到账，请直接通过（客服QQ：350859680）进行联系反馈，我们会有客服人员为您跟进处理</p>
+	</div>
+	<script>
+		
+	</script>
+	<script src="pages/home/read/js/rem.js"></script>
+</body>
+</html>
+
+

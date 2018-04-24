@@ -1,0 +1,162 @@
+/*鍏跺畠椤甸潰*/
+/*鍏呭�绠＄悊*/
+.announcementManagementTop{ padding-left: 14px; height: 40px; background: #ffffff;}
+.announcementManagementTop a{ display :inline-block; font-size: 14px; color: #333333; height: 40px; line-height: 40px; float: left;}
+.announcementManagementTop img{ float: left; margin: 15px 12px 0;}
+.rechargeManagementDe{ margin-top: 20px; background: #ffffff; padding: 30px 0 30px;}
+.rechargeManagementDeTop{ width: 960px; height: 140px; background: #f9f9f9; margin-left: 30px;}
+.rechargeManagementDeTop div{ width: 238px; float: left; margin-top: 5px;}
+.rechargeManagementDeTop div h2{ font-weight: normal; font-size: 14px; color: #666666; height: 64px; line-height: 64px;}
+.rechargeManagementDeTop div h1{ font-weight: normal; font-size: 30px; color: #333333; height: 40px; line-height: 40px;}
+.rechargeManagementDeTop div p{ font-size: 12px; color: #666666; height: 22px; line-height: 22px;}
+.rechargeManagementDeTop span{ display: inline-block; height: 81px; border-left: 1px solid #cccccc; float: left; margin-left: 1px; margin-top: 30px;}
+.rechargeManagementDeSelL{ float: left; margin-top: 30px;}
+.rechargeManagementDeSelL1{ float: left; margin-left: 30px; width: 228px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.rechargeManagementDeSelL1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 180px;}
+.rechargeManagementDeSelL1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 185px; text-align: left;}
+.rechargeManagementDeSelL1 img{ width: 12px; float: right; margin-right: 10px; margin-top: 11px; cursor: pointer;}
+.rechargeManagementDeSelL2{ float: left; margin-left: 10px; width: 235px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.rechargeManagementDeSelL2 input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 19px; margin-top: 7px; width: 180px;}
+.rechargeManagementDeSelL2 img{ float: right; margin-right: 19px; margin-top: 14px;}
+.rechargeManagementDeSelL3{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #cccccc; border-radius: 4px; background: #f5f5f5; position: relative; cursor: pointer;}
+.rechargeManagementDeSelL3:hover{ background: #fff;}
+.rechargeManagementDeSelL3 p{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 20px;}
+.rechargeManagementDeSelL3 img{ float: right; margin-top: 14px; margin-right: 20px;}
+.rechargeManagementDeSelL3 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.rechargeManagementDeSelL3 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.rechargeManagementDeSelL3 ul li:hover{ color: #f37427;}
+.rechargeManagementDeSel>a{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; background: #f37526; float: right; margin-top: 30px; margin-right: 30px;}
+.rechargeManagementDeSel>a span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic49.png) right center no-repeat;}
+.rechargeManagementTit{ width: 960px; height: 50px; margin-left: 30px; background: #f7f7f7; margin-top: 20px;}
+.rechargeManagementTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.rechargeManagementTex{ width: 960px; margin-left: 30px;}
+.rechargeManagementTex ul li{ width: 100%; height: 50px;}
+.rechargeManagementTex ul li div{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.rechargeManagementTex1{ margin-left: 19px; width: 92px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.rechargeManagementTex2{ width: 104px; margin-left: 24px;}
+.rechargeManagementTex3{ width: 134px;}
+.rechargeManagementTex4{ width: 78px;}
+.rechargeManagementTex5{ width: 93px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.rechargeManagementTex6{ width: 85px; margin-left: 20px;}
+.rechargeManagementTex7{ width: 71px;}
+.rechargeManagementTex8{ width: 77px;}
+.rechargeManagementTex9{ width: 87px;}
+.flipTwo{ margin-top: 20px; margin-left: 30px;}
+.flipTwoL{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; float: left;}
+.flipTwoR{ float: right; margin-right: 30px; cursor: pointer;}
+.flipTwoPrev{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoPrev img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoDe{ float: left;}
+.flipTwoDe span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 13px;}
+.flipTwoDe span.flipTwoDeSpan{ color: #f37427;}
+.flipTwoNext{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoNext img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoSkip{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 10px; float: left;}
+.flipTwoInp{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #ffffff;}
+.flipTwoInp input{ font-size: 12px; color: #666666; height: 16px; line-height: 16px; float: left; width: 30px; margin-top: 7px; text-align: center;}
+.flipTwoSure{ font-size: 12px; color: #666666; height: 30px; line-height: 30px; border: 1px solid #dbdbdb; border-radius: 2px; background: #f5f5f5; float: left; width: 62px;}
+
+/*鏁版嵁缁熻*/
+.platformOverviewCumulative{ margin-top: 20px;}
+.platformOverviewCumulativeD{ width: 296px; padding-left: 30px; height: 193px; padding-top: 22px; background: #ffffff; text-align: left; float: left; position: relative;}
+.platformOverviewCumulativeD>h2{ font-weight: normal; font-size: 14px; color: #666666; height: 30px; line-height: 30px;}
+.platformOverviewCumulativeD>h1{ font-size: 32px; color: #f37427; height: 44px; line-height: 44px;}
+.platformOverviewCumulativeD>h3{ font-weight: normal; font-size: 12px; color: #666666; height: 22px; line-height: 22px;}
+.platformOverviewCumulativeDe{ margin-top: 19px;}
+.platformOverviewCumulativeDe div{ float: left;}
+.platformOverviewCumulativeDe div p{ font-size: 14px; color: #999999; height: 24px; line-height: 24px;}
+.platformOverviewCumulativeDe div h1{ font-weight: normal; font-size: 24px; color: #666666; height: 34px; line-height: 34px;}
+.platformOverviewCumulativeD>a{ display: inline-block; font-size: 14px; color: #666666; height: 26px; line-height: 26px; padding-right: 14px; background: url(../images/myPic12.png) right center no-repeat; position: absolute; right: 30px; top: 70px;}
+.platformOverviewChart{ margin-top: 20px; padding: 30px 0 15px 30px; background: #ffffff;}
+.platformOverviewChart>h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; text-align: left; padding-left: 10px; border-left: 2px solid #f37526;}
+.platformOverviewChartSel{ margin-top: 20px;}
+.platformOverviewChartSel span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; margin-right: 10px; cursor: pointer; float: left;}
+.platformOverviewChartSel span:hover{ background: #ffffff;}
+.platformOverviewChartSel span.platformOverviewChartSelAct{ height: 36px; line-height: 36px; width: 96px; background: #fe8137; color: #ffffff; border: none;}
+.platformOverviewChartSel div{ float: left; margin-left: 10px; width: 235px; height: 34px; border: 1px solid #cccccc; position: relative; cursor: pointer; background: #f5f5f5;}
+.platformOverviewChartSel div:hover{ background: #ffffff;}
+.platformOverviewChartSel div img{ position: absolute; top: 15px; right: 19px;}
+.platformOverviewChartSel div input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-top: 7px; margin-left: 19px; width: 215px;}
+.platformOverviewChartDe{ margin-top: 20px;}
+
+/*閫氱煡鍏憡*/
+.noticeBulletinDe{ padding: 30px 0 20px; background: #ffffff; margin-top: 20px;}
+.noticeBulletinDeTop{ margin-left: 30px;}
+.noticeBulletinDeTop div{ float: left; width: 235px; height: 34px; border: 1px solid #cccccc; position: relative; cursor: pointer; background: #f5f5f5;}
+.noticeBulletinDeTop div:hover{ background: #ffffff;}
+.noticeBulletinDeTop div img{ position: absolute; top: 15px; right: 19px;}
+.noticeBulletinDeTop div input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-top: 7px; margin-left: 19px; width: 215px;}
+.noticeBulletinDeTit{ width: 960px; height: 50px; background: #f7f7f7; margin-left: 30px; margin-top: 20px;}
+.noticeBulletinDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.noticeBulletinDeTex{ width: 960px; margin-left: 30px;}
+.noticeBulletinDeTex ul li{ width: 100%; height: 50px;}
+.noticeBulletinDeTex ul li>p{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.noticeBulletinDeTex ul li div{ float: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px; position: relative;}
+.noticeBulletinDeTex ul li div p{ float: left; width: 225px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.noticeBulletinDeTex ul li div span{ display: inline-block; float: left; margin-left: 10px; color: #288df0; cursor: pointer;}
+
+/*鏁版嵁缁熻璇︽儏*/
+.dataStatisticsDe{ margin-top: 20px; background: #ffffff; padding-bottom: 30px;}
+.dataStatisticsDeTop{ width: 100%; height: 50px; background: #f7f7f7;}
+.dataStatisticsDeTop a{ display: inline-block; font-size: 14px; color: #666666; height: 47px; line-height: 44px; width: 150px; border-top: 3px solid #f7f7f7; float: left;}
+.dataStatisticsDeTop a.dataStatisticsDeTopAct{ color: 333333; background: #ffffff; border-top: 3px solid #f37526;}
+.dataStatisticsDailyDeTit{ width: 960px; height: 50px; margin-top: 20px; margin-left: 30px; background: #f7f7f7;}
+.dataStatisticsDailyDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.dataStatisticsDailyDeTex{ width: 960px; margin-left: 30px;}
+.dataStatisticsDailyDeTex ul li{ width: 100%; height: 50px;}
+.dataStatisticsDailyDeTex ul li p{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.dataStatisticsDailyDeTex1{ width: 166px; margin-left: 19px;}
+.dataStatisticsDailyDeTex2{ width: 174px;}
+.dataStatisticsDailyDeTex3{ width: 176px;}
+.dataStatisticsDailyDeTex4{ width: 176px;}
+.dataStatisticsDailyDeTex5{ width: 181px;}
+
+/*鏁版嵁缁熻鏈堟姤*/
+.monthlyDataStatisticsTit{ width: 960px; height: 50px; margin-top: 20px; margin-left: 30px; background: #f7f7f7;}
+.monthlyDataStatisticsTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left; text-align: left;}
+.monthlyDataStatisticsTex{ width: 960px; margin-left: 30px;}
+.monthlyDataStatisticsTex ul li{ width: 100%; height: 50px;}
+.monthlyDataStatisticsTex ul li p{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.monthlyDataStatisticsTex1{ width: 236px; margin-left: 19px;}
+.monthlyDataStatisticsTex2{ width: 214px;}
+.monthlyDataStatisticsTex3{ width: 216px;}
+.monthlyDataStatisticsTex4{ width: 207px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

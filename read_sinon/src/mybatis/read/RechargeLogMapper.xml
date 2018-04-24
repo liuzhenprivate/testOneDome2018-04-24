@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RechargeLogMapper">
+	
+	<select id="sumAll" parameterType="pd" resultType="pd">
+		select
+				sum(a.MONEY) MONEY,count(*) TIMES,a.USER_ID	 
+		from 
+				TB_RECHARGE_LOG a,SYS_USER u
+		where   a.USER_ID=u.USER_ID and a.STATE = 1
+			<if test="MONTH!=null and MONTH!=''">
+				AND a.CREATE_TIME  LIKE CONCAT( #{MONTH} ,'%')
+			</if>
+			<if test="USER_ID!=null and USER_ID!=''">
+				AND a.USER_ID=#{USER_ID}
+			</if>
+			<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+				AND a.CREATE_TIME  LIKE CONCAT( #{sendTimeBegin} ,'%') 
+			</if>
+			<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				AND a.CREATE_TIME LIKE CONCAT( #{sendTimeEnd} ,'%') 
+			</if>	 
+	</select>
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_RECHARGE_LOG(
+			USERID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			MONEY,	
+			BOOK_CURRENCY,	
+			BOOK_CURRENCY_GIFT,	
+			BOOK_CURRENCY_ALL,	
+			CONSUME,	
+			CREATE_TIME,	
+			STATE,	
+			RESULT_PAY,	
+			TIME_PAY,	
+			RESULT_RECHARGE,	
+			TIME_RECHARGE,	
+			CHANNEL,	
+			CHANNEL_INCOME,	
+			INCOME,	
+			UPSTREAM_INCOME,
+			RECHARGE_TYPE,
+			EXP_DATE
+		) values (
+			#{USERID},	
+			#{USER_ID},	
+			#{WEBCHAT_ID},	
+			#{MONEY},	
+			#{BOOK_CURRENCY},	
+			#{BOOK_CURRENCY_GIFT},	
+			#{BOOK_CURRENCY_ALL},	
+			#{CONSUME},	
+			#{CREATE_TIME},	
+			#{STATE},	
+			#{RESULT_PAY},	
+			#{TIME_PAY},	
+			#{RESULT_RECHARGE},	
+			#{TIME_RECHARGE},	
+			#{CHANNEL},	
+			#{CHANNEL_INCOME},	
+			#{INCOME},	
+			#{UPSTREAM_INCOME},
+			#{RECHARGE_TYPE},
+			#{EXP_DATE}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_RECHARGE_LOG
+		where 
+			RECHARGE_LOG_ID = #{RECHARGE_LOG_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_RECHARGE_LOG
+			set 
+				USERID = #{USERID},
+				USER_ID = #{USER_ID},
+				WEBCHAT_ID = #{WEBCHAT_ID},
+				MONEY = #{MONEY},
+				BOOK_CURRENCY = #{BOOK_CURRENCY},
+				BOOK_CURRENCY_GIFT = #{BOOK_CURRENCY_GIFT},
+				BOOK_CURRENCY_ALL = #{BOOK_CURRENCY_ALL},
+				CONSUME = #{CONSUME},
+				CREATE_TIME = #{CREATE_TIME},
+				STATE = #{STATE},
+				RESULT_PAY = #{RESULT_PAY},
+				TIME_PAY = #{TIME_PAY},
+				RESULT_RECHARGE = #{RESULT_RECHARGE},
+				TIME_RECHARGE = #{TIME_RECHARGE},
+				CHANNEL = #{CHANNEL},
+				CHANNEL_INCOME = #{CHANNEL_INCOME},
+				INCOME = #{INCOME},
+				UPSTREAM_INCOME = #{UPSTREAM_INCOME},
+				RECHARGE_TYPE = #{RECHARGE_TYPE},
+				EXP_DATE = #{EXP_DATE}
+			where 
+				RECHARGE_LOG_ID = #{RECHARGE_LOG_ID}
+	</update>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			RECHARGE_LOG_ID,	
+			USERID,	
+			USER_ID,	
+			WEBCHAT_ID,	
+			MONEY,	
+			BOOK_CURRENCY,	
+			BOOK_CURRENCY_GIFT,	
+			BOOK_CURRENCY_ALL,	
+			CONSUME,	
+			CREATE_TIME,	
+			STATE,	
+			RESULT_PAY,	
+			TIME_PAY,	
+			RESULT_RECHARGE,	
+			TIME_RECHARGE,	
+			CHANNEL,	
+			CHANNEL_INCOME,	
+			INCOME,	
+			UPSTREAM_INCOME,
+			RECHARGE_TYPE,
+			EXP_DATE
+		from 
+			TB_RECHARGE_LOG
+		where 
+			RECHARGE_LOG_ID = #{RECHARGE_LOG_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				tu.NICKNAME,
+				su.NAME,
+				tu.ISVIP,
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,	
+				a.BOOK_CURRENCY_GIFT,	
+				a.BOOK_CURRENCY_ALL,	
+				a.CONSUME,	
+				a.CREATE_TIME,	
+				a.STATE,	
+				a.RESULT_PAY,	
+				a.TIME_PAY,	
+				a.RESULT_RECHARGE,	
+				a.TIME_RECHARGE,	
+				a.CHANNEL,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.UPSTREAM_INCOME,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE
+		from 
+				TB_RECHARGE_LOG a
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID
+		where a.STATE = 1
+				<if test="pd.FOLLOWSTATE1!=null and pd.FOLLOWSTATE1!=''">
+					AND tu.FOLLOWSTATE = #{pd.FOLLOWSTATE1}
+				</if>
+				<if test="pd.RECHARGE_TYPE1!=null and pd.RECHARGE_TYPE1!=''">
+					AND a.RECHARGE_TYPE = #{pd.RECHARGE_TYPE1}
+				</if>
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+							tu.NICKNAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+							or
+							su.NAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						)
+				</if>
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				ORDER BY a.CREATE_TIME DESC
+	</select>
+	
+	<!-- 列表导出excel -->
+	<select id="listexcel" parameterType="pd" resultType="pd">
+		select
+				tu.NICKNAME,
+				su.NAME,
+				tu.ISVIP,
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,	
+				a.BOOK_CURRENCY_GIFT,	
+				a.BOOK_CURRENCY_ALL,	
+				a.CONSUME,	
+				a.CREATE_TIME,	
+				a.STATE,	
+				a.RESULT_PAY,	
+				a.TIME_PAY,	
+				a.RESULT_RECHARGE,	
+				a.TIME_RECHARGE,	
+				a.CHANNEL,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.UPSTREAM_INCOME,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE
+		from 
+				TB_RECHARGE_LOG a
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID
+		where  a.STATE = 1
+				<if test="FOLLOWSTATE1!=null and FOLLOWSTATE1!=''">
+					AND tu.FOLLOWSTATE = #{pFOLLOWSTATE1}
+				</if>
+				<if test="RECHARGE_TYPE1!=null and RECHARGE_TYPE1!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE1}
+				</if>
+				<if test="names!=null and names!=''">
+					AND (
+							tu.NICKNAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+							or
+							su.NAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+						)
+				</if>
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				ORDER BY a.CREATE_TIME DESC
+	</select>
+	
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,	
+				a.BOOK_CURRENCY_GIFT,	
+				a.BOOK_CURRENCY_ALL,	
+				a.CONSUME,	
+				a.CREATE_TIME,	
+				a.STATE,	
+				a.RESULT_PAY,	
+				a.TIME_PAY,	
+				a.RESULT_RECHARGE,	
+				a.TIME_RECHARGE,	
+				a.CHANNEL,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.UPSTREAM_INCOME,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE
+		from 
+				TB_RECHARGE_LOG a
+		where
+			 a.STATE = 1
+	</select>
+	
+	<!-- 列表(Data) -->
+	<select id="datalistPd" parameterType="pd" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.USER_ID,	
+				a.WEBCHAT_ID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,	
+				a.BOOK_CURRENCY_GIFT,	
+				a.BOOK_CURRENCY_ALL,	
+				a.CONSUME,	
+				a.CREATE_TIME,	
+				a.STATE,	
+				a.RESULT_PAY,	
+				a.TIME_PAY,	
+				a.RESULT_RECHARGE,	
+				a.TIME_RECHARGE,	
+				a.CHANNEL,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.UPSTREAM_INCOME,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE
+		from 
+				TB_RECHARGE_LOG a
+		where
+			 a.STATE = 1
+			<if test="CTIME != null and CTIME != '' ">
+				AND a.USERID in (
+					select 
+						USERID 
+					from 
+						TB_USER 
+					where
+						CTIME = #{CTIME}
+				)
+			</if>
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_RECHARGE_LOG
+		where 
+			RECHARGE_LOG_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 获取昨天充值次数大于1次的人数 -->
+	<select id="seachYesterDayRechargeLog" parameterType="pd" resultType="pd">
+		select sum(countUserid) SumUserIds from (
+			select
+				count(USERID) countUserid<!-- 复充人数 -->
+			from
+				TB_RECHARGE_LOG
+			where
+				TIME_RECHARGE like CONCAT(CONCAT('', #{TIME_RECHARGE}),'%')
+				 and STATE = 1
+				group by USERID
+				having countUserid > 1
+		) TB_RECHARGE_LOG
+	</select>
+	
+	<!-- 获取 昨天充值人数 -->
+	<select id="seachRechargeLog" parameterType="pd" resultType="pd">
+			select
+				sum(USERID) countUserid<!-- 昨天充值人数 -->
+			from
+				TB_RECHARGE_LOG
+			where
+				TIME_RECHARGE like CONCAT(CONCAT('', #{TIME_RECHARGE}),'%')
+				 and STATE = 1
+				group by USERID
+	</select>
+	
+	<!-- 通过userid获取数据 -->
+	<select id="countRechargeLogDay" parameterType="pd" resultType="pd">
+		select 
+			count(RECHARGE_LOG_ID) RECHARGENUMBERS,<!-- 充值笔数 -->
+			sum(MONEY) RECHARGEMONEY  <!-- 充值金额 -->
+		from 
+			TB_RECHARGE_LOG
+		where 
+			USERID = #{USERID}  and STATE = 1
+			<if test="TIME_RECHARGE != null and TIME_RECHARGE != '' ">
+				and TIME_RECHARGE LIKE CONCAT(CONCAT('', #{TIME_RECHARGE}),'%')
+			</if>
+	</select>
+	
+	<!-- 获取指定读者充值金额和充值笔数（指定时间） -->
+	<select id="rechargelogData" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) rechargeTimes,
+				sum(MONEY) recharges
+			from
+				TB_RECHARGE_LOG
+			where STATE = 1
+				AND USERID in (
+					select USERID FROM TB_USER WHERE OPENID = #{OPENID}
+				) 
+				and
+				TIME_RECHARGE like CONCAT(CONCAT('', #{TIME}),'%')
+	</select>
+	
+	<!--指定id读者充值列表 -->
+	<select id="ReadlistPage" parameterType="page" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,
+				a.USER_ID,
+				a.MONEY,	
+				a.BOOK_CURRENCY,		
+				a.BOOK_CURRENCY_ALL,	
+				a.CREATE_TIME,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				tu.ISVIP,
+				su.NAME,
+				su.DIVIDES
+		from 
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON tu.USERID = a.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID
+		where
+				a.USERID  in (
+						select USERID from tb_user where OPENID = #{pd.OPENID}
+				)
+				and a.STATE = 1
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.RECHARGE_TYPE!=null and pd.RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{pd.RECHARGE_TYPE}
+				</if>
+				<if test="pd.NAME!=null and pd.NAME!=''">
+					AND su.NAME LIKE CONCAT(CONCAT('%', #{pd.NAME}),'%')
+				</if>
+	</select>
+	<!--导出读者消费excel -->
+	<select id="listReadexcel" parameterType="pd" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,
+				a.USER_ID,
+				a.MONEY,	
+				a.BOOK_CURRENCY,		
+				a.BOOK_CURRENCY_ALL,	
+				a.CREATE_TIME,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				tu.ISVIP,
+				su.NAME,
+				su.DIVIDES
+		from 
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON tu.USERID = a.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID
+		where
+				a.USERID  in (
+						select USERID from tb_user where OPENID = #{pd.OPENID}
+				)
+				and a.STATE = 1
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="RECHARGE_TYPE!=null and RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE}
+				</if>
+				<if test="pd.NAME!=null and pd.NAME!=''">
+					AND su.NAME LIKE CONCAT(CONCAT('%', #{NAME}),'%')
+				</if>
+	</select>
+	
+	<!-- 渠道充值列表 -->
+	<select id="sysuserRechargelistPage" parameterType="page" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,		
+				a.BOOK_CURRENCY_ALL,	
+				a.CREATE_TIME,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.STATE,
+				tu.ISVIP,
+				su.USER_ID,
+				su.NAME,
+				trl.QMONEY,
+				tu.NICKNAME,
+				tu.FOLLOWSTATE
+		from 
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID 
+				LEFT JOIN (
+					select 
+						sum(MONEY) QMONEY,
+						USER_ID
+					from 
+						TB_RECHARGE_LOG 
+					where  USER_ID = #{pd.USER_ID}
+				)trl ON a.USER_ID = trl.USER_ID
+		where a.USER_ID = #{pd.USER_ID} and a.STATE = 1
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.RECHARGE_TYPE!=null and pd.RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{pd.RECHARGE_TYPE}
+				</if>
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+						tu.NICKNAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						or
+						a.USER_ID LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+					)
+				</if>
+	</select>
+	<!-- 导出充值记录到excel -->
+	<select id="listsysuserRechargeExcel" parameterType="pd" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,		
+				a.BOOK_CURRENCY_ALL,	
+				a.CREATE_TIME,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.STATE,
+				tu.ISVIP,
+				su.USER_ID,
+				su.NAME,
+				trl.QMONEY,
+				tu.NICKNAME,
+				tu.FOLLOWSTATE
+		from 
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID 
+				LEFT JOIN (
+					select 
+						sum(MONEY) QMONEY,
+						USER_ID
+					from 
+						TB_RECHARGE_LOG 
+					where  USER_ID = #{USER_ID}
+				)trl ON a.USER_ID = trl.USER_ID
+		where a.USER_ID = #{USER_ID} and a.STATE = 1
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="RECHARGE_TYPE!=null and RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE}
+				</if>
+				<if test="names!=null and names!=''">
+					AND (
+						tu.NICKNAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+						or
+						a.USER_ID LIKE CONCAT(CONCAT('%', #{names}),'%')
+					)
+				</if>
+	</select>
+	
+	
+	
+	<!-- 渠道充值信息   累计/当月/当天/昨天 -->
+	<select id="sysUserRecharge" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) RECHARGE_LOG_ID,
+				ifnull(sum(MONEY),0) MONEY
+			from
+				TB_RECHARGE_LOG
+			where USER_ID = #{USER_ID} and STATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!-- 渠道充值信息   累计/当月/当天/昨天 -->
+	<select id="rechargeCount" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) RECHARGE_LOG_ID,
+				ifnull(sum(MONEY),0) MONEY
+			from
+				TB_RECHARGE_LOG
+			where STATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>
+	</select>
+	
+	<!-- 导出渠道充值列表到excel -->
+	<select id="listsysuserRechargeExce" parameterType="pd" resultType="pd">
+		select
+				a.RECHARGE_LOG_ID,	
+				a.USERID,	
+				a.MONEY,	
+				a.BOOK_CURRENCY,		
+				a.BOOK_CURRENCY_ALL,	
+				a.CREATE_TIME,	
+				a.CHANNEL_INCOME,	
+				a.INCOME,	
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				tu.ISVIP,
+				su.USER_ID,
+				su.NAME,
+				trl.QMONEY,
+				tu.NICKNAME,
+				tu.FOLLOWSTATE
+		from 
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+				LEFT JOIN sys_user su ON a.USER_ID = su.USER_ID 
+				LEFT JOIN (
+					select 
+						sum(MONEY) QMONEY,
+						USER_ID
+					from 
+						TB_RECHARGE_LOG 
+					where  USER_ID = #{USER_ID}
+				)trl ON a.USER_ID = trl.USER_ID
+		where a.USER_ID = #{USER_ID} and a.STATE = 1
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="RECHARGE_TYPE!=null and RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE}
+				</if>
+				<if test="names!=null and names!=''">
+					AND (
+						tu.NICKNAME LIKE CONCAT(CONCAT('%', #{names}),'%')
+						or
+						a.USER_ID LIKE CONCAT(CONCAT('%', #{names}),'%')
+					)
+				</if>
+	</select>
+	
+	<!-- 渠道付费人数  累计/当月/当天 -->
+	<select id="sysUserRechargeP" parameterType="pd" resultType="pd">
+		select COUNT(RECHARGE_LOG_ID) RECHARGE_LOG_ID FROM (
+				select
+					count(RECHARGE_LOG_ID) RECHARGE_LOG_ID
+				from
+					TB_RECHARGE_LOG
+				where USER_ID = #{USER_ID}  and STATE = 1
+					<if test="TIME!=null and TIME!=''">
+						and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+					</if>
+					GROUP BY USERID
+		)TB_RECHARGE_LOG 
+	</select>
+	
+	<!-- 渠道读者充值信息-->
+	<select id="sysUserrechargelogData" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) rechargeTimes,
+				ifnull(sum(MONEY),0) recharges
+			from
+				TB_RECHARGE_LOG
+			where 
+				USERID  = #{USERID} and STATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and	TIME_PAY like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>	
+	</select>
+	<!-- 渠道读者充值列表 -->
+	<select id="sysUserRechargeloglistPage" parameterType="page" resultType="pd">
+		SELECT
+				a.CREATE_TIME,
+				tu.ISVIP,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.MONEY,
+				a.RECHARGE_LOG_ID,
+				a.BOOK_CURRENCY_ALL,
+				a.INCOME,
+				tu.RECHARGE_MONEY,
+				a.USERID
+		FROM
+				TB_RECHARGE_LOG a
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+		WHERE
+				a.USERID = #{pd.USERID} and a.STATE = 1
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.RECHARGE_TYPE!=null and pd.RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{pd.RECHARGE_TYPE}
+				</if>
+	</select>
+	<!-- 导出 渠道读者充值列表到excel -->
+	<select id="listsysUserReadexcel" parameterType="pd" resultType="pd">
+		SELECT
+				a.CREATE_TIME,
+				tu.ISVIP,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.MONEY,
+				a.RECHARGE_LOG_ID,
+				a.BOOK_CURRENCY_ALL,
+				a.INCOME,
+				tu.RECHARGE_MONEY,
+				a.USERID
+		FROM
+				TB_RECHARGE_LOG a 
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+		WHERE
+				a.USERID = #{USERID}  and a.STATE = 1
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="RECHARGE_TYPE!=null and RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE}
+				</if>
+	</select>
+	
+	
+	<!-- ====渠道端== -->
+	
+	<!-- 渠道端：渠道付费人数  累计/当月/当天 -->
+	<select id="sysUserRechargeChannel" parameterType="pd" resultType="pd">
+		select COUNT(USERID) USERID FROM (
+				select
+					USERID
+				from
+					TB_RECHARGE_LOG
+				where USER_ID = #{USER_ID}  and STATE = 1
+					<if test="TIME!=null and TIME!=''">
+						and CREATE_TIME like CONCAT(CONCAT('', #{TIME}),'%')
+					</if>
+					GROUP BY USERID
+		)TB_RECHARGE_LOG 
+	</select>
+	
+	<!-- 渠道端：渠道读者充值信息-->
+	<select id="channelrechargelog" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) rechargeTimes,
+				ifnull(sum(MONEY),0) recharges
+			from
+				TB_RECHARGE_LOG
+			where 
+				USERID  = #{USERID}   and STATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and	TIME_PAY like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>	
+	</select>
+	<!-- 渠道端：渠道读者充值列表 -->
+	<select id="channelRechargeloglistPage" parameterType="page" resultType="pd">
+		SELECT
+				a.CREATE_TIME,
+				tu.ISVIP,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.MONEY,
+				a.RECHARGE_LOG_ID,
+				a.BOOK_CURRENCY_ALL,
+				a.INCOME,
+				tu.RECHARGE_MONEY,
+				a.USERID
+		FROM
+				TB_RECHARGE_LOG a
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+		WHERE
+				a.USERID = #{pd.USERID}  and a.STATE = 1
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="pd.RECHARGE_TYPE!=null and pd.RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{pd.RECHARGE_TYPE}
+				</if>
+				ORDER BY a.CREATE_TIME DESC
+	</select>
+	<!-- 渠道端：导出 渠道读者充值列表到excel -->
+	<select id="channelrechargelogexcel" parameterType="pd" resultType="pd">
+		SELECT
+				a.CREATE_TIME,
+				tu.ISVIP,
+				a.RECHARGE_TYPE,
+				a.EXP_DATE,
+				a.MONEY,
+				a.RECHARGE_LOG_ID,
+				a.BOOK_CURRENCY_ALL,
+				a.INCOME,
+				tu.RECHARGE_MONEY,
+				a.USERID
+		FROM
+				TB_RECHARGE_LOG a
+				LEFT JOIN tb_user tu ON a.USERID = tu.USERID
+		WHERE
+				a.USERID = #{USERID}  and a.STATE = 1
+				<if test="sendTimeBegin!=null and sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{sendTimeBegin}
+				</if>
+				<if test="sendTimeEnd!=null and sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{sendTimeEnd}
+				 ]]>   
+				</if>
+				<if test="RECHARGE_TYPE!=null and RECHARGE_TYPE!=''">
+					AND a.RECHARGE_TYPE = #{RECHARGE_TYPE}
+				</if>
+	</select>
+	<!-- 渠道端：渠道充值信息-->
+	<select id="channelrechargelogsum" parameterType="pd" resultType="pd">
+			select
+				count(RECHARGE_LOG_ID) rechargeTimes,
+				ifnull(sum(MONEY),0) recharges
+			from
+				TB_RECHARGE_LOG
+			where 
+				USER_ID  = #{USER_ID}  and STATE = 1
+				<if test="TIME!=null and TIME!=''">
+					and	TIME_PAY like CONCAT(CONCAT('', #{TIME}),'%')
+				</if>	
+	</select>
+	
+</mapper>

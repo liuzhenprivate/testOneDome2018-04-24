@@ -1,0 +1,65 @@
+package com.sinontech.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sinontech.dao.BaseDao;
+import com.sinontech.modle.ConsumeLog;
+
+@Repository("consumeLogdao")
+public class ConsumeLogDaoImpl {
+
+	@Autowired
+	BaseDao baseDao;
+
+	public void setBaseBo(BaseDao baseDao) {
+		this.baseDao = baseDao;
+	}
+	
+	public void saveConsumeLog(ConsumeLog consumeLog){
+		this.baseDao.save(consumeLog);
+	}
+ 
+	public ConsumeLog getConsumeLogByUserId(long userid ){
+		String sql = "select * from TB_CONSUMELOG where USERID=?   ";
+		List<ConsumeLog> list= this.baseDao.findObjListBySql(sql, ConsumeLog.class,userid  );
+		if(null!=list && list.size()>0){
+			return list.get(0);
+		}else{
+			return null;
+		}
+	}
+	/**
+	 * 
+	 * @purpose：更新阅读消费记录表
+	 * @param consumeLog
+	 * @return void
+	 * @author liuzhen
+	 * @Time：2018-3-11 上午11:07:30
+	 */
+	public void updateConsumeLog(ConsumeLog consumeLog) {
+		this.baseDao.update(consumeLog);
+	}
+	/**
+	 * 
+	 * @purpose：查询本章节是否有消费过
+	 * @param userId
+	 * @param articlechapterid
+	 * @return
+	 * @return ConsumeLog
+	 * @author liuzhen
+	 * @Time：2018-3-20 下午5:29:26
+	 */
+	public ConsumeLog selectIsNotNull(long userId, long articlechapterid) {
+		String sql = "select * from TB_CONSUMELOG where USERID=?  and ARTICLE_CHAPTER_ID = ? ";
+		List<ConsumeLog> list= this.baseDao.findObjListBySql(sql, ConsumeLog.class,userId ,articlechapterid );
+		if(null!=list && list.size()>0){
+			return list.get(0);
+		}else{
+			return null;
+		}
+	}
+	
+}

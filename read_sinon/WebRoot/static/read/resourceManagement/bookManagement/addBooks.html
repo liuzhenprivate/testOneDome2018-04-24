@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>添加书籍（单本）</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" href="bookManagement.html" title="">书籍管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">新增书籍</a>
+	</div>
+	<div class="addBooksDe">
+		<h1>新增书籍</h1>
+		<div class="bookName clearfix">
+			<span>书籍名称</span>
+			<div class="bookName1 clearfix">
+				<input type="text" />
+				<p>请输入书籍名称</p>
+			</div>
+		</div>
+		<div class="bookCover clearfix">
+			<span>书籍封面</span>
+			<div class="bookCoverC">
+				<img src="../../images/myPic33.png" alt="" />
+				<i>上传封面</i>
+				<input type="file" />
+			</div>
+			<div class="bookCoverR">
+				<p>推荐尺寸：90×120 px</p>
+				<p>支持jpj、jpeg、gif、png，大小不超过5MB</p>
+			</div>
+		</div>
+		<div class="bookName clearfix">
+			<span>书籍作者</span>
+			<div class="bookName1 clearfix">
+				<input type="text" />
+				<p>请输入作者姓名</p>
+			</div>
+		</div>
+		<div class="paymentType clearfix">
+			<span>付费类型</span>
+			<div class="paymentTypeDiv clearfix">
+				<p>请选择付费类型</p>
+				<img src="../../images/myPic13.png" alt="" />
+				<ul>
+					<li>支付宝</li>
+					<li>银行卡</li>
+					<li>微信</li>
+				</ul>
+			</div>
+		</div>
+		<div class="paymentType clearfix">
+			<span>付费方式</span>
+			<div class="paymentTypeDiv clearfix">
+				<p>请选择付费方式</p>
+				<img src="../../images/myPic13.png" alt="" />
+				<ul>
+					<li>支付宝</li>
+					<li>银行卡</li>
+					<li>微信</li>
+				</ul>
+			</div>
+		</div>
+		<div class="paymentType clearfix">
+			<span>是否热门</span>
+			<div class="paymentTypeDiv clearfix">
+				<p>请选择付费类型</p>
+				<img src="../../images/myPic13.png" alt="" />
+				<ul>
+					<li>支付宝</li>
+					<li>银行卡</li>
+					<li>微信</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bookLabel clearfix">
+			<span>书籍标签</span>
+			<div class="clearfix">
+				<p>请添加书籍标签</p>
+				<i>添加标签</i>
+			</div>
+		</div>
+		<div class="bookName clearfix">
+			<span>推荐指数</span>
+			<div class="bookName1 clearfix">
+				<input type="text" />
+				<p>请输入1-100数值</p>
+			</div>
+		</div>
+		<div class="bookIntroduction clearfix">
+			<span>书籍简介</span>
+			<div class="clearfix">
+				<textarea></textarea>
+				<p>请输入书籍简介</p>
+			</div>
+		</div>
+		<div class="addBooksDeBtn clearfix">
+			<a href="javascript:void(0)" title="">完&nbsp;&nbsp;成</a>
+			<span>取&nbsp;&nbsp;消</span>
+		</div>
+	</div>
+	
+	
+	<script>
+		$('.bookName1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.bookName1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.bookName1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$(".bookCoverC input").change(function() {
+			var $file = $(this);
+			var fileObj = $file[0];
+			var windowURL = window.URL || window.webkitURL;
+			var dataURL;
+			var $img = $(this).siblings('img');
+			if(fileObj && fileObj.files && fileObj.files[0]){
+				dataURL = windowURL.createObjectURL(fileObj.files[0]);
+				$img.attr('src',dataURL);
+			}else{
+				dataURL = $file.val();
+				var imgObj = $img.get(0);
+				imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+				imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+			}
+		});
+		
+		$(window).click(function(){
+			$('.paymentTypeDiv').find('ul').hide();
+		})
+		$('.paymentTypeDiv').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.paymentTypeDiv ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$(this).parent().siblings('p').text(val);
+			e.stopPropagation();
+		})
+		
+		$('.bookIntroduction div p').click(function(){
+			$(this).hide();
+			$(this).siblings('textarea').focus();
+		})
+		$('.bookIntroduction div textarea').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.bookIntroduction div textarea').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$('.bookLabel div i').click(function(){
+			$('.labelEditingAlert', parent.document).show();
+			(function(Thunder){
+				$('.labelEditingAlert', parent.document).css('padding-top',Thunder);
+			})((parent.document.documentElement.clientHeight-$('.labelEditing', parent.document).get(0).offsetHeight)/2);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ExtensionContentMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_EXTENSION_CONTENT(
+			USER_ID,	
+			COVER,	
+			ARTICLE_ID,	
+			ARTICLE_NAME,	
+			ARTICLE_CHAPTERS,	
+			CREATE_TIME,	
+			FORCE_CHAPTER,	
+			CONTENT_URL,	
+			TITLE,	
+			CSSS,	
+			CLICK_TITLE,	
+			CLICK_TITLE_CSS,
+			NAME
+		) values (
+			#{USER_ID},	
+			#{COVER},	
+			#{ARTICLE_ID},	
+			#{ARTICLE_NAME},	
+			#{ARTICLE_CHAPTERS},	
+			#{CREATE_TIME},	
+			#{FORCE_CHAPTER},	
+			#{CONTENT_URL},	
+			#{TITLE},	
+			#{CSSS},	
+			#{CLICK_TITLE},	
+			#{CLICK_TITLE_CSS},
+			#{name}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_EXTENSION_CONTENT
+		where 
+			EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_EXTENSION_CONTENT
+			set 
+				USER_ID = #{USER_ID},
+				COVER = #{COVER},
+				ARTICLE_ID = #{ARTICLE_ID},
+				ARTICLE_NAME = #{ARTICLE_NAME},
+				ARTICLE_CHAPTERS = #{ARTICLE_CHAPTERS},
+				FORCE_CHAPTER = #{FORCE_CHAPTER},
+				CONTENT_URL = #{CONTENT_URL},
+				TITLE = #{TITLE},
+				FOLLOW = #{FOLLOW},
+				GUIDE = #{GUIDE},
+				RECHARGE = #{RECHARGE},
+				RECHARGE_PEOPLES = #{RECHARGE_PEOPLES},
+				RECHARGE_TIMES = #{RECHARGE_TIMES},
+				PROFIT = #{PROFIT},
+				CSSS = #{CSSS},
+				CLICK_TITLE = #{CLICK_TITLE},
+				CLICK_TITLE_CSS = #{CLICK_TITLE_CSS},
+				NAME = #{NAME}
+			where 
+				EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			USER_ID,	
+			COVER,	
+			ARTICLE_ID,	
+			ARTICLE_NAME,	
+			ARTICLE_CHAPTERS,	
+			CREATE_TIME,	
+			FORCE_CHAPTER,	
+			CONTENT_URL,	
+			TITLE,	
+			FOLLOW,	
+			GUIDE,	
+			RECHARGE,	
+			RECHARGE_PEOPLES,	
+			RECHARGE_TIMES,	
+			PROFIT,	
+			CSSS,	
+			CLICK_TITLE,	
+			CLICK_TITLE_CSS,	
+			EXTENSION_CONTENT_ID,
+			STATE,
+			NAME
+		from 
+			TB_EXTENSION_CONTENT
+		where 
+			EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.EXTENSION_CONTENT_ID,	
+				a.USER_ID,	
+				a.COVER,	
+				a.ARTICLE_ID,	
+				a.ARTICLE_NAME,	
+				a.ARTICLE_CHAPTERS,	
+				a.CREATE_TIME,	
+				a.FORCE_CHAPTER,	
+				a.CONTENT_URL,	
+				a.TITLE,	
+				a.FOLLOW,	
+				a.GUIDE,	
+				a.RECHARGE,	
+				a.RECHARGE_PEOPLES,	
+				a.RECHARGE_TIMES,	
+				a.PROFIT,	
+				a.CSSS,	
+				a.CLICK_TITLE,	
+				a.CLICK_TITLE_CSS,
+				a.STATE,
+				a.NAME,
+				ROUND(a.FOLLOW/a.GUIDE*100,0) FOLLOWGUIDE,
+				ROUND(a.RECHARGE_PEOPLES/a.FOLLOW*100,0) RECHARGEFOLLOW
+		from 
+				TB_EXTENSION_CONTENT a
+		where a.USER_ID = #{pd.USER_ID} AND a.STATE = 0
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+							a.ARTICLE_NAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+							or
+							a.TITLE LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						)
+				</if>
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+	</select>
+	
+	<!-- 列表 -->
+	<select id="ExtensionDetailslistPage" parameterType="page" resultType="pd">
+		select
+				a.EXTENSION_CONTENT_ID,	
+				a.USER_ID,	
+				a.COVER,	
+				a.ARTICLE_ID,	
+				a.ARTICLE_NAME,	
+				a.ARTICLE_CHAPTERS,	
+				a.CREATE_TIME,	
+				a.FORCE_CHAPTER,	
+				a.CONTENT_URL,	
+				a.TITLE,	
+				a.FOLLOW,	
+				a.GUIDE,	
+				a.RECHARGE,	
+				a.RECHARGE_PEOPLES,	
+				a.RECHARGE_TIMES,	
+				a.PROFIT,	
+				a.CSSS,	
+				a.CLICK_TITLE,	
+				a.CLICK_TITLE_CSS,
+				a.STATE,
+				a.NAME,
+				ROUND(a.FOLLOW/a.GUIDE*100,0) FOLLOWGUIDE,
+				ROUND(a.RECHARGE_PEOPLES/a.FOLLOW*100,0) RECHARGEFOLLOW
+		from 
+				TB_EXTENSION_CONTENT a
+		where a.USER_ID = #{pd.USER_ID} AND a.STATE = 0
+				<if test="pd.names!=null and pd.names!=''">
+					AND (
+							a.ARTICLE_NAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+							or
+							a.TITLE LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						)
+				</if>
+				<if test="pd.sendTimeBegin!=null and pd.sendTimeBegin!='' ">
+					AND a.CREATE_TIME>=#{pd.sendTimeBegin}
+				</if>
+				<if test="pd.sendTimeEnd!=null and pd.sendTimeEnd!='' ">
+				  <![CDATA[   
+					AND a.CREATE_TIME <= #{pd.sendTimeEnd}
+				 ]]>   
+				</if>
+	</select>
+	
+	
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.EXTENSION_CONTENT_ID,	
+				a.USER_ID,	
+				a.COVER,	
+				a.ARTICLE_ID,	
+				a.ARTICLE_NAME,	
+				a.ARTICLE_CHAPTERS,	
+				a.CREATE_TIME,	
+				a.FORCE_CHAPTER,	
+				a.CONTENT_URL,	
+				a.TITLE,	
+				a.FOLLOW,	
+				a.GUIDE,	
+				a.RECHARGE,	
+				a.RECHARGE_PEOPLES,	
+				a.RECHARGE_TIMES,	
+				a.PROFIT,	
+				a.CSSS,	
+				a.CLICK_TITLE,	
+				a.CLICK_TITLE_CSS,
+				a.STATE,
+				a.NAME
+		from 
+				TB_EXTENSION_CONTENT a
+		where
+				a.STATE = 0
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_EXTENSION_CONTENT
+		where 
+			EXTENSION_CONTENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 通过CREATE_TIME获取数据 -->
+	<select id="findByTime" parameterType="pd" resultType="pd">
+		select 
+			USER_ID,	
+			COVER,	
+			ARTICLE_ID,	
+			ARTICLE_NAME,	
+			ARTICLE_CHAPTERS,	
+			CREATE_TIME,	
+			FORCE_CHAPTER,	
+			CONTENT_URL,	
+			TITLE,	
+			FOLLOW,	
+			GUIDE,	
+			RECHARGE,	
+			RECHARGE_PEOPLES,	
+			RECHARGE_TIMES,	
+			PROFIT,	
+			CSSS,	
+			CLICK_TITLE,	
+			CLICK_TITLE_CSS,	
+			EXTENSION_CONTENT_ID,
+			STATE,
+			NAME
+		from 
+			TB_EXTENSION_CONTENT
+		where 
+			CREATE_TIME = #{CREATE_TIME}
+	</select>
+	
+	<!-- 修改URL -->
+	<update id="editURL" parameterType="pd">
+		update  TB_EXTENSION_CONTENT
+			set 
+				CONTENT_URL = #{CONTENT_URL}
+			where 
+				EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</update>
+	
+	<!-- 删除推广 -->
+	<update id="del" parameterType="pd">
+		update  TB_EXTENSION_CONTENT
+			set 
+				STATE = #{STATE}
+			where 
+				EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</update>
+	
+	<!-- 修改推广 -->
+	<update id="extensionedit" parameterType="pd">
+		update  TB_EXTENSION_CONTENT
+			set 
+				ARTICLE_ID = #{ARTICLE_ID},
+				ARTICLE_NAME = #{ARTICLE_NAME},
+				ARTICLE_CHAPTERS = #{ARTICLE_CHAPTERS},
+				FORCE_CHAPTER = #{FORCE_CHAPTER},
+				NAME = #{NAME}
+			where 
+				EXTENSION_CONTENT_ID = #{EXTENSION_CONTENT_ID}
+	</update>
+	
+</mapper>

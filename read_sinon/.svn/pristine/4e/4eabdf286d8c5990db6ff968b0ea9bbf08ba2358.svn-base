@@ -1,0 +1,64 @@
+package com.sinontech.controller.system.timer;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.springframework.scheduling.quartz.QuartzJobBean;
+
+import com.sinontech.service.read.article.ArticleService;
+import com.sinontech.service.read.board.BoardService;
+import com.sinontech.util.Logger;
+import com.sinontech.util.PageData;
+
+public class BoardTimesJob extends QuartzJobBean{
+	protected static final Logger logger = Logger.getLogger(SignTimesJob.class);
+	private ArticleService articleService;
+	private BoardService boardService;
+	
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+	
+	public BoardService getBoardService() {
+		return boardService;
+	}
+	public void setBoardService(BoardService boardService) {
+		this.boardService = boardService;
+	}
+	/**
+	 * 
+	 * @purpose：定时更新每个榜单的数据（每天更新一次）
+	 * @return void
+	 * @author liuzhen
+	 * @Time：2018年4月18日 下午4:22:39
+	 */
+	@Override
+	protected void executeInternal(JobExecutionContext arg0) throws JobExecutionException {
+		PageData pd = new PageData();
+		try {
+			List<PageData> list = this.boardService.listAll(pd);
+			if(list.size()>0&&list!=null){
+				for (int i = 0; i < list.size(); i++) {
+					if("主编推荐榜".equals(list.get(i).getString("BOARD_NAME"))){
+						list.remove(i);
+					}
+				}
+				for (int i = 0; i < list.size(); i++) {
+					System.out.println(list.get(i)+"---");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

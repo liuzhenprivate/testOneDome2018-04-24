@@ -1,0 +1,13 @@
+package com.sinontech.service;
+
+import java.util.List;
+
+import com.sinontech.modle.Html;
+import com.sinontech.modle.HtmlModle;
+
+public interface HtmlModleService {
+	
+	public Html findById(long id);
+	public void updateHtml(Html html);
+	public List<HtmlModle> getHtmlModleByPlaceType(int placeType );
+}

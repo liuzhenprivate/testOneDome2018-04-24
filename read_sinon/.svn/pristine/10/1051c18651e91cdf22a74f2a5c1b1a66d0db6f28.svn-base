@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>资源管理书籍管理</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">书籍管理</a>
+	</div>
+	<div class="bookManagementDe">
+		<div class="bookManagementDeTop clearfix">
+			<div class="labelManagementTopL clearfix">
+				<div class="labelManagementTopL1 clearfix">
+					<input type="text" />
+					<p>输入分类名称</p>
+					<img src="../../images/myPic26.png" alt="" />
+				</div>
+				<div class="bookManagementTopL2 clearfix">
+					<input id="test6" readonly="readonly" />
+					<img src="../../images/myPic13.png" alt="" />
+				</div>
+			</div>
+			<div class="labelManagementTopR clearfix">
+				<a class="labelManagementTopR1" href="batchEditing.html" title=""><i>批量编辑</i></a>
+				<span class="labelManagementTopR2">
+					<i>添加书籍</i>
+					<ul>
+						<li><a href="addBooks.html" title="">新增书籍</a></li>
+						<li><a href="batchAddBooks.html" title="">批量新增</a></li>
+					</ul>
+				</span>
+			</div>
+		</div>
+		<div class="bookManagementDeClickdown">
+			<span>展开搜索条件</span>
+		</div>
+		<div class="bookManagementDeClickup">
+			<ul class="clearfix">
+				<li style="margin-left: 19px;" class="clearfix">
+					<span>书籍状态</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>男女频道</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>书籍类型</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+				<li style="margin-left: 19px;" class="clearfix">
+					<span>是否热门</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>连载状态</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+				<li class="clearfix">
+					<span>付费方式</span>
+					<div class="bookManagementDeClickupDiv clearfix">
+						<p>全部书籍</p>
+						<img src="../../images/myPic13.png" alt="" />
+						<ul>
+							<li>全部书籍</li>
+							<li>部分书籍</li>
+							<li>少数书籍</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<div class="bookManagementDeClickupKey clearfix">
+				<a href="javascript:void" title="">查&nbsp;&nbsp;询</a>
+				<span>重&nbsp;&nbsp;置</span>
+			</div>
+			<div class="bookManagementDeClickupBtn">
+				<span>收起</span>
+			</div>
+		</div>
+		<div class="bookManagementDeTit clearfix">
+			<span style="width: 80px; margin-left: 19px;">封面</span>
+			<span style="width: 148px;">基本信息</span>
+			<span style="width: 113px;">书籍ID</span>
+			<span style="width: 86px;">书籍类型</span>
+			<span style="width: 85px;">累计消费</span>
+			<span style="width: 84px;">全本价格</span>
+			<span style="width: 74px;">书籍状态</span>
+			<span style="width: 47px;">热门</span>
+			<span style="width: 60px;">男女频</span>
+			<span style="width: 85px;">添加日期</span>
+			<span>管理操作</span>
+		</div>
+		<div class="bookManagementDeCont">
+			<ul>
+				<li class="clearfix">
+					<span class="bookManagementDeContOn">
+						<img src="../../images/myPic29.png" alt="" />
+					</span>
+					<span class="bookManagementDeContTw">
+						<p><i>书名：</i>我与校花的青春</p>
+						<p><i>作者：</i>小小猪</p>
+						<p><i>章节数：</i>2344</p>
+						<p><i>总字数：</i>563万字</p>
+					</span>
+					<span class="bookManagementDeContTh">
+						241587468112
+					</span>
+					<span class="bookManagementDeContFo"><p>校园<i>（连载）</i></p></span>
+					<span class="bookManagementDeContFi">
+						<p><i>人数：</i></br>35448</p>
+						<p><i>阅读币：</i></br>45142578</p>
+					</span>
+					<span class="bookManagementDeContSi">
+						<p>42533</p>
+						<p>阅读币</p>
+						<h3>VIP免费</h3>
+					</span>
+					<span class="bookManagementDeContSe">
+						未上架
+					</span>
+					<span class="bookManagementDeContEi">
+						是
+					</span>
+					<span class="bookManagementDeContNi">
+						男频
+					</span>
+					<span class="bookManagementDeContTe">
+						<p>2017-02-01</br>09:47</p>
+					</span>
+					<span class="bookManagementDeContEl">
+						<i>操作</i>
+						<div class="bookManagementDeContElDiv">
+							<a>预览</a>
+							<a>编辑</a>
+							<a>下架</a>
+						</div>
+					</span>
+					<a href="bookDetails.html" title=""></a>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					
+					<span class="bookManagementDeContOn">
+						<img src="../../images/myPic30.png" alt="" />
+					</span>
+					<span class="bookManagementDeContTw">
+						<p><i>书名：</i>我与校花的青春</p>
+						<p><i>作者：</i>小小猪</p>
+						<p><i>章节数：</i>2344</p>
+						<p><i>总字数：</i>563万字</p>
+					</span>
+					<span class="bookManagementDeContTh">
+						241587468112
+					</span>
+					<span class="bookManagementDeContFo"><p>校园<i>（连载）</i></p></span>
+					<span class="bookManagementDeContFi">
+						<p><i>人数：</i></br>35448</p>
+						<p><i>阅读币：</i></br>45142578</p>
+					</span>
+					<span class="bookManagementDeContSi">
+						<p>42533</p>
+						<p>阅读币</p>
+						<h3>VIP免费</h3>
+					</span>
+					<span class="bookManagementDeContSe">
+						未上架
+					</span>
+					<span class="bookManagementDeContEi">
+						是
+					</span>
+					<span class="bookManagementDeContNi">
+						男频
+					</span>
+					<span class="bookManagementDeContTe">
+						<p>2017-02-01</br>09:47</p>
+					</span>
+					<span class="bookManagementDeContEl">
+						<i>操作</i>
+						<div class="bookManagementDeContElDiv">
+							<a>预览</a>
+							<a>编辑</a>
+							<a>下架</a>
+						</div>
+					</span>
+					<a href="bookDetails.html" title=""></a>
+				</li>
+				<li class="clearfix">
+					<span class="bookManagementDeContOn">
+						<img src="../../images/myPic29.png" alt="" />
+					</span>
+					<span class="bookManagementDeContTw">
+						<p><i>书名：</i>我与校花的青春</p>
+						<p><i>作者：</i>小小猪</p>
+						<p><i>章节数：</i>2344</p>
+						<p><i>总字数：</i>563万字</p>
+					</span>
+					<span class="bookManagementDeContTh">
+						241587468112
+					</span>
+					<span class="bookManagementDeContFo"><p>校园<i>（连载）</i></p></span>
+					<span class="bookManagementDeContFi">
+						<p><i>人数：</i></br>35448</p>
+						<p><i>阅读币：</i></br>45142578</p>
+					</span>
+					<span class="bookManagementDeContSi">
+						<p>42533</p>
+						<p>阅读币</p>
+						<h3>VIP免费</h3>
+					</span>
+					<span class="bookManagementDeContSe">
+						未上架
+					</span>
+					<span class="bookManagementDeContEi">
+						是
+					</span>
+					<span class="bookManagementDeContNi">
+						男频
+					</span>
+					<span class="bookManagementDeContTe">
+						<p>2017-02-01</br>09:47</p>
+					</span>
+					<span class="bookManagementDeContEl">
+						<i>操作</i>
+						<div class="bookManagementDeContElDiv">
+							<a>预览</a>
+							<a>编辑</a>
+							<a>下架</a>
+						</div>
+					</span>
+					<a href="bookDetails.html" title=""></a>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<span class="bookManagementDeContOn">
+						<img src="../../images/myPic30.png" alt="" />
+					</span>
+					<span class="bookManagementDeContTw">
+						<p><i>书名：</i>我与校花的青春</p>
+						<p><i>作者：</i>小小猪</p>
+						<p><i>章节数：</i>2344</p>
+						<p><i>总字数：</i>563万字</p>
+					</span>
+					<span class="bookManagementDeContTh">
+						241587468112
+					</span>
+					<span class="bookManagementDeContFo"><p>校园<i>（连载）</i></p></span>
+					<span class="bookManagementDeContFi">
+						<p><i>人数：</i></br>35448</p>
+						<p><i>阅读币：</i></br>45142578</p>
+					</span>
+					<span class="bookManagementDeContSi">
+						<p>42533</p>
+						<p>阅读币</p>
+						<h3>VIP免费</h3>
+					</span>
+					<span class="bookManagementDeContSe">
+						未上架
+					</span>
+					<span class="bookManagementDeContEi">
+						是
+					</span>
+					<span class="bookManagementDeContNi">
+						男频
+					</span>
+					<span class="bookManagementDeContTe">
+						<p>2017-02-01</br>09:47</p>
+					</span>
+					<span class="bookManagementDeContEl">
+						<i>操作</i>
+						<div class="bookManagementDeContElDiv">
+							<a>预览</a>
+							<a>编辑</a>
+							<a>下架</a>
+						</div>
+					</span>
+					<a href="bookDetails.html" title=""></a>
+				</li>
+				<li class="clearfix">
+					<span class="bookManagementDeContOn">
+						<img src="../../images/myPic29.png" alt="" />
+					</span>
+					<span class="bookManagementDeContTw">
+						<p><i>书名：</i>我与校花的青春</p>
+						<p><i>作者：</i>小小猪</p>
+						<p><i>章节数：</i>2344</p>
+						<p><i>总字数：</i>563万字</p>
+					</span>
+					<span class="bookManagementDeContTh">
+						241587468112
+					</span>
+					<span class="bookManagementDeContFo"><p>校园<i>（连载）</i></p></span>
+					<span class="bookManagementDeContFi">
+						<p><i>人数：</i></br>35448</p>
+						<p><i>阅读币：</i></br>45142578</p>
+					</span>
+					<span class="bookManagementDeContSi">
+						<p>42533</p>
+						<p>阅读币</p>
+						<h3>VIP免费</h3>
+					</span>
+					<span class="bookManagementDeContSe">
+						未上架
+					</span>
+					<span class="bookManagementDeContEi">
+						是
+					</span>
+					<span class="bookManagementDeContNi">
+						男频
+					</span>
+					<span class="bookManagementDeContTe">
+						<p>2017-02-01</br>09:47</p>
+					</span>
+					<span class="bookManagementDeContEl">
+						<i>操作</i>
+						<div class="bookManagementDeContElDiv">
+							<a>预览</a>
+							<a>编辑</a>
+							<a>下架</a>
+						</div>
+					</span>
+					<a href="bookDetails.html" title=""></a>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-left: 30px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoC clearfix">
+				<span>5条/页</span>
+				<div>
+					<img class="flipTwoC1" src="../../images/myPic31.png" alt="" />
+					<img class="flipTwoC2" src="../../images/myPic32.png" alt="" />
+				</div>
+			</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../layDate-v5.0.8/laydate/laydate.js"></script>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		
+		$('.labelManagementTopL1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.labelManagementTopL1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.labelManagementTopL1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$('.labelManagementTopR2').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		
+		$(window).click(function(){
+			$('.bookManagementDeClickupDiv').find('ul').hide();
+			$('.bookManagementDeContElDiv').hide();
+			$('.labelManagementTopR2 ul').hide();
+		})
+		$('.bookManagementDeClickupDiv').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.bookManagementDeClickupDiv ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$(this).parent().siblings('p').text(val);
+			e.stopPropagation();
+		})
+		
+		$('.bookManagementDeClickdown span').click(function(){
+			$('.bookManagementDeClickdown').hide();
+			$('.bookManagementDeClickup').show();
+		})
+		$('.bookManagementDeClickupBtn span').click(function(){
+			$('.bookManagementDeClickdown').show();
+			$('.bookManagementDeClickup').hide();
+		})
+		
+		
+		$('.bookManagementDeContEl i').click(function(e){
+			if($(this).siblings('div').css('display')=="none"){
+				$(this).siblings('div').show();
+			}else{
+				$(this).siblings('div').hide();
+			}
+			$(this).parents('li').siblings().find('.bookManagementDeContElDiv').hide();
+			e.stopPropagation();
+		})
+		$('.bookManagementDeContElDiv a').click(function(e){
+			e.stopPropagation();
+		})
+		$('.bookManagementDeContElDiv a').click(function(){
+			$(this).parent().hide();
+		})
+		
+		$('.flipTwoC1').click(function(){
+			var spanVal=parseInt($('.flipTwoC span').text());
+			spanVal++;
+			$('.flipTwoC span').text(spanVal+'条/页');
+		})
+		$('.flipTwoC2').click(function(){
+			var spanVal=parseInt($('.flipTwoC span').text());
+			if(spanVal>0){
+				spanVal--;
+			}
+			$('.flipTwoC span').text(spanVal+'条/页');
+		})
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+package com.sinontech.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.sinontech.dao.BaseDao;
+import com.sinontech.modle.ArticleLabel;
+import com.sinontech.modle.ArticleLog;
+
+@Repository("articleLogdao")
+public class ArticleLogDaoImpl {
+
+	@Autowired
+	BaseDao baseDao;
+
+	public void setBaseBo(BaseDao baseDao) {
+		this.baseDao = baseDao;
+	}
+	
+	public void updateArticleLog(ArticleLog articleLog){
+		this.baseDao.update(articleLog);
+	}
+	
+	public void saveArticleLog(ArticleLog articleLog){
+		this.baseDao.save(articleLog);
+	}
+ 
+	public List<ArticleLog> getArticleLogByUserId(long userid ){
+		String sql = "select * from TB_ARTICLELOG a,TB_ARTICLE b  where a.ARTICLE_ID=b.ARTICLE_ID   and a.USERID=?  order by  a.ARTICLELOG_ID desc";
+		List<ArticleLog> list= this.baseDao.findObjListBySql(sql, ArticleLog.class,userid  );
+		return list ;
+	}
+	
+	public ArticleLog getArticleLogByUIdAndAid(long userid,long articleid ){
+		String sql = "select * from TB_ARTICLELOG a,TB_ARTICLE b  where a.ARTICLE_ID=b.ARTICLE_ID  and a.USERID=? and a.ARTICLE_ID=? ";
+		List<ArticleLog> list= this.baseDao.findObjListBySql(sql, ArticleLog.class,userid,articleid  );
+		if(null!=list && list.size()>0){
+			return list.get(0);
+		}else{
+			return null;
+		}
+	}
+}

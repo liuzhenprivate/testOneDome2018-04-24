@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HtmlmodleDetailMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_HTMLMODLE_DETAIL(
+			HTMLMODLE_ID,	
+			TITLE,	
+			SUBHEAD,	
+			CONTENT,	
+			IMG_URL,	
+			HTML_TYPE,	
+			SORT,	
+			ARTICLE_ID,	
+			HTML_URL,	
+			MEMO,	
+			CREATE_TIME 
+		) values (
+			#{HTMLMODLE_ID},	
+			#{TITLE},	
+			#{SUBHEAD},	
+			#{CONTENT},	
+			#{IMG_URL},	
+			#{HTML_TYPE},	
+			#{SORT},	
+			#{ARTICLE_ID},	
+			#{HTML_URL},	
+			#{MEMO},	
+			#{CREATE_TIME} 
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_HTMLMODLE_DETAIL
+		where 
+			HTMLMODLE_DETAIL_ID = #{HTMLMODLE_DETAIL_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_HTMLMODLE_DETAIL
+			set 
+				TITLE = #{TITLE},
+				SUBHEAD = #{SUBHEAD},
+				CONTENT = #{CONTENT},
+				IMG_URL = #{IMG_URL},
+				HTML_TYPE = #{HTML_TYPE},
+				SORT = #{SORT},
+				ARTICLE_ID = #{ARTICLE_ID},
+				HTML_URL = #{HTML_URL},
+				MEMO = #{MEMO},
+			HTMLMODLE_DETAIL_ID = HTMLMODLE_DETAIL_ID
+			where 
+				HTMLMODLE_DETAIL_ID = #{HTMLMODLE_DETAIL_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			HTMLMODLE_ID,	
+			TITLE,	
+			SUBHEAD,	
+			CONTENT,	
+			IMG_URL,	
+			HTML_TYPE,	
+			SORT,	
+			ARTICLE_ID,	
+			HTML_URL,	
+			MEMO,	
+			CREATE_TIME,	
+			HTMLMODLE_DETAIL_ID
+		from 
+			TB_HTMLMODLE_DETAIL
+		where 
+			HTMLMODLE_DETAIL_ID = #{HTMLMODLE_DETAIL_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.HTMLMODLE_ID,	
+				a.TITLE,	
+				a.SUBHEAD,	
+				a.CONTENT,	
+				a.IMG_URL,	
+				a.HTML_TYPE,	
+				a.SORT,	
+				a.ARTICLE_ID,	
+				a.HTML_URL,	
+				a.MEMO,	
+				a.CREATE_TIME,	
+				a.HTMLMODLE_DETAIL_ID
+		from 
+				TB_HTMLMODLE_DETAIL a,TB_HTMLMODLE b
+		where   a.HTMLMODLE_ID=b.HTMLMODLE_ID
+		<if test="pd.HTMLMODLE_ID != null and  pd.HTMLMODLE_ID!= ''">
+			AND a.HTMLMODLE_ID = ${pd.HTMLMODLE_ID}
+		</if>
+		order by a.SORT asc
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.HTMLMODLE_ID,	
+				a.TITLE,	
+				a.SUBHEAD,	
+				a.CONTENT,	
+				a.IMG_URL,	
+				a.HTML_TYPE,	
+				a.SORT,	
+				a.ARTICLE_ID,	
+				a.HTML_URL,	
+				a.MEMO,	
+				a.CREATE_TIME,	
+				a.HTMLMODLE_DETAIL_ID
+		from 
+				TB_HTMLMODLE_DETAIL a,TB_HTMLMODLE b
+		where   a.HTMLMODLE_ID=b.HTMLMODLE_ID
+		<if test="HTMLMODLE_ID != null and  HTMLMODLE_ID!= ''">
+			AND a.HTMLMODLE_ID = ${HTMLMODLE_ID}
+		</if>
+		order by a.SORT asc
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_HTMLMODLE_DETAIL
+		where 
+			HTMLMODLE_DETAIL_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

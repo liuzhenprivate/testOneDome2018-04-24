@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-dependency-check="none"
+	default-autowire="no">
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="SignLogUpdateTask" />
+				<ref local="BoardUpdateTask" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 每月一号清空用户签到记录 -->
+	<bean name="signlogtrade" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass"
+			value="com.sinontech.controller.system.timer.SignTimesJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="wxuserService">
+					<ref bean="wxuserService" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 设置同步时间 -->
+	<bean id="SignLogUpdateTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="signlogtrade" />
+		<property name="cronExpression" value="0 0 0 1 * ?" />
+	</bean>
+
+	
+	<!-- 榜单定时更新（每天00:00:00更新） -->
+	<bean name="boardtrade" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="com.sinontech.controller.system.timer.BoardTimesJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="articleService">
+					<ref bean="articleService" />
+				</entry>
+				<entry key="boardService">
+					<ref bean="boardService" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- 设置同步时间 -->
+	<bean id="BoardUpdateTask" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="boardtrade" />
+		<property name="cronExpression" value="0 0 0 * * ?" />
+	</bean>
+
+</beans>
+

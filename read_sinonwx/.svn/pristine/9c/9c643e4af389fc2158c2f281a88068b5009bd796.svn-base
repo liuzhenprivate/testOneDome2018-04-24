@@ -1,0 +1,8 @@
+.fileLDe{ width: 100%;}
+.fileLDe h1{ font-weight: normal; font-size: 0.32rem; color: #333333; height: 0.72rem; line-height: 0.72rem; width: 5.6rem; margin: 0 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.fileLDeImg{ margin: 0 auto; width: 5.56rem; height: 3.08rem; border: 1px solid #cccccc;}
+.fileLDeImg img{ display: block; width: 5.56rem; height: 3.08rem;}
+.fileLDeAll{ width: 5.56rem; padding-top: 0.36rem; margin: 0.4rem auto 0; border: 1px solid #33b3eb; position: relative;}
+.fileLDeAll h2{ font-weight: normal; font-size: 0.24rem; color: #ffffff; height: 0.52rem; line-height: 0.52rem; width: 4.42rem; background: url(pages/home/read/images/myPic772.png) left top no-repeat; background-size: 100% auto; position: absolute; left: 0.56rem; top: -0.24rem;}
+.fileLDeAll p{ font-size: 0.24rem; color: #333333; line-height: 0.4rem; text-align: left; margin-left: 0.22rem; margin-top: 0.1rem; width: 5.2rem;}
+.fileLDeBtn{ width: 5.6rem; height: 0.6rem; line-height: 0.6rem; margin: 0.2rem auto 0; font-size: 0.24rem; color: #ffffff; background: #32b5e9; border-radius: 0.06rem; cursor: pointer;}

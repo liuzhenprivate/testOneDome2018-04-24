@@ -1,0 +1,150 @@
+package com.sinontech.modle;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+/**
+ * 页面配置模块表
+ * @author ljj
+ *
+ */
+@Entity(name = "TB_HTMLMODLE")
+public class HtmlModle {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "HTMLMODLE_ID")
+	private long id;
+
+	@OneToOne
+	@JoinColumn(name = "HTML_ID")
+	private Html html;
+	 //所在位置排第几个
+	@Column(name = "PLACE")
+	private int place;
+	
+	//模块样式
+	@Column(name = "DIV_CLASS")
+	private String divClass;
+
+	//模板类型1系统页面 2其他
+	@Column(name = "MODLE_TYPE")
+	private int modleType;
+	
+	// 创建时间
+	@Column(name = "CREATE_TIME")
+	private String createTime;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+  
+	public Html getHtml() {
+		return html;
+	}
+
+	public void setHtml(Html html) {
+		this.html = html;
+	}
+
+	public String getDivClass() {
+		return divClass;
+	}
+
+	public void setDivClass(String divClass) {
+		this.divClass = divClass;
+	}
+
+	public int getModleType() {
+		return modleType;
+	}
+
+	public void setModleType(int modleType) {
+		this.modleType = modleType;
+	}
+
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	public int getPlace() {
+		return place;
+	}
+
+	public void setPlace(int place) {
+		this.place = place;
+	}
+
+	public HtmlModle() {
+		super();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((createTime == null) ? 0 : createTime.hashCode());
+		result = prime * result
+				+ ((divClass == null) ? 0 : divClass.hashCode());
+		result = prime * result + ((html == null) ? 0 : html.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + modleType;
+		result = prime * result + place;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		HtmlModle other = (HtmlModle) obj;
+		if (createTime == null) {
+			if (other.createTime != null)
+				return false;
+		} else if (!createTime.equals(other.createTime))
+			return false;
+		if (divClass == null) {
+			if (other.divClass != null)
+				return false;
+		} else if (!divClass.equals(other.divClass))
+			return false;
+		if (html == null) {
+			if (other.html != null)
+				return false;
+		} else if (!html.equals(other.html))
+			return false;
+		if (id != other.id)
+			return false;
+		if (modleType != other.modleType)
+			return false;
+		if (place != other.place)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "HtmlModle [id=" + id + ", html=" + html + ", place=" + place
+				+ ", divClass=" + divClass + ", modleType=" + modleType
+				+ ", createTime=" + createTime + "]";
+	}
+
+ 
+}

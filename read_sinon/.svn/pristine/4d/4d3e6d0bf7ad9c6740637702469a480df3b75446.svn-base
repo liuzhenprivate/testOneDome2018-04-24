@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>消费记录</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/channelList.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body style="background: #fff;" onload="myTab()">
+	<div class="channelRechargeRecordAll">
+		<div class="rechargeManagementDeTop clearfix">
+			<div>
+				<h2>累计阅读币</h2>
+				<h1>238492</h1>
+				<p>累计消费：28384</p>
+			</div>
+			<span></span>
+			<div>
+				<h2>当月消费</h2>
+				<h1>521452</h1>
+				<p>笔数：28384</p>
+			</div>
+			<span></span>
+			<div>
+				<h2>今日消费</h2>
+				<h1>238</h1>
+				<p>笔数：28384</p>
+			</div>
+			<span></span>
+			<div>
+				<h2>昨日充值</h2>
+				<h1>109</h1>
+				<p>笔数：28384</p>
+			</div>
+		</div>
+		<div class="rechargeManagementDeSel clearfix">
+			<div class="rechargeManagementDeSelL clearfix">
+				<div class="rechargeManagementDeSelL1 clearfix">
+					<input type="text" />
+					<p>输入书籍名称或作者搜索</p>
+					<img src="../images/myPic26.png" alt="" />
+				</div>
+				<div class="rechargeManagementDeSelL2 clearfix">
+					<input id="test6" readonly="readonly" />
+					<img src="../images/myPic13.png" alt="" />
+				</div>
+			</div>
+			<a href="javascript:void(0)" title=""><span>导出列表</span></a>
+		</div>
+		<div class="channelConsumptionTit clearfix">
+			<span style="width: 256px; margin-left: 19px;">消费日期</span>
+			<span style="width: 216px;">消费阅读币</span>
+			<span style="width: 315px;">消费书籍</span>
+			<span>消费章节</span>
+		</div>
+		<div class="channelConsumptionTex">
+			<ul>
+				<li class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div class="channelConsumptionTex1">2017-08-09 09:21</div>
+					<div class="channelConsumptionTex2">4582</div>
+					<div class="channelConsumptionTex3">《青山依旧在，几度夕阳红》</div>
+					<div class="channelConsumptionTex4">第二百二十九章 青山依旧</div>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-left: 30px;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../layDate-v5.0.8/laydate/laydate.js"></script>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("faker"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		$('.rechargeManagementDeSelL1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.rechargeManagementDeSelL1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.rechargeManagementDeSelL1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+/*璧勬簮绠＄悊缂栬緫鏍囩*/
+.announcementManagementTop{ padding-left: 14px; height: 40px; background: #ffffff;}
+.announcementManagementTop a{ display :inline-block; font-size: 14px; color: #333333; height: 40px; line-height: 40px; float: left;}
+.announcementManagementTop img{ float: left; margin: 15px 12px 0;}
+.editTagDe{ padding: 30px 0; background: #ffffff; margin-top: 20px;}
+.editTagDeT div{ float: left; margin-left: 20px;}
+.editTagDeT div span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border-radius: 3px; border: 1px solid #cccccc; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+.editTagDeT div span:hover{ background: #fff;}
+.editTagDeT a{ display: inline-block; width: 120px; height: 36px; background: #f17528; border-radius: 3px; float: right; margin-right: 30px;}
+.editTagDeT a:hover{ background: #ff8138;}
+.editTagDeT a i{ font-style: normal; display: inline-block; font-size: 14px; color: #fffefe; height: 36px; line-height: 36px; padding-right: 22px; background: url(../images/myPic22.png) right center no-repeat;}
+.editTagDeB{ margin-left: 15px; width: 970px; height: 550px; overflow-y: scroll;}
+.editTagDeB ul li{ font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 88px; border: 1px solid #cccccc; background: url(../images/myPic23.png) no-repeat; background-position:73px 18px; float: left; margin-left: 15px; margin-top: 20px; cursor: pointer;}
+.editTagDeB ul li.editTagDeBAct{ border: 1px solid #f17526; background: url(../images/myPic24.png) no-repeat; background-position:73px 18px; color: #f37427;}
+
+/*璧勬簮绠＄悊鏍囩绠＄悊*/
+.labelManagementTopL{ float: left;}
+.labelManagementTopL1{ float: left; margin-left: 30px; width: 228px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.labelManagementTopL1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 10px; margin-top: 7px; width: 180px;}
+.labelManagementTopL1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 10px; width: 185px; text-align: left;}
+.labelManagementTopL1 img{ width: 12px; float: right; margin-right: 10px; margin-top: 11px; cursor: pointer;}
+.labelManagementTopL2{ float: left; margin-left: 10px; width: 115px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.labelManagementTopL2 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 19px; background: url(../images/myPic13.png) right center no-repeat;}
+.labelManagementTopL2 ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.labelManagementTopL2 ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.labelManagementTopL2 ul li:hover{ color: #f37427;}
+.labelManagementTopR{ float: right; margin-right: 30px;}
+.labelManagementTopR1{ display: inline-block; width: 118px; height: 34px; border: 1px solid #f17526; border-radius: 3px; float: left;}
+.labelManagementTopR1 i{ font-style: normal; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic27.png) right center no-repeat;}
+.labelManagementTopR2{ display: inline-block; width: 120px; height: 36px; border-radius: 3px; float: left; margin-left: 10px; background: #f37526; cursor: pointer; position: relative;}
+.labelManagementTopR2 i{ font-style: normal; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic14.png) right center no-repeat;}
+.labelManagementTopR2 ul{ display: none; width: 118px; border: 1px solid #cccccc; border-top: none; position: absolute; left: 0; top: 36px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.labelManagementTopR2 ul li{ height: 30px; text-align: left;}
+.labelManagementTopR2 ul li a{ width: 98px; display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.labelManagementTopR2 ul li a:hover{ color: #f37427;}
+
+/*璧勬簮绠＄悊涔︾睄绠＄悊*/
+.bookManagementDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 20px;}
+.bookManagementTopL2{ float: left; margin-left: 10px; width: 235px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.bookManagementTopL2 input{ font-size: 14px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 19px; margin-top: 7px; width: 180px;}
+.bookManagementTopL2 img{ float: right; margin-right: 19px; margin-top: 14px;}
+.bookManagementDeClickdown{ margin-top: 10px; width: 960px; margin-left: 30px; border-bottom: 1px solid #cccccc;}
+.bookManagementDeClickdown span{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-right: 16px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.bookManagementDeClickup{ display: none; margin-top: 20px; width: 960px; margin-left: 30px; background: #fafafa; padding-bottom: 10px;}
+.bookManagementDeClickup>ul>li{ float: left; margin-left: 28px; margin-top: 20px;}
+.bookManagementDeClickup>ul>li>span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookManagementDeClickupDiv{ float: left; margin-left: 10px; width: 228px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.bookManagementDeClickupDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.bookManagementDeClickupDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.bookManagementDeClickupDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.bookManagementDeClickupDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.bookManagementDeClickupDiv ul li:hover{ color: #f37427;}
+.bookManagementDeClickupKey{ margin-top: 20px;}
+.bookManagementDeClickupKey a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left; margin-left: 354px;}
+.bookManagementDeClickupKey span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+.bookManagementDeClickupBtn{ margin-top: 10px;}
+.bookManagementDeClickupBtn span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding-right: 15px; background: url(../images/myPic28.png) right center no-repeat; cursor: pointer;}
+.bookManagementDeTit{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7; text-align: left;}
+.bookManagementDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.bookManagementDeCont{ width: 960px; margin-left: 30px; text-align: left;}
+.bookManagementDeCont ul li{ width: 100%; height: 120px; position: relative;}
+.bookManagementDeCont ul li>a{ display: inline-block; width: 870px; height: 120px; position: absolute; left: 0; top: 0;}
+.bookManagementDeCont ul li>span{ display: inline-block; float: left;}
+.bookManagementDeContOn{ margin-left: 19px; padding-top: 20px; width: 80px;}
+.bookManagementDeContOn img{ display: block; width: 60px;}
+.bookManagementDeContTw{ padding-top: 20px; width: 148px;}
+.bookManagementDeContTw p{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; width: 130px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.bookManagementDeContTw p i{ font-style: normal; color: #999999;}
+.bookManagementDeContTh{ font-size: 12px; color: #666666; height: 120px; line-height: 120px; width: 113px;}
+.bookManagementDeContFo{ width: 86px;}
+.bookManagementDeContFo p{ font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.bookManagementDeContFo p i{ font-style: normal; color: #f37427;}
+.bookManagementDeContFi{ padding-top: 20px; width: 85px;}
+.bookManagementDeContFi p{ font-size: 12px; color: #999999; line-height: 20px;}
+.bookManagementDeContFi p i{ font-style: normal; color: #666666;}
+.bookManagementDeContSi{ width: 84px; padding-top: 30px;}
+.bookManagementDeContSi p{ font-size: 12px; color: #666666; line-height: 20px;}
+.bookManagementDeContSi h3{ font-weight: normal; font-size: 12px; color: #f37427; line-height: 20px;}
+.bookManagementDeContSe{ width: 74px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.bookManagementDeContEi{ width: 47px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.bookManagementDeContNi{ width: 60px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.bookManagementDeContTe{ width: 85px;}
+.bookManagementDeContTe p{ font-size: 12px; color: #666666; line-height: 120px;}
+.bookManagementDeContEl{ padding-top: 50px; position: relative;}
+.bookManagementDeContEl i{ display: inline-block; font-style: normal; font-size: 12px; color: #666666; height: 20px; line-height: 20px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.bookManagementDeContElDiv{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 70px; left: 0px; z-index: 10; border: 1px solid #e7e7e7;}
+.bookManagementDeContElDiv a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.bookManagementDeContElDiv a:hover{ background: #f37526; color: #ffffff;}
+.flipTwo{ margin-top: 20px; margin-left: 60px;}
+.flipTwoL{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; float: left;}
+.flipTwoR{ float: right; margin-right: 30px; cursor: pointer;}
+.flipTwoPrev{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoPrev img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoDe{ float: left;}
+.flipTwoDe span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 13px;}
+.flipTwoDe span.flipTwoDeSpan{ color: #f37427;}
+.flipTwoNext{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5; position: relative;}
+.flipTwoNext img{ position: absolute; top: 11px; left: 13px;}
+.flipTwoSkip{ font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding: 0 10px; float: left;}
+.flipTwoInp{ float: left; width: 30px; height: 30px; border: 1px solid #dbdbdb; background: #ffffff;}
+.flipTwoInp input{ font-size: 12px; color: #666666; height: 16px; line-height: 16px; float: left; width: 30px; margin-top: 7px; text-align: center;}
+.flipTwoSure{ font-size: 12px; color: #666666; height: 30px; line-height: 30px; border: 1px solid #dbdbdb; border-radius: 2px; background: #f5f5f5; float: left; width: 62px;}
+.flipTwoC{ float: left; margin-left: 10px; width: 86px; height: 30px; border: 1px solid #dbdbdb; background: #f5f5f5;}
+.flipTwoC span{ display: inline-block; font-size: 12px; color: #999999; height: 30px; line-height: 30px; float: left; margin-left: 16px;}
+.flipTwoC div{ width: 8px; float: right; margin-right: 10px; margin-top: 9px;}
+.flipTwoC div img{ display: block; cursor: pointer;}
+.flipTwoC2{ margin-top: 2px;}
+
+/*娣诲姞涔︾睄锛堝崟鏈級*/
+.addBooksDe{ padding: 30px 0 20px; background: #ffffff; margin-top: 20px;}
+.addBooksDe h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.bookName{ margin-left: 29px; margin-top: 20px;}
+.bookName span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookName1{ float: left; margin-left: 9px; width: 498px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.bookName1 input{ font-size: 12px; color: #323232; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 460px;}
+.bookName1 p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 490px; text-align: left;}
+.bookCover{ margin-top: 20px; margin-left: 29px;}
+.bookCover span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookCoverC{ float: left; margin-left: 9px; border: 1px solid #cccccc; position: relative;}
+.bookCoverC img{ width: 108px; height: 115px; display: block;}
+.bookCoverC input{ opacity: 0; filter:alpha(opacity:0); width: 108px; height: 30px; position: absolute; left: 0; bottom: 0; cursor: pointer;}
+.bookCoverC i{ display: inline-block; font-style: normal; font-size: 12px; color: #ffffff; height: 30px; line-height: 30px; background: #5c5c5c; width: 108px;}
+.bookCoverR{ float: left; text-align: left; margin-left: 9px; padding-top: 5px;}
+.bookCoverR p{ font-size: 12px; color: #999999; height: 22px; line-height: 22px;}
+.paymentType{ margin-top: 20px; margin-left: 29px;}
+.paymentType span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.paymentTypeDiv{ float: left; margin-left: 9px; width: 498px; height: 34px; border: 1px solid #cccccc; position: relative; cursor: pointer;}
+.paymentTypeDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.paymentTypeDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.paymentTypeDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.paymentTypeDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.paymentTypeDiv ul li:hover{ color: #f37427;}
+.bookLabel{ margin-top: 20px; margin-left: 29px;}
+.bookLabel span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookLabel div{ float: left; margin-left: 9px; width: 498px; height: 34px; border: 1px solid #cccccc; position: relative;}
+.bookLabel div p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.bookLabel div i{ display: inline-block; font-style: normal; font-size: 12px; color: #288df0; height: 34px; line-height: 34px; float: right; margin-right: 10px; cursor: pointer;}
+.bookIntroduction{ margin-top: 20px; margin-left: 29px;}
+.bookIntroduction span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookIntroduction div{ float: left; margin-left: 9px; width: 648px; height: 130px; border: 1px solid #cccccc; position: relative;}
+.bookIntroduction div textarea{ font-size: 12px; color: #323232; line-height: 20px; float: left; margin-left: 11px; margin-top: 8px; width: 620px; height: 100px;}
+.bookIntroduction div p{ font-size: 12px; color: #cccccc; height: 120px; line-height: 36px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 620px; text-align: left;}
+.addBooksDeBtn{ margin-top: 20px; margin-left: 86px;}
+.addBooksDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left;}
+.addBooksDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; margin-left: 10px; cursor: pointer;}
+
+/*璧勬簮绠＄悊涔︾睄绠＄悊鎵归噺缂栬緫*/
+.batchEditingDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 20px;}
+.batchEditingDeTop div{ float: left; margin-left: 20px;}
+.batchEditingDeTop div span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border-radius: 3px; border: 1px solid #cccccc; float: left; margin-left: 10px; background: #f5f5f5; cursor: pointer;}
+.batchEditingDeTop div span:hover{ background: #fff;}
+.batchEditingDeTop a{ display: inline-block; float: right; margin-right: 30px; width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526;}
+.batchEditingDeTop a i{ display: inline-block; font-style: normal; font-size: 14px; color: #fffefe; height: 36px; line-height: 36px; padding-right: 22px; background: url(../images/myPic22.png) right center no-repeat;}
+.batchEditingDeTit{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7; text-align: left;}
+.batchEditingDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.batchEditingDeTit a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; background: #ffffff; float: left; margin-left: 20px; margin-top: 19px;}
+.batchEditingDeTit a i{ display: block; width: 10px; height: 10px;}
+.batchEditingDeTit a i.batchEditingDeTitAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.batchEditingDeCont{ width: 960px; margin-left: 30px; text-align: left;}
+.batchEditingDeCont ul li{ width: 100%; height: 120px;}
+.batchEditingDeCont ul li>a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; background: #ffffff; float: left; margin-left: 20px; margin-top: 54px;}
+.batchEditingDeCont ul li>a i{ display: block; width: 10px; height: 10px;}
+.batchEditingDeCont ul li>a i.batchEditingDeContAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.batchEditingDeCont ul li>span{ display: inline-block; float: left;}
+.batchEditingDeContOn{ margin-left: 21px; padding-top: 20px; width: 80px;}
+.batchEditingDeContOn img{ display: block; width: 60px;}
+.batchEditingDeContTw{ padding-top: 20px; width: 148px;}
+.batchEditingDeContTw p{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; width: 130px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.batchEditingDeContTw p i{ font-style: normal; color: #999999;}
+.batchEditingDeContTh{ font-size: 12px; color: #666666; height: 120px; line-height: 120px; width: 113px;}
+.batchEditingDeContFo{ width: 100px;}
+.batchEditingDeContFo p{ font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.batchEditingDeContFo p i{ font-style: normal; color: #f37427;}
+.batchEditingDeContFi{ padding-top: 20px; width: 95px;}
+.batchEditingDeContFi p{ font-size: 12px; color: #999999; line-height: 20px;}
+.batchEditingDeContFi p i{ font-style: normal; color: #666666;}
+.batchEditingDeContSi{ width: 84px; padding-top: 30px;}
+.batchEditingDeContSi p{ font-size: 12px; color: #666666; line-height: 20px;}
+.batchEditingDeContSi h3{ font-weight: normal; font-size: 12px; color: #f37427; line-height: 20px;}
+.batchEditingDeContSe{ width: 74px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.batchEditingDeContEi{ width: 56px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.batchEditingDeContNi{ width: 70px; font-size: 12px; color: #666666; height: 120px; line-height: 120px;}
+.batchEditingDeContTe{ width: 84px; padding-top: 40px;}
+.batchEditingDeContTe p{ font-size: 12px; color: #666666; line-height: 20px;}
+
+/*涔︾睄璇︽儏*/
+.bookDetailsDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 20px;}
+.bookDetailsDeTop>img{ float: left; margin-left: 30px; width: 210px; height: 280px;}
+.bookDetailsDeTopR{ float: left; margin-left: 30px;}
+.bookDetailsDeTopRtit h2{ font-size: 24px; color: #333333; height: 42px; line-height: 42px; float: left;}
+.bookDetailsDeTopRtit p{ font-size: 16px; color: #333333; height: 46px; line-height: 46px; float: left; margin-top: 3px; margin-left: 29px;}
+.bookDetailsDeTopRsel a{ display: inline-block; font-size: 14px; height: 28px; line-height: 28px; float: left; margin-right: 10px;}
+.bookDetailsDeTopRsel1{ width: 48px; border: 1px solid #278ef0; color: #288df0;}
+.bookDetailsDeTopRsel2{ width: 48px; border: 1px solid #30ba77; color: #30ba78;}
+.bookDetailsDeTopRsel3,.bookDetailsDeTopRsel4{ width: 68px; border: 1px solid #f37526; color: #f37427;}
+.bookDetailsDeTopint{ margin-top: 7px;}
+.bookDetailsDeTopint h2{ font-size: 16px; color: #666666; height: 30px; line-height: 30px; float: left;}
+.bookDetailsDeTopint h2 span{ font-weight: normal; font-size: 14px; margin-left: 10px;}
+.bookDetailsDeTopnub{ text-align: left; font-size: 14px; color: #666666; height: 28px; line-height: 28px;}
+.bookDetailsDeToppri p{ text-align: left; font-size: 14px; color: #666666; height: 30px; line-height: 30px;}
+.bookDetailsDeToppri p span{ font-weight: bold; font-size: 16px; margin-right: 7px;}
+.bookDetailsDeTopbtn{ margin-top: 30px;}
+.bookDetailsDeTopbtn a{ display: inline-block; font-size: 14px; float: left; border-radius: 3px;}
+.bookDetailsDeTopbtn1{ width: 96px; height: 36px; line-height: 36px; background: #f37526; color: #ffffff;}
+.bookDetailsDeTopbtn2{ width: 94px; height: 34px; line-height: 34px; border: 1px solid #cccccc; background: #f5f5f5; color: #666666; margin-left: 10px;}
+.bookDetailsDeCs{ margin-top: 30px; margin-left: 30px;}
+.bookDetailsDeCs h1{ text-align: left; padding-left: 9px; font-weight: normal; border-left: 2px solid #f17528; font-size: 14px; color: #666666; height: 14px; line-height: 14px;}
+.bookDetailsDeCs ul{ margin-top: 19px; padding-top: 6px; height: 146px; background: #f9f9f9; width: 960px;}
+.bookDetailsDeCs ul li{ width: 240px; float: left; position: relative;}
+.bookDetailsDeCs ul li h3{ font-weight: normal; font-size: 14px; color: #666666; height: 64px; line-height: 64px;}
+.bookDetailsDeCs ul li h2{ font-weight: normal; font-size: 30px; color: #333333; height: 38px; line-height: 38px;}
+.bookDetailsDeCs ul li p{ font-size: 14px; color: #666666; height: 22px; line-height: 22px;}
+.bookDetailsDeCs ul li span{ display: inline-block; height: 90px; border-left: 1px solid #cccccc; position: absolute; top: 31px; right: 0;}
+.bookDetailsDeCi{ margin-top: 30px;}
+.bookDetailsDeCi h1{ margin-left: 30px; text-align: left; padding-left: 9px; font-weight: normal; border-left: 2px solid #f17528; font-size: 14px; color: #666666; height: 14px; line-height: 14px;}
+.bookDetailsDeCiAll{ margin-top: 20px;}
+.bookDetailsDeCiAllR{ float: right; margin-right: 20px;}
+.bookDetailsDeCiAllR>a{ display: inline-block; float: left; margin-right: 10px; border-radius: 3px;}
+.bookDetailsDeCiAllR>div{ float: left; margin-right: 10px; border-radius: 3px; cursor: pointer;}
+.bookDetailsDeCiAllR1{ width: 118px; height: 34px; border: 1px solid #cccccc; background: #f5f5f5;}
+.bookDetailsDeCiAllR1 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic38.png) right center no-repeat;}
+.bookDetailsDeCiAllR2{ width: 118px; height: 34px; border: 1px solid #f37526;}
+.bookDetailsDeCiAllR2 span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic27.png) right center no-repeat;}
+.bookDetailsDeCiAllR3{ width: 120px; height: 36px; background: #f37526; position: relative;}
+.bookDetailsDeCiAllR3 span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic14.png) right center no-repeat;}
+.bookDetailsDeCiAllR3 div{ display: none; line-height: 30px; width: 118px; padding: 10px 0; background: #ffffff; position: absolute; top: 35px; left: 0; z-index: 10; border: 1px solid #e7e7e7; border-top: none;}
+.bookDetailsDeCiAllR3 div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.bookDetailsDeCiAllR3 div a:hover{ background: #f37526; color: #ffffff;}
+.bookDetailsDeCiAlldown{/* display: none;*/ margin-top: 10px; width: 960px; margin-left: 30px; border-bottom: 1px solid #cccccc;}
+.bookDetailsDeCiAlldown span{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-right: 16px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.bookDetailsDeCiAllup{ display: none; margin-top: 20px; width: 960px; margin-left: 30px; background: #fafafa; padding-bottom: 10px;}
+.bookDetailsDeCiAllup>ul>li{ float: left; margin-left: 28px; margin-top: 20px;}
+.bookDetailsDeCiAllup>ul>li>span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.bookDetailsDeCiAllupDiv{ float: left; margin-left: 10px; width: 228px; height: 34px; border: 1px solid #e4e4e4; position: relative; cursor: pointer;}
+.bookDetailsDeCiAllupDiv p{ font-size: 12px; color: #666666; height: 34px; line-height: 34px; float: left; margin-left: 10px;}
+.bookDetailsDeCiAllupDiv img{ float: right; margin-right: 10px; margin-top: 15px;}
+.bookDetailsDeCiAllupDiv ul{ display: none; width: 100%; border: 1px solid #cccccc; position: absolute; left: -1px; top: 34px; background: #fff; padding: 10px 0 7px 0; z-index: 5;}
+.bookDetailsDeCiAllupDiv ul li{ text-align: left; font-size: 12px; color: #666666; height: 30px; line-height: 30px; padding-left: 20px;}
+.bookDetailsDeCiAllupDiv ul li:hover{ color: #f37427;}
+.bookDetailsDeCiAllupKey{ margin-top: 20px;}
+.bookDetailsDeCiAllupKey a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; border-radius: 3px; background: #f37526; float: left; margin-left: 354px;}
+.bookDetailsDeCiAllupKey span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+.bookDetailsDeCiAllupBtn{ margin-top: 10px;}
+.bookDetailsDeCiAllupBtn span{ display: inline-block; font-size: 12px; color: #666666; height: 32px; line-height: 32px; padding-right: 15px; background: url(../images/myPic28.png) right center no-repeat; cursor: pointer;}
+.bookDetailsDeTit{ margin-top: 20px; margin-left: 30px; width: 960px; height: 50px; background: #f7f7f7; text-align: left;}
+.bookDetailsDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.bookDetailsDeTex{ width: 960px; margin-left: 30px; text-align: left;}
+.bookDetailsDeTex ul li{ width: 100%; height: 50px;}
+.bookDetailsDeTex ul li>div{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left;}
+.bookDetailsDeTexOn{ width: 48px; margin-left: 20px;}
+.bookDetailsDeTexTw{ width: 275px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.bookDetailsDeTexTh{ width: 117px;}
+.bookDetailsDeTexFo{ width: 135px;}
+.bookDetailsDeTexFi{ width: 148px; position: relative;}
+.bookDetailsDeTexFiInp{ display: none; width: 118px; height: 30px; border: 1px solid #cccccc; background: #ffffff; position: absolute; top: 9px; left: -9px;}
+.bookDetailsDeTexFiInp input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 8px; margin-top: 5px; width: 80px;}
+.bookDetailsDeTexFiErr{border: 1px solid #f14530;}
+.bookDetailsDeTexFiErr input{ color: #f14530;}
+.bookDetailsDeTexFiErr img{ float: right; margin-right: 6px; margin-top: 7px; cursor: pointer;}
+.bookDetailsDeTexFi span{ display: inline-block; height: 50px; padding-right: 20px; background: url(../images/myPic39.png) right center no-repeat; cursor: pointer;}
+.bookDetailsDeTexSi{ width: 140px;}
+.bookDetailsDeTexSe{ position: relative;}
+.bookDetailsDeTexSe span{ display: inline-block; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.bookDetailsDeTexSe div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 28px; left: -14px; z-index: 10; border: 1px solid #e7e7e7;}
+.bookDetailsDeTexSe div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.bookDetailsDeTexSe div a:hover{ background: #f37526; color: #ffffff;}
+.bookDetailsDeBe{}
+.bookDetailsDeAf{ display: none;}
+.bookDetailsDeCiAf{ margin-top: 30px;}
+.bookDetailsDeCiAf h1{ margin-left: 30px; text-align: left; padding-left: 9px; font-weight: normal; border-left: 2px solid #f17528; font-size: 14px; color: #666666; height: 14px; line-height: 14px;}
+.bookDetailsDeCiAfall{ margin-left: 30px; margin-top: 19px;}
+.bookDetailsDeCiAfall div{ float: left;}
+.bookDetailsDeCiAfall div span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 94px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5; float: left; margin-right: 10px; cursor: pointer;}
+.bookDetailsDeCiAfall div span:hover{ background: #fff;}
+.bookDetailsDeCiAfall a{ display: inline-block; width: 120px; height: 36px; line-height: 36px; border-radius: 3px; background: #f37526; float: right; margin-right: 30px;}
+.bookDetailsDeCiAfall a i{ display: inline-block; font-style: normal; font-size: 14px; color: #fffefe; height: 36px; padding-right: 21px; background: url(../images/myPic22.png) right center no-repeat;}
+.bookDetailsDeAfTit{ margin-top: 20px; margin-left: 30px; width: 960px; height: 50px; background: #f7f7f7; text-align: left;}
+.bookDetailsDeAfTit a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 20px; margin-top: 19px; background: #ffffff;}
+.bookDetailsDeAfTit a i{ display: block; width: 10px; height: 10px;}
+.bookDetailsDeAfTit a i.bookDetailsDeAfTitAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.bookDetailsDeAfTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.bookDetailsDeAfTex{ width: 960px; margin-left: 30px; text-align: left;}
+.bookDetailsDeAfTex ul li{ width: 100%; height: 50px;}
+.bookDetailsDeAfTex ul li a{ display: inline-block; width: 10px; height: 10px; border: 1px solid #cccccc; float: left; margin-left: 20px; margin-top: 19px; background: #ffffff;}
+.bookDetailsDeAfTex ul li a i{ display: block; width: 10px; height: 10px;}
+.bookDetailsDeAfTex ul li a i.bookDetailsDeAfTexAct{ background: url(../images/myPic35.png) center center no-repeat;}
+.bookDetailsDeAfTex span{ display: inline-block; font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left;}
+
+/*娣诲姞涔︾睄锛堟壒閲忥級*/
+.batchAddBooksDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 30px;}
+.batchAddBooksFile h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; text-align: left; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f47428;}
+.batchAddBooksFileDe{ margin-top: 20px; margin-left: 50px;}
+.batchAddBooksFileDeL{ float: left;}
+.batchAddBooksFileDeL p{ font-size: 14px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.batchAddBooksFileDeL p i{ font-style: normal; color: #30ba78;}
+.batchAddBooksFileDeL span{ display: inline-block; font-size: 14px; color: #f37427; height: 36px; line-height: 36px; float: left; margin-left: 16px;}
+.batchAddBooksFileDeR{ float: right; margin-right: 20px;}
+.batchAddBooksFileDeR a{ display: inline-block; font-size: 14px; float: left; width: 118px; height: 34px; margin-right: 10px;}
+.batchAddBooksFileDeR1{ background: #f5f5f5; border: 1px solid #cccccc; border-radius: 3px;}
+.batchAddBooksFileDeR1 span{ display: inline-block; color: #666666; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic41.png) right center no-repeat;}
+.batchAddBooksFileDeR2{ border: 1px solid #f37526; border-radius: 3px;position: relative;}
+.batchAddBooksFileDeR2 span{ display: inline-block; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic42.png) right center no-repeat;}
+.batchAddBooksFileDeR2 input{ width: 118px; height: 34px;position: absolute;left:0;top:0;opacity: 0; filter:alpha(opacity:0);}
+.batchAddBooksTit{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7; text-align: left;}
+.batchAddBooksTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.batchAddBooksTexNone{ width: 960px; margin-left: 30px; height: 50px; line-height: 50px; background: #fafafa; font-size: 14px; color: #333333;}
+.batchAddBooksTex{ width: 960px; margin-left: 30px; text-align: left;}
+.batchAddBooksTex ul li>div{ float: left;}
+.batchAddBooksTex ul li>div p{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.batchAddBooksTex1{ margin-left: 21px; width: 48px;}
+.batchAddBooksTex2{ width: 92px;}
+.batchAddBooksTex3{ width: 92px; margin-left: 20px;}
+.batchAddBooksTex4{ width: 77px; margin-left: 20px;}
+.batchAddBooksTex5{ width: 157px;}
+.batchAddBooksTex6{ width: 77px;}
+.batchAddBooksTex7{ width: 68px;}
+.batchAddBooksTex8{ width: 164px; margin-left: 20px;}
+.batchAddBooksTex9{ margin-left: 28px; position: relative;}
+.batchAddBooksTex9 span{ display: inline-block; height: 50px; line-height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.batchAddBooksTex9 div{ display: none; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 20px; left: -28px; z-index: 10; border: 1px solid #e7e7e7;}
+.batchAddBooksTex9 div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.batchAddBooksTex9 div a:hover{ background: #f37526; color: #ffffff;}
+.batchAddBooksCover{ margin-top: 30px;}
+.batchAddBooksCover>h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; text-align: left; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f47428;}
+.batchAddBooksCoverDe{ margin-top: 20px; margin-left: 50px;}
+.batchAddBooksCoverDeL{ float: left;}
+.batchAddBooksCoverDeL span{ display: inline-block; font-size: 14px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.batchAddBooksCoverDeL span i{ font-style: normal; color: #f37427;}
+.batchAddBooksCoverDeL p{ font-size: 14px; color: #f37427; height: 36px; line-height: 36px; float: left; margin-left: 16px;}
+.batchAddBooksCoverDeL small{ display: inline-block; font-size: 12px; color: #999999; height: 36px; line-height: 36px; float: left; margin-left: 16px;}
+.batchAddBooksCoverDe>a{ display: inline-block; float: right; margin-right: 30px; width: 118px; height: 34px; line-height: 34px; border: 1px solid #f17526; border-radius: 3px;}
+.batchAddBooksCoverDe>a span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic42.png) right center no-repeat;}
+.batchAddBooksCoverUpload{ margin-top: 20px; margin-left: 30px; width: 960px; padding-bottom: 20px; background: #fafafa;}
+.batchAddBooksCoverUpload ul{ height: 486px; overflow-y: scroll;}
+.batchAddBooksCoverUpload ul li{ width: 162px; height: 223px; border: 1px solid #cccccc; float: left; margin-left: 20px; margin-top: 20px; position: relative;}
+.batchAddBooksCoverUpload ul li img{ width: 162px; height: 223px; display: block;}
+.batchAddBooksCoverUpload ul li>input{ opacity: 0; filter:alpha(opacity:0); width: 162px; height: 188px; position: absolute; top: 0; left: 0; cursor: pointer;}
+.batchAddBooksCoverUpload ul li div{ width: 100%; height: 35px; background: url(../images/myPic20.png); position: absolute; left: 0; bottom: 0;}
+.batchAddBooksCoverUpload ul li div input{ width: 100%; font-size: 14px; color: #ffffff; height: 21px; line-height: 21px; float: left; margin-top: 7px; text-align: center;}
+.batchAddBooksCoverUpload ul li.batchAddBooksCoverUploadError{ border: 1px solid #f14530;}
+.batchAddBooksCoverUpload ul li.batchAddBooksCoverUploadError div input{ color: #f14530;}
+.batchAddBooksCoverBtnNone{ margin-left: 40px; margin-top: 20px;}
+.batchAddBooksCoverBtnNone a{ width: 118px; height: 34px; line-height: 34px; border: 1px solid #cccccc; display: inline-block; font-size: 14px; float: left; margin-left: 10px; border-radius: 3px;}
+.batchAddBooksCoverBtnNone1{ background: #e8e8e8; color: #cccccc;}
+.batchAddBooksCoverBtnNone2{ background: #f5f5f5; color: #666666;}
+.batchAddBooksCoverBtn{ display: none; margin-left: 40px; margin-top: 20px;}
+.batchAddBooksCoverBtn a{ display: inline-block; font-size: 14px; float: left; margin-left: 10px; border-radius: 3px;}
+.batchAddBooksCoverBtn1{ width: 120px; height: 36px; line-height: 36px; background: #f37526; color: #ffffff;}
+.batchAddBooksCoverBtn2{ width: 118px; height: 34px; line-height: 34px; border: 1px solid #cccccc; background: #f5f5f5; color: #666666;}
+
+/*娣诲姞绔犺妭锛堝崟绔狅級*/
+.addAChapterDe{ padding: 30px 0; margin-top: 20px; background: #ffffff;}
+.addAChapterDe>h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; text-align: left; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f47428;}
+.addAChapterDeInp{ margin-top: 20px; margin-left: 29px;}
+.addAChapterDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.addAChapterDeInp div{ width: 498px; height: 34px; border: 1px solid #cccccc; float: left; margin-left: 9px; position: relative;}
+.addAChapterDeInp div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 450px;}
+.addAChapterDeInp div p{ font-size: 12px; color: #cccccc; height: 34px; line-height: 34px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 460px; text-align: left;}
+.addAChapterDeInp h2{ font-weight: normal; font-size: 12px; color: #f37427; height: 36px; line-height: 36px; float: left; margin-left: 9px;}
+.addAChapterDeInp h3{ font-weight: normal; font-size: 12px; color: #999999; height: 36px; line-height: 36px; float: left; margin-left: 9px;}
+.addAChapterDeText{ margin-top: 20px; margin-left: 29px;}
+.addAChapterDeText span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.addAChapterDeText div{ width: 648px; height: 348px; border: 1px solid #cccccc; float: left; margin-left: 9px; position: relative;}
+.addAChapterDeText div textarea{ font-size: 12px; color: #666666; height: 310px; line-height: 22px; float: left; margin-left: 11px; margin-top: 7px; width: 610px;}
+.addAChapterDeText div p{ font-size: 12px; color: #cccccc; height: 330px; line-height: 36px; position: absolute; left: 0; top: 0; padding-left: 11px; width: 620px; text-align: left;}
+.addAChapterDeText i{ display: inline-block; font-style: normal; font-size: 12px; color: #999999; height: 30px; line-height: 30px; float: left; margin-left: 11px; margin-top: 320px;}
+.addAChapterDeBtn{ margin-top: 20px; margin-left: 86px;}
+.addAChapterDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; float: left;}
+.addAChapterDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; background: #f5f5f5; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+
+/*娣诲姞绔犺妭锛堟壒閲忥級*/
+.batchSectionDe{ padding: 30px 0; margin-top: 20px; background: #ffffff;}
+.batchSectionDe>h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; text-align: left; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f47428;}
+.batchSectionDeTop{ margin-left: 49px;}
+.batchSectionDeTopL{ float: left;}
+.batchSectionDeTopL p{ font-size: 14px; color: #666666; height: 76px; line-height: 76px; float: left;}
+.batchSectionDeTopL p i{ font-style: normal; color: #30ba78;}
+.batchSectionDeTopL span{ display: inline-block; font-size: 14px; color: #f37427; height: 76px; line-height: 76px; float: left; margin-left: 17px;}
+.batchSectionDeTopR{ float: right; margin-right: 20px; margin-top: 20px;}
+.batchSectionDeTopR a{ display: inline-block; float: left; margin-right: 10px;}
+.batchSectionDeTopR1{ width: 118px; height: 34px; border: 1px solid #cccccc; border-radius: 3px; background: #f5f5f5;}
+.batchSectionDeTopR1 span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic45.png) right center no-repeat;}
+.batchSectionDeTopR2{ width: 118px; height: 34px; border: 1px solid #f37526; border-radius: 3px;}
+.batchSectionDeTopR2 span{ display: inline-block; font-size: 14px; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic46.png) right center no-repeat;}
+.batchSectionDeTopR3{ width: 120px; height: 36px; border-radius: 3px; background: #f37526;}
+.batchSectionDeTopR3 span{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic47.png) right center no-repeat;}
+.batchSectionDeTit{ width: 960px; height: 50px; margin-left: 30px; background: #f7f7f7;}
+.batchSectionDeTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; text-align: left; float: left;}
+.batchSectionDeTex{ margin-left: 30px; width: 960px;}
+.batchSectionDeTex ul li{ height: 50px;}
+.batchSectionDeTex ul li.batchSectionDeTexErr{ height: 48px; border: 1px solid #f1462f;}
+.batchSectionDeTex ul li.batchSectionDeTexErr>div.batchSectionDeTex2{ color: #f14530;}
+.batchSectionDeTex ul li>div{ float: left; text-align: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px;}
+.batchSectionDeTex ul li>div p{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.batchSectionDeTex1{ width: 48px; margin-left: 20px;}
+.batchSectionDeTex2{ width: 270px;}
+.batchSectionDeTex2 p{ width: 193px;}
+.batchSectionDeTex3{ width: 138px;}
+.batchSectionDeTex4{ width: 408px;}
+.batchSectionDeTex4 p{ width: 368px;}
+.batchSectionDeTex5{ position: relative;}
+.batchSectionDeTex5 span{ display: inline-block; height: 50px; line-height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.batchSectionDeTex5 div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 26px; left: -24px; z-index: 10; border: 1px solid #e7e7e7;}
+.batchSectionDeTex5 div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.batchSectionDeTex5 div a:hover{ background: #f37526; color: #ffffff;}
+.batchSectionDeBtn{ margin-top: 20px; margin-left: 50px;}
+.batchSectionDeBtn a{ display: inline-block; font-size: 14px; color: #ffffff; height: 36px; line-height: 36px; width: 120px; background: #f37526; border-radius: 3px; float: left;}
+.batchSectionDeBtn span{ display: inline-block; font-size: 14px; color: #666666; height: 34px; line-height: 34px; width: 118px; background: #f5f5f5; border: 1px solid #cccccc; border-radius: 3px; float: left; margin-left: 10px; cursor: pointer;}
+
+
+/*绔犺妭绠＄悊*/
+/*璧勬簮绠＄悊绔犺妭绠＄悊*/
+.chapterManagementTit{ margin-top: 20px; margin-left: 30px; width: 960px; height: 50px; background: #f7f7f7; text-align: left;}
+.chapterManagementTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.chapterManagementTex{ width: 960px; margin-left: 30px; text-align: left;}
+.chapterManagementTex ul li{ width: 100%; height: 50px;}
+.chapterManagementTex ul li>div{ font-size: 12px; color: #666666; height: 50px; line-height: 50px; float: left;}
+.chapterManagementTexOn{ width: 80px; margin-left: 20px;}
+.chapterManagementTexTw{ width: 225px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.chapterManagementTexTh{ width: 87px;}
+.chapterManagementTexFo{ width: 87px;}
+.chapterManagementTexFi{ width: 95px;}
+.chapterManagementTexSi{ width: 149px; position: relative;}
+.chapterManagementTexSiInp{ display: none; width: 118px; height: 30px; border: 1px solid #cccccc; background: #ffffff; position: absolute; top: 9px; left: -9px;}
+.chapterManagementTexSiInp input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 8px; margin-top: 5px; width: 80px;}
+.chapterManagementTexSiErr{border: 1px solid #f14530;}
+.chapterManagementTexSiErr input{ color: #f14530;}
+.chapterManagementTexSiErr img{ float: right; margin-right: 6px; margin-top: 7px; cursor: pointer;}
+.chapterManagementTexSi span{ display: inline-block; height: 50px; padding-right: 20px; background: url(../images/myPic39.png) right center no-repeat; cursor: pointer;}
+.chapterManagementTexSe{ width: 141px;}
+.chapterManagementTexEi{ position: relative;}
+.chapterManagementTexEi span{ display: inline-block; height: 50px; padding-right: 14px; background: url(../images/myPic15.png) right center no-repeat; cursor: pointer;}
+.chapterManagementTexEi div{ display: none; line-height: 30px; width: 100px; padding: 10px 0; background: #ffffff; position: absolute; top: 28px; left: -14px; z-index: 10; border: 1px solid #e7e7e7;}
+.chapterManagementTexEi div a{ display: inline-block; font-size: 12px; color: #666666; height: 30px; line-height: 30px; width: 100%; text-align: center; cursor: pointer;}
+.chapterManagementTexEi div a:hover{ background: #f37526; color: #ffffff;}
+
+/*娣诲姞绔犺妭锛堟壒閲忕珷鑺傦級*/
+.AddBatchSectionR{ float: right; margin-right: 20px;}
+.AddBatchSectionR a{ display: inline-block; border-radius: 3px; font-size: 14px; float: left; margin-right: 10px;}
+.AddBatchSectionR1{ border: 1px solid #f37526; width: 118px; height: 34px;}
+.AddBatchSectionR1 span{ display: inline-block; color: #f37427; height: 34px; line-height: 34px; padding-right: 21px; background: url(../images/myPic48.png) right center no-repeat;}
+.AddBatchSectionR2{ height: 36px; width: 120px; background: #f37526;}
+.AddBatchSectionR2 span{ display: inline-block; color: #ffffff; height: 36px; line-height: 36px; padding-right: 21px; background: url(../images/myPic47.png) right center no-repeat;}
+.AddBatchSectionTit{ width: 960px; height: 50px; margin-left: 30px; margin-top: 20px; background: #f7f7f7; text-align: left;}
+.AddBatchSectionTit span{ display: inline-block; font-size: 14px; color: #333333; height: 50px; line-height: 50px; float: left;}
+.AddBatchSectionTex{ margin-left: 30px; width: 960px;}
+.AddBatchSectionTex ul li{ height: 50px;}
+.AddBatchSectionTex ul li div{ float: left; font-size: 12px; color: #666666; height: 50px; line-height: 50px; text-align: left;}
+.AddBatchSectionTex1{ width: 84px; margin-left: 20px;}
+.AddBatchSectionTex2{ width: 71px;}
+.AddBatchSectionTex3{ width: 84px;}
+.AddBatchSectionTex4{ width: 120px;}
+.AddBatchSectionTex5{ width: 283px;}
+.AddBatchSectionTex5 p{ float: left; width: 168px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.AddBatchSectionTex5 a{ display: inline-block; float: left; color: #288df0;}
+.AddBatchSectionTex6 p{ float: left; width: 180px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.AddBatchSectionTex6 a{ display: inline-block; float: left; color: #288df0;}
+.AddBatchSectionTex6 img{ float: left; margin-left: 50px; margin-top: 17px; cursor: pointer;}
+.AddBatchSectionTex ul li.AddBatchSectionTexErr{ height: 48px; border: 1px solid #f1462f;}
+.AddBatchSectionTex ul li.AddBatchSectionTexErr .AddBatchSectionTex4{ color: #f14530;}
+.AddBatchSectionBtn{ margin-left: 40px; margin-top: 20px;}
+.AddBatchSectionBtn a{ display: inline-block; font-size: 14px; float: left; margin-left: 10px; border-radius: 3px;}
+.AddBatchSectionBtn1{ width: 120px; height: 36px; line-height: 36px; background: #f37526; color: #ffffff;}
+.AddBatchSectionBtn2{ width: 118px; height: 34px; line-height: 34px; border: 1px solid #cccccc; background: #f5f5f5; color: #666666;}
+
+/*娣诲姞绔犺妭锛堟壒閲忕珷鑺傦級*/
+.newChapterDe{ background: #ffffff; margin-top: 20px; padding-top: 30px; padding-bottom: 20px;}
+.newChapterDe>h1{ font-weight: normal; font-size: 14px; color: #666666; height: 14px; line-height: 14px; margin-left: 30px; padding-left: 9px; border-left: 2px solid #f37427; text-align: left;}
+.newChapterDeInp{ margin-top: 20px; margin-left: 29px;}
+.newChapterDeInp span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.newChapterDeInp div{ width: 498px; height: 34px; float: left; margin-left: 9px; border: 1px solid #cccccc;}
+.newChapterDeInp div input{ font-size: 12px; color: #666666; height: 20px; line-height: 20px; float: left; margin-left: 11px; margin-top: 7px; width: 420px;}
+.newChapterDeInp div a{ display: inline-block; float: right; margin-right: 10px; font-size: 12px; color: #288df0; height: 34px; line-height: 34px;}
+.newChapterDeInp p{ font-size: 12px; color: #999999; height: 36px; line-height: 36px; float: left; margin-left: 10px;}
+.newChapterDeTex{ margin-top: 20px; margin-left: 29px;}
+.newChapterDeTex span{ display: inline-block; font-size: 12px; color: #666666; height: 36px; line-height: 36px; float: left;}
+.newChapterDeTex div{ width: 648px; height: 464px; float: left; margin-left: 9px; border: 1px solid #cccccc;}
+.newChapterDeTex div textarea{ font-size: 12px; color: #666666; line-height: 24px; float: left; margin-left: 11px; margin-top: 6px; height: 457px; width: 620px;}
+.newChapterDeTex i{ display: inline-block; font-style: normal; font-size: 12px; color: #999999; height: 32px; line-height: 32px; float: left; margin-left: 9px; margin-top: 434px;}
+
+

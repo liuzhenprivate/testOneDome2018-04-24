@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DiscussMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_DISCUSS(
+			ARTICLE_ID,	
+			USERID,	
+			ZANS,	
+			LEVELS,	
+			CONTENT,	
+			STATE,	
+			USER_CODE,	
+			CREATE_TIME,	
+			CHECK_TIME,	
+			MEMO,	
+			ADMIN 
+		) values (
+			#{ARTICLE_ID},	
+			#{USERID},	
+			#{ZANS},	
+			#{LEVELS},	
+			#{CONTENT},	
+			#{STATE},	
+			#{USER_CODE},	
+			#{CREATE_TIME},	
+			#{CHECK_TIME},	
+			#{MEMO},	
+			#{ADMIN} 
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_DISCUSS
+		where 
+			DISCUSS_ID = #{DISCUSS_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_DISCUSS
+			set 
+				STATE = #{STATE},
+				CHECK_TIME = #{CHECK_TIME},
+				MEMO = #{MEMO},
+				ADMIN = #{ADMIN},
+			DISCUSS_ID = DISCUSS_ID
+			where 
+				DISCUSS_ID = #{DISCUSS_ID}
+	</update>
+	
+	<!-- 修改书籍显示人数 -->
+	<update id="editDisplayReads" parameterType="pd">
+		update  TB_ARTICLE
+			set 
+				DISPLAY_READERS = #{DISPLAY_READERS}
+			where 
+				ARTICLE_ID = #{ARTICLE_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			ARTICLE_ID,	
+			USERID,	
+			ZANS,	
+			LEVELS,	
+			CONTENT,	
+			STATE,	
+			USER_CODE,	
+			CREATE_TIME,	
+			CHECK_TIME,	
+			MEMO,	
+			ADMIN,	
+			DISCUSS_ID
+		from 
+			TB_DISCUSS
+		where 
+			DISCUSS_ID = #{DISCUSS_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select	
+				tu.NICKNAME,
+				a.ARTICLE_ID,	
+				a.USERID,	
+				a.ZANS,	
+				a.LEVELS,	
+				a.CONTENT,	
+				a.STATE,	
+				a.USER_CODE,	
+				a.CREATE_TIME,	
+				a.CHECK_TIME,	
+				a.MEMO,	
+				a.ADMIN,
+				a.DISCUSS_ID
+		from 
+				TB_DISCUSS a LEFT JOIN TB_USER tu ON a.USERID = tu.USERID	
+		where 1 = 1
+				<if test="pd.ARTICLE_ID!=null and pd.ARTICLE_ID!=''">
+					AND a.ARTICLE_ID = #{pd.ARTICLE_ID}
+				</if>
+				<if test="pd.startTime!=null and pd.startTime!='' ">
+					AND CREATE_TIME >=#{pd.startTime}
+				</if>
+				<if test="pd.endTime!=null and pd.endTime!='' ">
+					<![CDATA[   
+						AND CREATE_TIME <= #{pd.endTime}
+					]]>   
+				</if>
+				<if test="pd.names!=null and pd.names!=''">
+					AND tu.NICKNAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+				</if>
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="articleCountdiscuss" parameterType="pd" resultType="pd">
+		select 
+			count(DISCUSS_ID) Countdiscuss
+		from 
+			TB_DISCUSS
+		where 
+			ARTICLE_ID = #{ARTICLE_ID}
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.ARTICLE_ID,	
+				a.USERID,	
+				a.ZANS,	
+				a.LEVELS,	
+				a.CONTENT,	
+				a.STATE,	
+				a.USER_CODE,	
+				a.CREATE_TIME,	
+				a.CHECK_TIME,	
+				a.MEMO,	
+				a.ADMIN,	
+				a.DISCUSS_ID
+		from 
+				TB_DISCUSS a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_DISCUSS
+		where 
+			DISCUSS_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

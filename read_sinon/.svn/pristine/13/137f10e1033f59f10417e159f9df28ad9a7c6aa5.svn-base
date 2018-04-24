@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数据统计平台概况</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/dataStatistics.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">数据统计</a>
+		<img src="../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">平台概况</a>
+	</div>
+	<div class="platformOverviewCumulative clearfix">
+		<div class="platformOverviewCumulativeD clearfix">
+			<h2>累计充值</h2>
+			<h1>637288</h1>
+			<h3>笔数：28384</h3>
+			<div class="clearfix platformOverviewCumulativeDe">
+				<div>
+					<p>当月</p>
+					<h1>238492</h1>
+				</div>
+				<div style="float: right; margin-right: 34px;">
+					<p>今日</p>
+					<h1>849281</h1>
+				</div>
+			</div>
+		</div>
+		<div style="margin-left: 20px;" class="platformOverviewCumulativeD clearfix">
+			<h2>累计读者</h2>
+			<h1>741245</h1>
+			<div style="margin-top: 41px;" class="clearfix platformOverviewCumulativeDe">
+				<div>
+					<p>当月</p>
+					<h1>238492</h1>
+				</div>
+				<div style="float: right; margin-right: 34px;">
+					<p>今日</p>
+					<h1>849281</h1>
+				</div>
+			</div>
+		</div>
+		<div style="margin-left: 20px;" class="platformOverviewCumulativeD clearfix">
+			<h2>累计渠道</h2>
+			<h1>145851</h1>
+			<div style="margin-top: 41px;" class="clearfix platformOverviewCumulativeDe">
+				<div>
+					<p>当月</p>
+					<h1>238492</h1>
+				</div>
+				<div style="float: right; margin-right: 34px;">
+					<p>今日</p>
+					<h1>849281</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="platformOverviewRecharge">
+		<h1>昨日充值</h1>
+		<div class="platformOverviewRechargeD clearfix">
+			<div class="platformOverviewRechargeDe">
+				<p>充值金额</p>
+				<h1>238492</h1>
+			</div>
+			<span></span>
+			<div class="platformOverviewRechargeDe">
+				<p>充值笔数</p>
+				<h1>492</h1>
+			</div>
+			<span></span>
+			<div class="platformOverviewRechargeDe">
+				<p>充值人数</p>
+				<h1>238</h1>
+			</div>
+			<span></span>
+			<div class="platformOverviewRechargeDe">
+				<p>复充人数</p>
+				<h1>109</h1>
+			</div>
+		</div>
+	</div>
+	<div class="platformOverviewChart">
+		<h1>充值图表</h1>
+		<div class="platformOverviewChartSel clearfix">
+			<span class="platformOverviewChartSelAct">近一年</span>
+			<span>近30天</span>
+			<div class="clearfix">
+				<input id="test6" readonly="readonly" />
+				<img src="../images/myPic13.png" alt="" />
+			</div>
+		</div>
+		<div class="platformOverviewChartDe">
+			<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		</div>
+	</div>
+	<div class="platformOverviewDaily">
+		<h1>充值日报</h1>
+		<div class="platformOverviewDailySel clearfix">
+			<div class="clearfix">
+				<input id="test6" readonly="readonly" />
+				<img src="../images/myPic13.png" alt="" />
+			</div>
+			<a href="javascript:void(0)" title=""><span>导出表格</span></a>
+		</div>
+		<div class="platformOverviewDailyDeTop clearfix">
+			<span style="width: 146px; margin-left: 29px;">时间</span>
+			<span style="width: 166px;">充值人数</span>
+			<span style="width: 160px;">充值笔数</span>
+			<span style="width: 180px;">充值金额(元)</span>
+			<span style="width: 166px;">月累计</span>
+			<span>总累计</span>
+		</div>
+		<div class="platformOverviewDailyDeTit">
+			<ul>
+				<li class="clearfix">
+					<div style="width: 146px; margin-left: 29px;">2017-08-09</div>
+					<div style="width: 166px;">19</div>
+					<div style="width: 160px;">19</div>
+					<div style="width: 180px;">29344</div>
+					<div style="width: 166px;">29344</div>
+					<div>29344</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div style="width: 146px; margin-left: 29px;">2017-08-09</div>
+					<div style="width: 166px;">19</div>
+					<div style="width: 160px;">19</div>
+					<div style="width: 180px;">29344</div>
+					<div style="width: 166px;">29344</div>
+					<div>29344</div>
+				</li>
+				<li class="clearfix">
+					<div style="width: 146px; margin-left: 29px;">2017-08-09</div>
+					<div style="width: 166px;">19</div>
+					<div style="width: 160px;">19</div>
+					<div style="width: 180px;">29344</div>
+					<div style="width: 166px;">29344</div>
+					<div>29344</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div style="width: 146px; margin-left: 29px;">2017-08-09</div>
+					<div style="width: 166px;">19</div>
+					<div style="width: 160px;">19</div>
+					<div style="width: 180px;">29344</div>
+					<div style="width: 166px;">29344</div>
+					<div>29344</div>
+				</li>
+			</ul>
+		</div>
+		<div style="margin-left: 0;" class="flipOne clearfix">
+			<div class="flipOneL">共233条</div>
+			<div class="flipOneR clearfix">
+				<div class="flipOnePrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipOneDe clearfix">
+					<span class="flipOneDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+				<div class="flipOneNext"><img src="../images/myPic18.png" alt="" /></div>
+			</div>
+		</div>
+		<div style="margin-left: 0;" class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	<script src="../layDate-v5.0.8/laydate/laydate.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="../js/brokenLine.js"></script>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		$('.highcharts-credits').hide();
+		
+		$('.platformOverviewChartSel span').click(function(){
+			$(this).addClass('platformOverviewChartSelAct').siblings().removeClass('platformOverviewChartSelAct');
+		})
+	</script>
+</body>
+</html>

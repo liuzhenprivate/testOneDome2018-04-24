@@ -1,0 +1,469 @@
+package com.sinontech.modle;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+/**
+ * 读者表
+ * @author ljj
+ *
+ */
+@Entity(name = "TB_USER")
+public class UserInfo {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "USERID")
+	private long id;
+	//渠道ID
+	@Column(name = "USER_ID")
+	private long channelId;
+	//微信公众号ID
+	@Column(name = "WEBCHAT_ID")
+	private long webchatId;
+	//平台ID
+	@Column(name = "USER_CODE")
+	private long usercode;
+	//openid
+	@Column(name = "OPENID")
+	private String openid;
+	//微信支付公众号OPENID
+	@Column(name = "OPENID_PAY")
+	private String openidPay;
+	//微信昵称
+	@Column(name = "NICKNAME")
+	private String nickname;
+	//累计充值金额
+	@Column(name = "RECHARGE_MONEY")
+	private long rechargeMoney;
+	//性别
+	@Column(name = "SEX")
+	private int sex;
+	//省份
+	@Column(name = "PROVINCE")
+	private String province;
+	//城市
+	@Column(name = "CITY")
+	private String city;
+	//国家
+	@Column(name = "COUNTRY")
+	private String country;
+	//微信头像
+	//用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。
+	@Column(name = "HEADIMGURL")
+	private String headimgurl;
+	//用户特权信息
+	@Column(name = "PRIVILEGE")
+	private String privilege;
+	
+	@Column(name = "UNIONID")
+	private String unionid;
+	//关注时间
+	@Column(name = "CTIME")
+	private String cTime;
+	//使用阅读币
+	@Column(name = "BOOK_CURRENCY")
+	private long bookCurrency;
+	//等级
+	@Column(name = "LEVEL")
+	private String level;
+	//赠送阅读币
+	@Column(name = "BOOK_CURRENCY_GIFT")
+	private long bookCurrencyGift;
+	
+	//累计阅读币
+	@Column(name = "CUMULATIVE_CURRENCY")
+	private long cumulativeCurrency;
+	//注册时间
+	@Column(name = "CREATE_TIME")
+	private String createTime;
+	//读者来源（默认 0微信 ）
+	@Column(name = "SOURCE")
+	private int source;
+	//最后登陆时间
+	@Column(name = "LOGIN_TIME")
+	private String loginTime;
+	//关注状态 默认 0未关注 1已关注
+	@Column(name = "FOLLOWSTATE")
+	private int followstate;
+	//是否是vip 默认 0不是 1是单月VIP 2是连续包月VIP
+	@Column(name = "ISVIP")
+	private int isvip;
+	//绑定手机号
+	@Column(name = "PHONE")
+	private String phone;
+	//签到次数
+	@Column(name = "SIGNTIMES")
+	private int signtimes;
+	@Column(name = "STATE")
+	private int state;
+	//自动购买付费章节，默认0未开启1开启
+	@Column(name = "AUTO_ORDER")
+	private int autoOrder;
+	//会员有限期
+	@Column(name = "EXP_DATE")
+	private String expDate;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getChannelId() {
+		return channelId;
+	}
+	public void setChannelId(long channelId) {
+		this.channelId = channelId;
+	}
+	public long getWebchatId() {
+		return webchatId;
+	}
+	public void setWebchatId(long webchatId) {
+		this.webchatId = webchatId;
+	}
+	public long getUsercode() {
+		return usercode;
+	}
+	public void setUsercode(long usercode) {
+		this.usercode = usercode;
+	}
+	public String getOpenid() {
+		return openid;
+	}
+	public void setOpenid(String openid) {
+		this.openid = openid;
+	}
+	public String getOpenidPay() {
+		return openidPay;
+	}
+	public void setOpenidPay(String openidPay) {
+		this.openidPay = openidPay;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public long getRechargeMoney() {
+		return rechargeMoney;
+	}
+	public void setRechargeMoney(long rechargeMoney) {
+		this.rechargeMoney = rechargeMoney;
+	}
+	public int getSex() {
+		return sex;
+	}
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+	public String getProvince() {
+		return province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getHeadimgurl() {
+		return headimgurl;
+	}
+	public void setHeadimgurl(String headimgurl) {
+		this.headimgurl = headimgurl;
+	}
+	public String getPrivilege() {
+		return privilege;
+	}
+	public void setPrivilege(String privilege) {
+		this.privilege = privilege;
+	}
+	public String getUnionid() {
+		return unionid;
+	}
+	public void setUnionid(String unionid) {
+		this.unionid = unionid;
+	}
+	public String getcTime() {
+		return cTime;
+	}
+	public void setcTime(String cTime) {
+		this.cTime = cTime;
+	}
+	public long getBookCurrency() {
+		return bookCurrency;
+	}
+	public void setBookCurrency(long bookCurrency) {
+		this.bookCurrency = bookCurrency;
+	}
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
+	public long getBookCurrencyGift() {
+		return bookCurrencyGift;
+	}
+	public void setBookCurrencyGift(long bookCurrencyGift) {
+		this.bookCurrencyGift = bookCurrencyGift;
+	}
+	public long getCumulativeCurrency() {
+		return cumulativeCurrency;
+	}
+	public void setCumulativeCurrency(long cumulativeCurrency) {
+		this.cumulativeCurrency = cumulativeCurrency;
+	}
+	public String getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+	public int getSource() {
+		return source;
+	}
+	public void setSource(int source) {
+		this.source = source;
+	}
+	public String getLoginTime() {
+		return loginTime;
+	}
+	public void setLoginTime(String loginTime) {
+		this.loginTime = loginTime;
+	}
+	public int getFollowstate() {
+		return followstate;
+	}
+	public void setFollowstate(int followstate) {
+		this.followstate = followstate;
+	}
+	public int getIsvip() {
+		return isvip;
+	}
+	public void setIsvip(int isvip) {
+		this.isvip = isvip;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public int getSigntimes() {
+		return signtimes;
+	}
+	public void setSigntimes(int signtimes) {
+		this.signtimes = signtimes;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	public int getAutoOrder() {
+		return autoOrder;
+	}
+	public void setAutoOrder(int autoOrder) {
+		this.autoOrder = autoOrder;
+	}
+	public String getExpDate() {
+		return expDate;
+	}
+	public void setExpDate(String expDate) {
+		this.expDate = expDate;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + autoOrder;
+		result = prime * result + (int) (bookCurrency ^ (bookCurrency >>> 32));
+		result = prime * result
+				+ (int) (bookCurrencyGift ^ (bookCurrencyGift >>> 32));
+		result = prime * result + ((cTime == null) ? 0 : cTime.hashCode());
+		result = prime * result + (int) (channelId ^ (channelId >>> 32));
+		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result
+				+ ((createTime == null) ? 0 : createTime.hashCode());
+		result = prime * result
+				+ (int) (cumulativeCurrency ^ (cumulativeCurrency >>> 32));
+		result = prime * result + ((expDate == null) ? 0 : expDate.hashCode());
+		result = prime * result + followstate;
+		result = prime * result
+				+ ((headimgurl == null) ? 0 : headimgurl.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + isvip;
+		result = prime * result + ((level == null) ? 0 : level.hashCode());
+		result = prime * result
+				+ ((loginTime == null) ? 0 : loginTime.hashCode());
+		result = prime * result
+				+ ((nickname == null) ? 0 : nickname.hashCode());
+		result = prime * result + ((openid == null) ? 0 : openid.hashCode());
+		result = prime * result
+				+ ((openidPay == null) ? 0 : openidPay.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result
+				+ ((privilege == null) ? 0 : privilege.hashCode());
+		result = prime * result
+				+ ((province == null) ? 0 : province.hashCode());
+		result = prime * result
+				+ (int) (rechargeMoney ^ (rechargeMoney >>> 32));
+		result = prime * result + sex;
+		result = prime * result + signtimes;
+		result = prime * result + source;
+		result = prime * result + state;
+		result = prime * result + ((unionid == null) ? 0 : unionid.hashCode());
+		result = prime * result + (int) (usercode ^ (usercode >>> 32));
+		result = prime * result + (int) (webchatId ^ (webchatId >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UserInfo other = (UserInfo) obj;
+		if (autoOrder != other.autoOrder)
+			return false;
+		if (bookCurrency != other.bookCurrency)
+			return false;
+		if (bookCurrencyGift != other.bookCurrencyGift)
+			return false;
+		if (cTime == null) {
+			if (other.cTime != null)
+				return false;
+		} else if (!cTime.equals(other.cTime))
+			return false;
+		if (channelId != other.channelId)
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
+			return false;
+		if (createTime == null) {
+			if (other.createTime != null)
+				return false;
+		} else if (!createTime.equals(other.createTime))
+			return false;
+		if (cumulativeCurrency != other.cumulativeCurrency)
+			return false;
+		if (expDate == null) {
+			if (other.expDate != null)
+				return false;
+		} else if (!expDate.equals(other.expDate))
+			return false;
+		if (followstate != other.followstate)
+			return false;
+		if (headimgurl == null) {
+			if (other.headimgurl != null)
+				return false;
+		} else if (!headimgurl.equals(other.headimgurl))
+			return false;
+		if (id != other.id)
+			return false;
+		if (isvip != other.isvip)
+			return false;
+		if (level == null) {
+			if (other.level != null)
+				return false;
+		} else if (!level.equals(other.level))
+			return false;
+		if (loginTime == null) {
+			if (other.loginTime != null)
+				return false;
+		} else if (!loginTime.equals(other.loginTime))
+			return false;
+		if (nickname == null) {
+			if (other.nickname != null)
+				return false;
+		} else if (!nickname.equals(other.nickname))
+			return false;
+		if (openid == null) {
+			if (other.openid != null)
+				return false;
+		} else if (!openid.equals(other.openid))
+			return false;
+		if (openidPay == null) {
+			if (other.openidPay != null)
+				return false;
+		} else if (!openidPay.equals(other.openidPay))
+			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
+		if (privilege == null) {
+			if (other.privilege != null)
+				return false;
+		} else if (!privilege.equals(other.privilege))
+			return false;
+		if (province == null) {
+			if (other.province != null)
+				return false;
+		} else if (!province.equals(other.province))
+			return false;
+		if (rechargeMoney != other.rechargeMoney)
+			return false;
+		if (sex != other.sex)
+			return false;
+		if (signtimes != other.signtimes)
+			return false;
+		if (source != other.source)
+			return false;
+		if (state != other.state)
+			return false;
+		if (unionid == null) {
+			if (other.unionid != null)
+				return false;
+		} else if (!unionid.equals(other.unionid))
+			return false;
+		if (usercode != other.usercode)
+			return false;
+		if (webchatId != other.webchatId)
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "UserInfo [id=" + id + ", channelId=" + channelId
+				+ ", webchatId=" + webchatId + ", usercode=" + usercode
+				+ ", openid=" + openid + ", openidPay=" + openidPay
+				+ ", nickname=" + nickname + ", rechargeMoney=" + rechargeMoney
+				+ ", sex=" + sex + ", province=" + province + ", city=" + city
+				+ ", country=" + country + ", headimgurl=" + headimgurl
+				+ ", privilege=" + privilege + ", unionid=" + unionid
+				+ ", cTime=" + cTime + ", bookCurrency=" + bookCurrency
+				+ ", level=" + level + ", bookCurrencyGift=" + bookCurrencyGift
+				+ ", cumulativeCurrency=" + cumulativeCurrency
+				+ ", createTime=" + createTime + ", source=" + source
+				+ ", loginTime=" + loginTime + ", followstate=" + followstate
+				+ ", isvip=" + isvip + ", phone=" + phone + ", signtimes="
+				+ signtimes + ", state=" + state + ", autoOrder=" + autoOrder
+				+ ", expDate=" + expDate + "]";
+	}
+	
+}

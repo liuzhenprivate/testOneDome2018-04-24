@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>渠道信息总览</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/channelList.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body style="background: #fff;" onload="myTab()">
+	<div class="channelformationAll">
+		<div class="channelDetailsDeInfor clearfix">
+			<h2>基本信息</h2>
+			<div class="clearfix">
+				<a class="channelDetailsDeInfor1" href="javascript:void(0)" title=""><span>冻结渠道</span></a>
+				<a class="channelDetailsDeInfor2" href="javascript:void(0)" title=""><span>重置密码</span></a>	
+			</div>
+		</div>
+		<div class="channelDetailsDeAll clearfix">
+			<ul>
+				<li class="clearfix">
+					<span>渠道账号</span>
+					<p>18754785741</p>
+				</li>
+				<li class="clearfix">
+					<span>渠道 ID</span>
+					<p>18754785741</p>
+				</li>
+				<li class="clearfix">
+					<span>添加日期</span>
+					<p>2017-12-14 09:13</p>
+				</li>
+				<li class="clearfix">
+					<span>渠道充值</span>
+					<p>8541247</p>
+				</li>
+				<li class="clearfix">
+					<span>渠道状态</span>
+					<p>正常</p>
+				</li>
+			</ul>
+		</div>
+		<div class="channelDetailsDeInfor clearfix">
+			<h2>公众号信息</h2>
+		</div>
+		<div class="channelDetailsDeAll clearfix">
+			<ul>
+				<li class="clearfix">
+					<span>公众号名称</span>
+					<p>巴士小说</p>
+				</li>
+				<li class="clearfix">
+					<span>公众号类型</span>
+					<p>服务号</p>
+				</li>
+				<li class="clearfix">
+					<span>原始 ID</span>
+					<p>23623424243254sdgfs</p>
+				</li>
+				<li class="clearfix">
+					<span>App ID</span>
+					<p>wxa5c262e2e6f04ba7</p>
+				</li>
+				<li class="clearfix">
+					<span>App Secret</span>
+					<p>6ffa67efd10c88b0e6c2d49b0f631297</p>
+				</li>
+				<li class="clearfix">
+					<span>公众号二维码</span>
+					<div>
+						<img class="channelDetailsDeAll1" src="../images/myPic63.png" alt="" />
+						<img class="channelDetailsDeAll2" src="../images/myPic63.png" alt="" />
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("faker"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		$('.channelDetailsDeAll ul li div').mouseenter(function(){
+			$('.channelDetailsDeAll2').show();
+		})
+		$('.channelDetailsDeAll ul li div').mouseleave(function(){
+			$('.channelDetailsDeAll2').hide();
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+package com.sinontech.controller;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sinontech.controller.base.BaseController;
+import com.sinontech.modle.Article;
+import com.sinontech.modle.ArticleChapter;
+import com.sinontech.modle.ArticleChapterLog;
+import com.sinontech.modle.ArticleLog;
+import com.sinontech.modle.ConsumeLog;
+import com.sinontech.modle.ExtensionContent;
+import com.sinontech.modle.UserInfo;
+import com.sinontech.modle.Webchat;
+import com.sinontech.pub.utils.DateUtil;
+import com.sinontech.service.impl.ArticleChapterLogServiceImpl;
+import com.sinontech.service.impl.ArticleChapterServiceImpl;
+import com.sinontech.service.impl.ArticleLogServiceImpl;
+import com.sinontech.service.impl.ArticleServiceImpl;
+import com.sinontech.service.impl.ConsumeLogServiceImpl;
+import com.sinontech.service.impl.ExtensionContentServiceImpl;
+import com.sinontech.service.impl.UserInfoServiceImpl;
+import com.sinontech.service.impl.WebchatServiceImpl;
+
+import common.Logger;
+
+@Controller("articlechaptercontroller")
+@RequestMapping(value = "/articlechapter")
+public class ArticleChapterController extends BaseController{
+	protected static final Logger logger = Logger
+			.getLogger(ArticleController.class);
+
+	@Autowired
+	WebchatServiceImpl webchatServiceImpl;
+	@Autowired
+	UserInfoServiceImpl userinfoService;
+	@Autowired
+	ArticleChapterServiceImpl articleChapterServiceImpl;
+	@Autowired
+	ArticleChapterLogServiceImpl articleChapterLogServiceImpl;
+	@Autowired
+	ConsumeLogServiceImpl consumeLogServiceImpl;
+	@Autowired
+	ArticleLogServiceImpl articleLogServiceImpl;
+	@Autowired
+	ExtensionContentServiceImpl extensionContentServiceImpl;
+	@Autowired
+	ArticleServiceImpl articleServiceImpl;
+	/**
+	 * @purpose：查询书籍章节内容
+	 * @param userId
+	 * @param articlechapterid
+	 * @param request
+	 * @param response
+	 * @return String
+	 * @author liuzhen
+	 * @Time：2018-3-11 上午11:09:28
+	 */
+	@RequestMapping(value = "/articlechapterGetById/{webchatId}/{articlechapterid}/{userId}")
+	public String articlechapterGetById(@PathVariable long webchatId,@PathVariable long userId,
+			@PathVariable long articlechapterid,HttpServletRequest request,HttpServletResponse response) {
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());  
+ 		UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+		if(null==user){
+			String CODE = request.getParameter("code");
+			if(null!=CODE && !"".equals(CODE) && !"null".equals(CODE)){
+					//通过CODE获取到用户信息
+				 	user = getUserInfo(chat,CODE);
+				 	if(null!=user){
+				 		request.getSession().setAttribute("userinfo", user);
+				 	}else{
+				 		return null;
+				 	}
+			}else{
+				return getWXCode(chat,"/read/bookstore/"+webchatId);
+			}
+		}else{
+			//判断未关注用户更新用户信息
+			if(user.getFollowstate()==0){
+				user = updateUserInfo(chat,user);
+			}
+		} 
+		ArticleChapter articleChapter = null;
+		String chapterTxt = "";
+		ConsumeLog consumelog = null;
+		try {
+			
+			articleChapter = articleChapterServiceImpl.getArticleChapterById(articlechapterid);
+			if(null==articleChapter){
+				return null;
+			}
+			//判断是否收费
+			if (articleChapter.getIsFree() == 1) {
+				//查询是否消费过此章节
+				System.out.println("articlechapterid="+articlechapterid+"-----userId="+userId);
+				consumelog = consumeLogServiceImpl.selectIsNotNull(userId,articlechapterid);
+				if(consumelog==null){
+					if (articleChapter.getConsumes() <= (user.getCumulativeCurrency()-user.getBookCurrency())) {
+						URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+						HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+						// 设置超时间为3秒
+						conn.setConnectTimeout(3 * 1000);
+						// 防止屏蔽程序抓取而返回403错误
+						conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+						// 得到输入流
+						InputStream inputStream = conn.getInputStream();
+						//书籍章节内容
+						chapterTxt = readInputStream(inputStream);
+						user.setBookCurrency((user.getBookCurrency()+articleChapter.getConsumes()));
+						//更新用户信息
+						userinfoService.updateUserInfo(user);
+						String dateTime = DateUtil.getStringNow();
+						//添加书籍章节阅读记录
+						ArticleChapterLog articleChapterLog = new ArticleChapterLog();
+						articleChapterLog.setArticle(articleChapter.getArticle());
+						articleChapterLog.setArticleChapter(articleChapter);
+						articleChapterLog.setFee(articleChapter.getConsumes());
+						articleChapterLog.setCreateTime(dateTime);
+						articleChapterLog.setArticleName(articleChapter.getArticle().getArticleName());
+						articleChapterLog.setChannelId(user.getChannelId());
+						articleChapterLog.setChapterName(articleChapter.getChapterName());
+						articleChapterLog.setUserId(user.getId());
+						articleChapterLog.setWebchatId(user.getWebchatId());
+						articleChapterLogServiceImpl.saveArticleChapterLog(articleChapterLog);
+						
+						//添加书籍阅读记录
+						ArticleLog a = articleLogServiceImpl.getArticleLogByUIdAndAid(userId,articleChapter.getArticle().getId());
+						ArticleLog articleLog = new ArticleLog();
+						articleLog.setArticle(articleChapter.getArticle());
+						articleLog.setUserId(userId);
+						articleLog.setChannelId(user.getChannelId());
+						articleLog.setWebchatId(user.getWebchatId());
+						articleLog.setArticleName(articleChapter.getArticle().getArticleName());
+						articleLog.setChapterName(articleChapter.getChapterName());
+						articleLog.setCreateTime(dateTime);
+						articleLog.setFee(articleChapter.getConsumes());
+						if(a!=null){
+							articleLogServiceImpl.updateArticleLog(articleLog);
+						}else{
+							articleLogServiceImpl.saveArticleLog(articleLog);
+							//添加书籍消费记录
+							ConsumeLog consumeLog = new ConsumeLog();
+							consumeLog.setUserId(userId);
+							consumeLog.setChannelId(user.getChannelId());
+							consumeLog.setWebchatId(user.getWebchatId());
+							consumeLog.setArticleId(articleChapter.getArticle().getId());
+							consumeLog.setArticleChapterId(articleChapter.getId());
+							consumeLog.setArticleName(articleChapter.getArticle().getArticleName());
+							consumeLog.setChapterName(articleChapter.getChapterName());
+							consumeLog.setCreateTime(dateTime);
+							consumeLog.setConsumes(articleChapter.getConsumes());
+							consumeLog.setConsumeType(0);
+							consumeLogServiceImpl.saveConsumeLog(consumeLog);
+						}
+					}else{
+						//如果用户账户里剩余阅读币不够购买下一下章节
+						request.setAttribute("currency", 0);
+					}
+				}else{
+					URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+					// 设置超时间为3秒
+					conn.setConnectTimeout(3 * 1000);
+					// 防止屏蔽程序抓取而返回403错误
+					conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+					// 得到输入流
+					InputStream inputStream = conn.getInputStream();
+					//书籍章节内容
+					chapterTxt = readInputStream(inputStream);
+				}
+			}else{
+				URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				// 设置超时间为3秒
+				conn.setConnectTimeout(3 * 1000);
+				// 防止屏蔽程序抓取而返回403错误
+				conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+				// 得到输入流
+				InputStream inputStream = conn.getInputStream();
+				//书籍章节内容
+				chapterTxt = readInputStream(inputStream);
+			}
+		} catch (Exception e) {
+			logger.error(e.toString(), e);
+		}
+		request.setAttribute("user", user);
+		request.getSession().setAttribute("userinfo", user);
+		request.setAttribute("articleChapter", articleChapter);
+		request.setAttribute("chapterTxt", chapterTxt);
+		return "home/read/bookstore/changeColor";
+	}
+	
+	/**
+	 * 
+	 * @purpose：阅读下一章节
+	 * @param webchatId
+	 * @param userId
+	 * @param request
+	 * @param response
+	 * @return
+	 * @return String
+	 * @author liuzhen
+	 * @Time：2018-3-20 下午5:22:36
+	 */
+	@RequestMapping(value = "/readNextArticleChapter/{webchatId}/{userId}")
+	public String readNextArticleChapter(@PathVariable long webchatId,@PathVariable long userId,
+			HttpServletRequest request,HttpServletResponse response){
+		long articleId = Long.parseLong(request.getParameter("articleId"));
+		long articleChpterId = Long.parseLong(request.getParameter("articleChpterId"));
+		
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());  
+ 		UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+		if(null==user){
+			String CODE = request.getParameter("code");
+			if(null!=CODE && !"".equals(CODE) && !"null".equals(CODE)){
+					//通过CODE获取到用户信息
+				 	user = getUserInfo(chat,CODE);
+				 	if(null!=user){
+				 		request.getSession().setAttribute("userinfo", user);
+				 	}else{
+				 		return null;
+				 	}
+			}else{
+				return getWXCode(chat,"/read/bookstore/"+webchatId);
+			}
+		}else{
+			//判断未关注用户更新用户信息
+			if(user.getFollowstate()==0){
+				user = updateUserInfo(chat,user);
+			}
+		} 
+		request.setAttribute("user", user);
+		request.getSession().setAttribute("userinfo", user);
+		
+		
+		
+		return "";
+	}
+	
+	
+	/**
+	 * 
+	 * @purpose：接收渠道分享链接
+	 * @param request
+	 * @param response
+	 * @return
+	 * @return String
+	 * @author liuzhen
+	 * @Time：2018-3-16 下午4:06:12
+	 */
+	@RequestMapping(value = "/visit")
+	public String Manufacture(HttpServletRequest request,HttpServletResponse response){
+		int articleChpaters = Integer.parseInt(request.getParameter("a_cs").substring(0, 1));
+		long articleId = Long.parseLong(request.getParameter("a_i"));
+		long extensionContentId = Long.parseLong(request.getParameter("e_c_i"));
+		long user_id = Long.parseLong(request.getParameter("s_ui"));
+		ExtensionContent extensionContent = null;
+		List<ArticleChapter> articleChapterlist = null;
+		Article article = null;
+		ArticleChapter articleChapter = null;
+		List<Map> chapterList = new ArrayList<Map>();
+		try {
+			extensionContent = extensionContentServiceImpl.selectFindById(extensionContentId);
+			if(extensionContent==null){
+				return null;
+			}
+			article = articleServiceImpl.getArticleByArticleId(articleId);
+			if(article==null){
+				return null;
+			}
+			articleChapterlist = articleChapterServiceImpl.visitSeachChapter(articleId,articleChpaters);
+			if(articleChapterlist.size()==0){
+				return null;
+			}
+			articleChapter =articleChapterlist.get(articleChapterlist.size()-1);
+			for (int i = 0; i < articleChapterlist.size(); i++) {
+				Map<String,Object> map = new HashMap<String,Object>();
+				URL url = new URL("http://127.0.0.1:8089/read/"+articleChapterlist.get(i).getContentUrl());
+				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				// 设置超时间为3秒
+				conn.setConnectTimeout(3 * 1000);
+				// 防止屏蔽程序抓取而返回403错误
+				conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+				// 得到输入流
+				InputStream inputStream = conn.getInputStream();
+				//书籍章节内容
+				String chapterTxt = readInputStream(inputStream);
+				map.put("articleChapter", articleChapterlist.get(i));
+				map.put("chapterTxt", chapterTxt);
+				chapterList.add(map);
+			}
+		} catch (Exception e) {
+			logger.error(e.toString(),e);
+		}
+		request.setAttribute("extensionContent",extensionContent );
+		request.setAttribute("articleChapterlist", articleChapterlist);
+		request.setAttribute("chapterList", chapterList);
+		request.setAttribute("articleChapter", articleChapter);
+		request.setAttribute("article", article);
+		request.setAttribute("user_id", user_id);
+		request.setAttribute("httpUrl", "http://kuwx.xinxinwx.cn/read/");
+		return "home/read/extension/extension_textReading";
+	}
+	
+	/**
+	 * 
+	 * @purpose：通过分享链接进入详细章节阅读
+	 * @param request
+	 * @param response
+	 * @return
+	 * @return String
+	 * @author liuzhen
+	 * @Time：2018-3-19 下午2:21:09
+	 */
+	@RequestMapping(value = "/extensionChapterRead")
+	public String extensionChapterRead(HttpServletRequest request,HttpServletResponse response){
+		long user_id = Long.parseLong(request.getParameter("user_id"));
+		long articleId = Long.parseLong(request.getParameter("articleId"));
+		long articleChapterId = Long.parseLong(request.getParameter("articleChapterId"));
+		long extensionContentId = Long.parseLong(request.getParameter("extensionContentId"));
+		
+		Webchat webchat = this.webchatServiceImpl.selectFindByChannelId(user_id);
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchat.getId());
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());  
+ 		UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+		if(null==user){
+			String CODE = request.getParameter("code");
+			if(null!=CODE && !"".equals(CODE) && !"null".equals(CODE)){
+					//通过CODE获取到用户信息
+				 	user = getUserInfo(chat,CODE);
+				 	
+				 	if(null!=user){
+				 		request.getSession().setAttribute("userinfo", user);
+				 	}else{
+				 		return null;
+				 	}
+			}else{
+				return getWXCode(chat,"/articlechapter/extensionChapterRead.do?webchatId="+webchat.getId()
+						+"&user_id="+user_id+"&articleId="+articleId+"&articleChapterId="+articleChapterId
+						+"&extensionContentId="+extensionContentId);
+			}
+		}else{
+			//判断未关注用户更新用户信息
+			if(user.getFollowstate()==0){
+				user = updateUserInfo(chat,user);
+			}
+		} 
+		System.out.println(user.toString()+"============");
+		ExtensionContent extensionContent = null;
+		ArticleChapter articleChapter = null;
+		String chapterTxt = "";
+		try {
+			//查询推广链接详情
+			extensionContent = extensionContentServiceImpl.selectFindById(extensionContentId);
+			//查询下一个章节内容
+			articleChapter = articleChapterServiceImpl.seachNextChapter(articleId,articleChapterId);
+			URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			// 设置超时间为3秒
+			conn.setConnectTimeout(3 * 1000);
+			// 防止屏蔽程序抓取而返回403错误
+			conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+			// 得到输入流
+			InputStream inputStream = conn.getInputStream();
+			//书籍章节内容
+			chapterTxt = readInputStream(inputStream);
+			request.setAttribute("chapterTxt", chapterTxt);
+			//添加书籍章节阅读记录
+			String dateTime = DateUtil.getStringNow();
+			ArticleChapterLog articleChapterLog = new ArticleChapterLog();
+			articleChapterLog.setArticle(articleChapter.getArticle());
+			articleChapterLog.setArticleChapter(articleChapter);
+			articleChapterLog.setFee(articleChapter.getConsumes());
+			articleChapterLog.setCreateTime(dateTime);
+			articleChapterLog.setArticleName(articleChapter.getArticle().getArticleName());
+			articleChapterLog.setChannelId(user.getChannelId());
+			articleChapterLog.setChapterName(articleChapter.getChapterName());
+			articleChapterLog.setUserId(user.getId());
+			articleChapterLog.setWebchatId(user.getWebchatId());
+			articleChapterLogServiceImpl.saveArticleChapterLog(articleChapterLog);
+			
+			//添加书籍阅读记录
+			ArticleLog a = articleLogServiceImpl.getArticleLogByUIdAndAid(user.getId(),articleChapter.getArticle().getId());
+			ArticleLog articleLog = new ArticleLog();
+			articleLog.setArticle(articleChapter.getArticle());
+			articleLog.setUserId(user.getId());
+			articleLog.setChannelId(user.getChannelId());
+			articleLog.setWebchatId(user.getWebchatId());
+			articleLog.setArticleName(articleChapter.getArticle().getArticleName());
+			articleLog.setChapterName(articleChapter.getChapterName());
+			articleLog.setCreateTime(dateTime);
+			articleLog.setFee(articleChapter.getConsumes());
+			if(a!=null){
+				articleLogServiceImpl.updateArticleLog(articleLog);
+			}else{
+				articleLogServiceImpl.saveArticleLog(articleLog);
+				//添加书籍消费记录
+				ConsumeLog consumeLog = new ConsumeLog();
+				consumeLog.setUserId(user.getId());
+				consumeLog.setChannelId(user.getChannelId());
+				consumeLog.setWebchatId(user.getWebchatId());
+				consumeLog.setArticleId(articleChapter.getArticle().getId());
+				consumeLog.setArticleChapterId(articleChapter.getId());
+				consumeLog.setArticleName(articleChapter.getArticle().getArticleName());
+				consumeLog.setChapterName(articleChapter.getChapterName());
+				consumeLog.setCreateTime(dateTime);
+				consumeLog.setConsumes(articleChapter.getConsumes());
+				consumeLog.setConsumeType(0);
+				consumeLogServiceImpl.saveConsumeLog(consumeLog);
+			}
+		} catch (Exception e) {
+			logger.error(e.toString(),e);
+		}
+		request.setAttribute("user", user);
+		request.getSession().setAttribute("userinfo", user);
+		request.setAttribute("extensionContent", extensionContent);
+		request.setAttribute("articleChapter", articleChapter);
+		
+		if(user.getFollowstate()==0){
+			return "home/read/bookstore/changeColor";
+		}else{
+			return "home/read/extension/textReading";
+		}
+	}
+	
+	
+	/**
+	 * 
+	 * @purpose：通过分享链接进入详细下一章节阅读
+	 * @param request
+	 * @param response
+	 * @return
+	 * @return String
+	 * @author liuzhen
+	 * @Time：2018-3-19 下午2:21:09
+	 */
+	@RequestMapping(value = "/extensionChapterReadNext/{webchatId}/{userId}")
+	public String extensionChapterReadNext(@PathVariable long webchatId,@PathVariable long userId,HttpServletRequest request,HttpServletResponse response){
+		long articleId = Long.parseLong(request.getParameter("articleId"));
+		long articleChapterId = Long.parseLong(request.getParameter("articleChapterId"));
+		long extensionContentId = Long.parseLong(request.getParameter("extensionContentId"));
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());  
+ 		UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+		if(null==user){
+			String CODE = request.getParameter("code");
+			if(null!=CODE && !"".equals(CODE) && !"null".equals(CODE)){
+					//通过CODE获取到用户信息
+				 	user = getUserInfo(chat,CODE);
+				 	if(null!=user){
+				 		request.getSession().setAttribute("userinfo", user);
+				 	}else{
+				 		return null;
+				 	}
+			}else{
+				return getWXCode(chat,"/read/bookstore/"+webchatId);
+			}
+		}else{
+			//判断未关注用户更新用户信息
+			if(user.getFollowstate()==0){
+				user = updateUserInfo(chat,user);
+			}
+		} 
+		ExtensionContent extensionContent = null;
+		ArticleChapter articleChapter = null;
+		String chapterTxt = "";
+		String returnUrl = "";
+		try {
+			//查询推广链接详情
+			extensionContent = extensionContentServiceImpl.selectFindById(extensionContentId);
+			int forceChapter = extensionContent.getForceChapter();
+			//查询下一个章节内容
+			articleChapter = articleChapterServiceImpl.seachNextChapter(articleId,articleChapterId);
+			if(user.getFollowstate()==0){
+				int articleChapterdown = articleChapterServiceImpl.countDownChapter(articleChapter.getArticle().getId(),articleChapter.getId());
+				if(forceChapter<=articleChapterdown){
+					returnUrl = "home/read/extension/compulsoryAttention";
+				}else{
+					URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+					// 设置超时间为3秒
+					conn.setConnectTimeout(3 * 1000);
+					// 防止屏蔽程序抓取而返回403错误
+					conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+					// 得到输入流
+					InputStream inputStream = conn.getInputStream();
+					//书籍章节内容
+					chapterTxt = readInputStream(inputStream);
+					request.setAttribute("chapterTxt", chapterTxt);
+					returnUrl = "home/read/extension/textReading";
+				}
+			}else{
+				URL url = new URL("http://127.0.0.1:8089/read/"+articleChapter.getContentUrl());
+				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				// 设置超时间为3秒
+				conn.setConnectTimeout(3 * 1000);
+				// 防止屏蔽程序抓取而返回403错误
+				conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+				// 得到输入流
+				InputStream inputStream = conn.getInputStream();
+				//书籍章节内容
+				chapterTxt = readInputStream(inputStream);
+				request.setAttribute("chapterTxt", chapterTxt);
+				returnUrl = "home/read/bookstore/changeColor";
+			}
+			//添加书籍章节阅读记录
+			String dateTime = DateUtil.getStringNow();
+			ArticleChapterLog articleChapterLog = new ArticleChapterLog();
+			articleChapterLog.setArticle(articleChapter.getArticle());
+			articleChapterLog.setArticleChapter(articleChapter);
+			articleChapterLog.setFee(articleChapter.getConsumes());
+			articleChapterLog.setCreateTime(dateTime);
+			articleChapterLog.setArticleName(articleChapter.getArticle().getArticleName());
+			articleChapterLog.setChannelId(user.getChannelId());
+			articleChapterLog.setChapterName(articleChapter.getChapterName());
+			articleChapterLog.setUserId(user.getId());
+			articleChapterLog.setWebchatId(user.getWebchatId());
+			articleChapterLogServiceImpl.saveArticleChapterLog(articleChapterLog);
+			
+			//添加书籍阅读记录
+			ArticleLog a = articleLogServiceImpl.getArticleLogByUIdAndAid(userId,articleChapter.getArticle().getId());
+			ArticleLog articleLog = new ArticleLog();
+			articleLog.setArticle(articleChapter.getArticle());
+			articleLog.setUserId(userId);
+			articleLog.setChannelId(user.getChannelId());
+			articleLog.setWebchatId(user.getWebchatId());
+			articleLog.setArticleName(articleChapter.getArticle().getArticleName());
+			articleLog.setChapterName(articleChapter.getChapterName());
+			articleLog.setCreateTime(dateTime);
+			articleLog.setFee(articleChapter.getConsumes());
+			if(a!=null){
+				articleLogServiceImpl.updateArticleLog(articleLog);
+			}else{
+				articleLogServiceImpl.saveArticleLog(articleLog);
+				//添加书籍消费记录
+				ConsumeLog consumeLog = new ConsumeLog();
+				consumeLog.setUserId(userId);
+				consumeLog.setChannelId(user.getChannelId());
+				consumeLog.setWebchatId(user.getWebchatId());
+				consumeLog.setArticleId(articleChapter.getArticle().getId());
+				consumeLog.setArticleChapterId(articleChapter.getId());
+				consumeLog.setArticleName(articleChapter.getArticle().getArticleName());
+				consumeLog.setChapterName(articleChapter.getChapterName());
+				consumeLog.setCreateTime(dateTime);
+				consumeLog.setConsumes(articleChapter.getConsumes());
+				consumeLog.setConsumeType(0);
+				consumeLogServiceImpl.saveConsumeLog(consumeLog);
+			}
+		} catch (Exception e) {
+			logger.error(e.toString(),e);
+		}
+		request.setAttribute("user", user);
+		request.getSession().setAttribute("userinfo", user);
+		request.setAttribute("extensionContent", extensionContent);
+		request.setAttribute("articleChapter", articleChapter);
+		return returnUrl;
+	}
+	
+}

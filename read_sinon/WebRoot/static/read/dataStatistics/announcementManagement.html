@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数据统计公告管理</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/dataStatistics.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">数据统计</a>
+		<img src="../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">公告管理</a>
+	</div>
+	<div class="announcementManagementDe">
+		<div class="announcementManagementDeTop clearfix">
+			<div class="announcementManagementDeTopL clearfix">
+				<input id="test6" readonly="readonly" />
+				<img src="../images/myPic13.png" alt="" />
+			</div>
+			<div class="announcementManagementDeTopC clearfix">
+				<p>推送状态</p>
+				<img src="../images/myPic13.png" alt="" />
+				<ul>
+					<li>已推送</li>
+					<li>未推送</li>
+					<li>已推送</li>
+				</ul>
+			</div>
+			<a href="javascript:void(0)" title=""><span>新建公告</span></a>
+		</div>
+		<div class="announcementManagementDeBodyT clearfix">
+			<span style="width: 140px; margin-left: 19px;">推送日期</span>
+			<span style="width: 110px;">管理员类型</span>
+			<span style="width: 96px;">管理员ID</span>
+			<span style="width: 108px;">推送标题</span>
+			<span style="width: 305px;">内容预览</span>
+			<span style="width: 107px;">公告状态</span>
+			<span>管理操作</span>
+		</div>
+		<div class="announcementManagementDeBodyB">
+			<ul>
+				<li class="clearfix">
+					<div style="width: 140px; margin-left: 19px;">2017-08-09 09:21</div>
+					<div style="width: 110px;">公告管理</div>
+					<div style="width: 96px;">11233566</div>
+					<div style="width: 108px;">新书推荐</div>
+					<div style="width: 305px;" class="clearfix">
+						<p>圣墟、大道无疆、天心诀人气推荐，建议建议建议</p>
+						<span>展开</span>
+					</div>
+					<div style="width: 107px;">已推送</div>
+					<div class="clearfix">
+						<i>操作</i>
+						<div class="announcementManagementDeBodyB1">
+							<a onClick="fun3()">编辑</a>
+							<a>立即推送</a>
+							<a>取消推送</a>
+							<a>删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div style="width: 140px; margin-left: 19px;">2017-08-09 09:21</div>
+					<div style="width: 110px;">公告管理</div>
+					<div style="width: 96px;">11233566</div>
+					<div style="width: 108px;">新书推荐</div>
+					<div style="width: 305px;" class="clearfix">
+						<p>圣墟、大道无疆、天心诀人气推荐，建议建议建议</p>
+						<span>展开</span>
+					</div>
+					<div style="width: 107px;">已推送</div>
+					<div class="clearfix">
+						<i>操作</i>
+						<div class="announcementManagementDeBodyB1">
+							<a class="announcementManagementDeBodyB1A">编辑</a>
+							<a>立即推送</a>
+							<a>取消推送</a>
+							<a>删除</a>
+						</div>
+					</div>
+				</li>
+				<li class="clearfix">
+					<div style="width: 140px; margin-left: 19px;">2017-08-09 09:21</div>
+					<div style="width: 110px;">公告管理</div>
+					<div style="width: 96px;">11233566</div>
+					<div style="width: 108px;">新书推荐</div>
+					<div style="width: 305px;" class="clearfix">
+						<p>圣墟、大道无疆、天心诀人气推荐，建议建议建议</p>
+						<span>展开</span>
+					</div>
+					<div style="width: 107px;">已推送</div>
+					<div class="clearfix">
+						<i>操作</i>
+						<div class="announcementManagementDeBodyB1">
+							<a class="announcementManagementDeBodyB1A">编辑</a>
+							<a>立即推送</a>
+							<a>取消推送</a>
+							<a>删除</a>
+						</div>
+					</div>
+				</li>
+				<li style="background: #fafafa;" class="clearfix">
+					<div style="width: 140px; margin-left: 19px;">2017-08-09 09:21</div>
+					<div style="width: 110px;">公告管理</div>
+					<div style="width: 96px;">11233566</div>
+					<div style="width: 108px;">新书推荐</div>
+					<div style="width: 305px;" class="clearfix">
+						<p>圣墟、大道无疆、天心诀人气推荐，建议建议建议</p>
+						<span>展开</span>
+					</div>
+					<div style="width: 107px;">已推送</div>
+					<div class="clearfix">
+						<i>操作</i>
+						<div class="announcementManagementDeBodyB1">
+							<a class="announcementManagementDeBodyB1A">编辑</a>
+							<a>立即推送</a>
+							<a>取消推送</a>
+							<a>删除</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="flipOne clearfix">
+			<div class="flipOneL">共233条</div>
+			<div class="flipOneR clearfix">
+				<div class="flipOnePrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipOneDe clearfix">
+					<span class="flipOneDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+				</div>
+				<div class="flipOneNext"><img src="../images/myPic18.png" alt="" /></div>
+			</div>
+		</div>
+		<div class="flipTwo clearfix">
+			<div class="flipTwoL">共233条</div>
+			<div class="flipTwoR clearfix">
+				<div class="flipTwoPrev"><img src="../images/myPic17.png" alt="" /></div>
+				<div class="flipTwoDe clearfix">
+					<span class="flipTwoDeSpan">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>...</span>
+					<span>50</span>
+				</div>
+				<div class="flipTwoNext"><img src="../images/myPic18.png" alt="" /></div>
+				<div class="flipTwoSkip">跳至</div>
+				<div class="clearfix flipTwoInp">
+					<input value="1" />
+				</div>
+				<div class="flipTwoSkip">页</div>
+				<div class="flipTwoSure">确定</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../layDate-v5.0.8/laydate/laydate.js"></script>
+	
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		laydate.render({
+		  elem: '#test6'
+		  ,range: true
+		});
+		
+		
+		$('.announcementManagementDeTopC').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.announcementManagementDeTopC ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$('.announcementManagementDeTopC p').text(val);
+			e.stopPropagation();
+		})
+		$(window).click(function(){
+			$('.announcementManagementDeTopC').find('ul').hide();
+			$('.announcementManagementDeBodyB ul li>div div').hide();
+		})
+		
+		$('.announcementManagementDeBodyB ul li div i').click(function(e){
+			if($(this).siblings('div').css('display')=="none"){
+				$(this).siblings('div').show();
+			}else{
+				$(this).siblings('div').hide();
+			}
+			$(this).parents('li').siblings().find('.announcementManagementDeBodyB1').hide();
+			e.stopPropagation();
+		})
+		$('.announcementManagementDeBodyB ul li>div div a').click(function(e){
+			e.stopPropagation();
+		})
+		$('.announcementManagementDeBodyB1 a').click(function(){
+			$(this).parent().hide();
+		})
+//		$('.announcementManagementDeBodyB1A').click(function(){
+//			$('.editorialNoticeAlert', parent.document).show();
+//			(function(Thunder){
+//				$('.editorialNoticeAlert', parent.document).css('padding-top',Thunder);
+//			})((parent.document.documentElement.clientHeight-$('.editorialNotice', parent.document).get(0).offsetHeight)/2);
+//		})
+		function fun3()
+
+{
+
+	var diag = new top.Dialog();
+
+	diag.Width = 560;
+
+	diag.Height = 388;
+
+	diag.Title = "编辑公告";
+
+	diag.URL = "http://127.0.0.1:8020/digitalReading/allAlert/editorialNotice.html";
+
+	diag.show();
+
+}
+	</script>
+</body>
+</html>

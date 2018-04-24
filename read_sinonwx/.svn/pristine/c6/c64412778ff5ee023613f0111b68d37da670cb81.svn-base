@@ -1,0 +1,135 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.sinontech.modle.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	 
+	Integer signflag = (Integer)request.getAttribute("signflag");//0未开启签到功能 1 已签到2未签到
+	UserInfo user = (UserInfo)request.getAttribute("user");
+//	System.out.println(user.toString());
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<base href="<%=basePath%>">
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>${articleCategory.gategory }</title>
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/base.css">
+    <link rel="stylesheet" type="text/css" href="pages/home/read/css/index.css">
+    <script src='pages/home/read/js/jquery-1.12.4.min.js'></script>
+    <script>
+    	function search(){
+    		$("#FORM").submit();
+    	}
+    </script>
+</head>
+<body style="background: #f2f2f2;">
+ 		<div class="vipBookStoreT clearfix">
+			<span class="vipBookStoreTAct" id="allboard"><a href="javascript:void(0)">所有</a></span>
+			<span id="manboard"><a href="javascript:void(0)">男生</a></span>
+			<span id="girlboard"><a href="javascript:void(0)">女生</a></span>
+		<i>筛选</i>
+	</div>
+	<div style="background: #ffffff; margin-top: 0;" class="detailsListDe">
+		<ul>
+		<c:forEach items="${list}" var="var" varStatus="vs">
+			<li class="clearfix">
+				<div class="detailsListDeL"><img src="http://kuwx.xinxinwx.cn/read/${var.bookCover }" alt="" /></div>
+				<div class="detailsListDeR">
+				<a href="<%=basePath%>article/findArticleId/<%=user.getWebchatId()%>/${var.id }/<%=user.getId()%>.do">
+					<div class="detailsListDeRT clearfix">
+						<!-- img src="pages/home/read/images/myPic2.png" alt="" /-->
+						<p>${var.articleName }</p>
+					</div>
+					<div class="detailsListDeRC">
+						 ${var.summary }
+					</div>
+					<div class="detailsListDeRB clearfix">
+						<p>${var.author }</p>
+						<div class="clearfix">
+							<span>${var.articleCategory.gategory }</span>
+							<span>${var.displayReaders }人在看</span>
+						</div>
+					</div>
+				</a>
+				</div>
+			</li>
+		</c:forEach>
+			 
+		</ul>
+	</div>
+	<div class="vipBottom clearfix">
+		<span style="margin-left: 0.3rem;"></span>
+		<p>我是有底线的</p>
+		<span></span>
+	</div>
+	<!--筛选下拉-->
+	<div class="vipBookStoreDown">
+		<ul>
+			<li class="clearfix">
+				<span>状态</span>
+				<div class="clearfix">
+					<i>连载</i>
+					<i>完结</i>
+				</div>
+			</li>
+			<li class="clearfix">
+				<span>方式</span>
+				<div class="clearfix">
+					<i>免费</i>
+					<i>付费</i>
+				</div>
+			</li>
+			<li class="clearfix">
+				<span>分类</span>
+				<div class="clearfix">
+					<i>科幻</i>
+					<i>游戏</i>
+					<i>玄幻</i>
+					<i>奇幻</i>
+					<i>仙侠</i>
+					<i>都市</i>
+					<i>校园</i>
+					<i>历史</i>
+					<i>悬疑</i>
+					<i>古代言情</i>
+					<i>现代言情</i>
+					<i>玄幻言情</i>
+					<i>仙侠情缘</i>
+					<i>青春校园</i>
+					<i>游戏竞技</i>
+					<i>科幻空间</i>
+					<i>惊悚悬疑</i>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	<script src="pages/home/read/js/rem.js"></script>
+	<script>
+		$('.vipBookStoreT span').click(function(){
+			$(this).addClass('vipBookStoreTAct').siblings('span').removeClass('vipBookStoreTAct');
+		});
+		
+		$('.vipBookStoreT i').click(function(){
+			if($(this).hasClass('vipBookStoreTIAct')){
+				$(this).removeClass('vipBookStoreTIAct');
+				$('.vipBookStoreDown').hide();
+			}else{
+				$(this).addClass('vipBookStoreTIAct');
+				$('.vipBookStoreDown').show();
+			}
+		});
+	</script>
+</body>
+</html>
+
+

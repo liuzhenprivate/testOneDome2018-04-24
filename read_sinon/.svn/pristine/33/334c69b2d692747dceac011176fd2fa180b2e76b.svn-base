@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>资源管理标签管理</title>
+	<link rel="stylesheet" type="text/css" href="../../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/resourceManagement.css"/>
+	<script src="../../js/jquery-1.12.4.min.js"></script>
+</head>
+<body onload="CrbtOrders()">
+	<div class="announcementManagementTop clearfix">
+		<a class="announcementManagementTop1" href="javascript:void(0)" title="">资源管理</a>
+		<img src="../../images/myPic12.png" alt="" />
+		<a class="announcementManagementTop2" style="color: #999999;" href="javascript:void(0)" title="">标签管理</a>
+	</div>
+	<div class="editTagDe">
+		<div class="labelManagementTop clearfix">
+			<div class="labelManagementTopL clearfix">
+				<div class="labelManagementTopL1 clearfix">
+					<input type="text" />
+					<p>输入分类名称</p>
+					<img src="../../images/myPic26.png" alt="" />
+				</div>
+				<div class="labelManagementTopL2 clearfix">
+					<span>全部标签</span>
+					<ul>
+						<li>武侠</li>
+						<li>古装</li>
+						<li>搞笑</li>
+					</ul>
+				</div>
+			</div>
+			<div class="labelManagementTopR clearfix">
+				<a class="labelManagementTopR1" href="javascript:void(0)" title=""><i>编辑标签</i></a>
+				<a class="labelManagementTopR2" href="editTag.html" title=""><i>新增标签</i></a>
+			</div>
+		</div>
+		<div class="editTagDeB">
+			<ul class="clearfix">
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+				<li>古装武侠剧</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("Thunder"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+		
+		$('.labelManagementTopL1 p').click(function(){
+			$(this).hide();
+			$(this).siblings('input').focus();
+		})
+		$('.labelManagementTopL1 input').bind('input propertychange', function(){
+        	if($(this).val()==''){
+        		$(this).siblings('p').show();
+//      		$(this).blur();
+        	}
+		});
+		$('.labelManagementTopL1 input').blur(function(){
+			if($(this).val()==''){
+				$(this).siblings('p').show();
+			}
+		})
+		
+		$(window).click(function(){
+			$('.labelManagementTopL2').find('ul').hide();
+		})
+		$('.labelManagementTopL2').click(function(e){
+			if($(this).find('ul').css('display')=="none"){
+				$(this).find('ul').show();
+			}else{
+				$(this).find('ul').hide();
+			}
+			e.stopPropagation();
+		})
+		$('.labelManagementTopL2 ul li').click(function(e){
+			$(this).css('color','#f37427');
+			$(this).siblings().css('color','#666666');
+			$(this).parent().hide();
+			var val=$(this).text();
+			$('.labelManagementTopL2 span').text(val);
+			e.stopPropagation();
+		})
+		
+		$('.editTagDeB ul li').click(function(){
+			if($(this).hasClass('editTagDeBAct')){
+				$(this).removeClass('editTagDeBAct');
+			}else{
+				$(this).addClass('editTagDeBAct');
+			}
+		})
+		
+		$('.labelManagementTopR span').click(function(){
+			$('.labelManagementPlusAlert', parent.document).show();
+			(function(Thunder){
+				$('.labelManagementPlusAlert', parent.document).css('padding-top',Thunder);
+			})((parent.document.documentElement.clientHeight-$('.labelManagementPlus', parent.document).get(0).offsetHeight)/2);
+		})
+	</script>
+</body>
+</html>

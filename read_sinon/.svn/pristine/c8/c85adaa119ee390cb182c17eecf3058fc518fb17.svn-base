@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardDetailMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into TB_BOARD_DETAIL(
+			BOARD_ID,	
+			ARTICLE_ID,	
+			BOARD_TYPE,	
+			SORT,	
+			CREATE_TIME,
+			SORT_RULE
+		) values (
+			#{BOARD_ID},	
+			#{ARTICLE_ID},	
+			#{BOARD_TYPE},	
+			#{SORT},	
+			#{CREATE_TIME},
+			#{SORT_RULE}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from TB_BOARD_DETAIL
+		where 
+			BOARD_DETAIL_ID = #{BOARD_DETAIL_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  TB_BOARD_DETAIL
+			set 
+				BOARD_ID = #{BOARD_ID},
+				ARTICLE_ID = #{ARTICLE_ID},
+				BOARD_TYPE = #{BOARD_TYPE},
+				SORT = #{SORT},
+				CREATE_TIME = #{CREATE_TIME},
+				SORT_RULE = #{SORT_RULE}
+			where 
+				BOARD_DETAIL_ID = #{BOARD_DETAIL_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			BOARD_ID,	
+			ARTICLE_ID,	
+			BOARD_TYPE,	
+			SORT,	
+			CREATE_TIME,	
+			BOARD_DETAIL_ID,
+			SORT_RULE
+		from 
+			TB_BOARD_DETAIL
+		where 
+			BOARD_DETAIL_ID = #{BOARD_DETAIL_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.BOARD_ID,	
+				a.ARTICLE_ID,	
+				a.BOARD_TYPE,	
+				a.SORT,	
+				a.CREATE_TIME,	
+				a.BOARD_DETAIL_ID,
+				a.SORT_RULE,
+				ta.ARTICLE_CATEGORY_ID,
+				ta.ARTICLE_CODE,	
+				ta.ARTICLE_NAME,	
+				ta.AUTHOR,	
+				ta.FEE_TYPE,	
+				ta.PAY_WAY,	
+				ta.PAY_CONSUMES,	
+				ta.COUNT_LETTER,	
+				ta.COUNT_CHAPTERS,	
+				ta.STATE,	
+				ta.COLLECTION,	
+				ta.READERS,
+				ta.DISPLAY_READERS,	
+				ta.CHANNEL_TYPE,
+				ta.SERIAL_STATE,
+				ta.BOOK_COVER
+		from 
+				TB_BOARD_DETAIL a LEFT JOIN tb_article ta ON a.ARTICLE_ID = ta.ARTICLE_ID
+		where ta.STATE = 1
+				<if test="pd.BOARD_ID!=null and pd.BOARD_ID!=''">
+					and a.BOARD_ID = #{pd.BOARD_ID}
+				</if>
+				<if test="pd.BOARD_TYPE!=null and pd.BOARD_TYPE!=''">
+					and a.BOARD_TYPE = #{pd.BOARD_TYPE}
+				</if>
+				<if test="pd.FEE_TYPE!=null and pd.FEE_TYPE!=''">
+					and ta.FEE_TYPE = #{pd.FEE_TYPE}
+				</if>
+				<if test="pd.CHANNEL_TYPE!=null and pd.CHANNEL_TYPE!=''">
+					and ta.CHANNEL_TYPE = #{pd.CHANNEL_TYPE}
+				</if>
+				<if test="pd.ARTICLE_CATEGORY_ID!=null and pd.ARTICLE_CATEGORY_ID!=''">
+					and ta.ARTICLE_CATEGORY_ID = #{pd.ARTICLE_CATEGORY_ID}
+				</if>
+				<if test="pd.names=null and pd.names!=''">
+					and ( 
+						ta.ARTICLE_NAME LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+						or 
+						ta.AUTHOR LIKE CONCAT(CONCAT('%', #{pd.names}),'%')
+					)
+				</if>
+				ORDER BY a.SORT 
+	</select>
+	
+	
+	<!-- 查询书籍类目 -->
+	<select id="seachboarddetailCATEGORY" parameterType="pd" resultType="pd">
+		select 
+			CATEGORY
+		from 
+			TB_ARTICLE_CATEGORY
+		where 
+			ARTICLE_CATEGORY_ID = #{ARTICLE_CATEGORY_ID}
+	</select>
+	
+	<!--  查询手动添加书籍 -->
+	<select id="addBooksListAll" parameterType="pd" resultType="pd">
+		select
+				a.ARTICLE_ID,	
+				a.ARTICLE_CATEGORY_ID,	
+				a.ARTICLE_CODE,	
+				a.ARTICLE_NAME,	
+				a.AUTHOR,	
+				a.FEE_TYPE,	
+				a.PAY_WAY,	
+				a.PAY_CONSUMES,	
+				a.IS_HOT,	
+				a.SUMMARY,	
+				a.COUNT_LETTER,	
+				a.COUNT_CHAPTERS,	
+				a.STATE,	
+				SUBSTRING(a.CREATE_TIME,1,10) CREATE_TIME,	
+				a.READERS,
+				a.DISPLAY_READERS,	
+				a.COLLECTION,	
+				a.COUNT_CONSUMES,	
+				a.CHANNEL_TYPE,
+				a.SERIAL_STATE,
+				a.BOOK_COVER,
+				a.RECOMMEND
+		from 
+				TB_ARTICLE a
+				LEFT JOIN tb_article_category ac on a.ARTICLE_CATEGORY_ID = ac.ARTICLE_CATEGORY_ID
+		where a.STATE = 1
+				and a.ARTICLE_ID not in(
+					select ARTICLE_ID from TB_BOARD_DETAIL where BOARD_ID = #{BOARD_ID} and BOARD_TYPE = #{BOARD_TYPE}
+				)
+				<if test="ARTICLE_CATEGORY_ID!=null and ARTICLE_CATEGORY_ID!=''">
+					and a.ARTICLE_CATEGORY_ID = #{ARTICLE_CATEGORY_ID}
+				</if>
+				<if test="CHANNEL_TYPE!=null and CHANNEL_TYPE!=''">
+					and a.CHANNEL_TYPE = #{CHANNEL_TYPE}
+				</if>
+				<if test="FEE_TYPE!=null and FEE_TYPE!=''">
+				 and a.FEE_TYPE = #{FEE_TYPE}
+				</if>
+				<if test="SEARCHKEY !=null and SEARCHKEY !=''">
+					and (a.ARTICLE_NAME like CONCAT(CONCAT('%', #{SEARCHKEY}),'%')
+					     or a.AUTHOR like CONCAT(CONCAT('%', #{SEARCHKEY}),'%')
+					     )
+				</if>
+	</select>
+	
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.BOARD_ID,	
+				a.ARTICLE_ID,	
+				a.BOARD_TYPE,	
+				a.SORT,	
+				a.CREATE_TIME,	
+				a.BOARD_DETAIL_ID,
+				a.SORT_RULE
+		from 
+				TB_BOARD_DETAIL a
+	</select>
+	
+	<!--手动添加前确认添加的书籍是否已经存在 -->
+	<select id="seachContrast" parameterType="pd" resultType="pd">
+		select 
+			BOARD_ID,	
+			ARTICLE_ID,	
+			BOARD_TYPE,	
+			SORT,	
+			CREATE_TIME,	
+			BOARD_DETAIL_ID,
+			SORT_RULE
+		from 
+			TB_BOARD_DETAIL
+		where 
+			BOARD_ID = #{BOARD_ID}
+			and
+			BOARD_TYPE = #{BOARD_TYPE}
+			and
+			ARTICLE_ID = #{ARTICLE_ID}
+	</select>
+	
+	<!-- 查询排序的最后一个 -->
+	<select id="seachNextSort" parameterType="pd" resultType="pd">
+		select 
+			BOARD_ID,	
+			ARTICLE_ID,	
+			BOARD_TYPE,	
+			SORT,	
+			CREATE_TIME,	
+			BOARD_DETAIL_ID,
+			SORT_RULE
+		from 
+			TB_BOARD_DETAIL
+		where 
+			BOARD_ID = #{BOARD_ID}
+			and
+			BOARD_TYPE = #{BOARD_TYPE}
+			and
+			SORT_RULE = 0
+			ORDER BY SORT ASC
+			limit 0,1
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from TB_BOARD_DETAIL
+		where 
+			BOARD_DETAIL_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

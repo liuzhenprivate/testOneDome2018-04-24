@@ -1,0 +1,222 @@
+package com.sinontech.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sinontech.controller.base.BaseController;
+import com.sinontech.modle.Article;
+import com.sinontech.modle.ArticleCategory;
+import com.sinontech.modle.ArticleChapterLog;
+import com.sinontech.modle.Html;
+import com.sinontech.modle.HtmlModle;
+import com.sinontech.modle.HtmlModleDetail;
+import com.sinontech.modle.HtmlModleDetailInfo;
+import com.sinontech.modle.HtmlModleInfo;
+import com.sinontech.modle.SearchLog;
+import com.sinontech.modle.UserInfo;
+import com.sinontech.modle.Webchat;
+import com.sinontech.pub.utils.DateUtil;
+import com.sinontech.service.impl.ArticleCategoryServiceImpl;
+import com.sinontech.service.impl.ArticleChapterLogServiceImpl;
+import com.sinontech.service.impl.ArticleServiceImpl;
+import com.sinontech.service.impl.HtmlModleDetailServiceImpl;
+import com.sinontech.service.impl.HtmlModleServiceImpl;
+import com.sinontech.service.impl.SearchkeyServiceImpl;
+import com.sinontech.service.impl.SearchlogServiceImpl;
+import com.sinontech.service.impl.SignlogServiceImpl;
+import com.sinontech.service.impl.SignsetServiceImpl;
+import com.sinontech.service.impl.UserInfoServiceImpl;
+import com.sinontech.service.impl.WebchatServiceImpl;
+
+import common.Logger;
+
+@Controller("readcontroller")
+@RequestMapping(value = "/read")
+public class ReadController extends BaseController{
+	protected static final Logger logger = Logger.getLogger(ReadController.class);
+	
+	@Autowired
+	UserInfoServiceImpl userinfoService;
+	@Autowired
+	WebchatServiceImpl webchatServiceImpl;
+	@Autowired
+	SignlogServiceImpl signlogServiceImpl;
+	@Autowired
+	SignsetServiceImpl signsetServiceImpl;
+	@Autowired
+	HtmlModleServiceImpl htmlModleServiceImpl;
+	@Autowired
+	HtmlModleDetailServiceImpl htmlModleDetailServiceImpl;
+	@Autowired
+	ArticleServiceImpl articleServiceImpl;
+	@Autowired
+	SearchkeyServiceImpl searchkeyServiceImpl;
+	@Autowired
+	SearchlogServiceImpl searchlogServiceImpl;
+	@Autowired
+	ArticleCategoryServiceImpl articleCategoryServiceImpl;
+	@Autowired
+	ArticleChapterLogServiceImpl articleChapterLogServiceImpl;
+	
+	@RequestMapping(value = "/bookstore/{webchatId}/{placType}")
+	public String bookstore(@PathVariable long webchatId,@PathVariable int placType,HttpServletRequest request, HttpServletResponse response) {
+		logger.info("欢迎进入+user=" );
+		
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());  
+		UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+		if(null==user){
+			String CODE = request.getParameter("code");
+			if(null!=CODE && !"".equals(CODE) && !"null".equals(CODE)){
+					//通过CODE获取到用户信息
+				 	user = getUserInfo(chat,CODE);
+				 	if(null!=user){
+				 		request.getSession().setAttribute("userinfo", user);
+				 	}else{
+				 		return null;
+				 	}
+			}else{
+				return getWXCode(chat,"/read/bookstore/"+webchatId);
+			}
+		}else{
+			//判断未关注用户更新用户信息
+			if(user.getFollowstate()==0){
+				user = updateUserInfo(chat,user);
+			}
+		}
+		//书城首页顶部模块
+//		int placType =1;
+		Html html = this.htmlModleServiceImpl.findHtmlByPlacType(placType);
+		if(null!=html){
+			List<HtmlModleInfo> htmlModleInfolist = getHtmlInfo(html);
+			 
+			request.setAttribute("html", html);
+			request.setAttribute("htmlModleInfolist", htmlModleInfolist);
+			if(1==placType){
+				//用户最新的阅读记录
+				ArticleChapterLog articleChapterLog = this.articleChapterLogServiceImpl.getNewArticleChapterLogByUserId(user.getId());
+				if(null!=articleChapterLog){
+					request.setAttribute("articleChapterLog", articleChapterLog);
+				}
+			}
+		}
+		
+		request.getSession().setAttribute("userinfo", user);
+		
+		request.setAttribute("webchatId", webchatId);
+		request.setAttribute("placType", placType);
+		return "home/read/bookstore/bookStore";
+	}
+	
+	public List<HtmlModleInfo> getHtmlInfo(Html html){
+		List<HtmlModleInfo> htmlModleInfolist = new ArrayList<HtmlModleInfo>();
+		List<HtmlModle> list = this.htmlModleServiceImpl.getHtmlModleByHtmlId(html.getId());
+		if(null!=list){
+			for(HtmlModle modle:list){
+				HtmlModleInfo modleinfo = getHtmlModleInfo(modle);
+				//模板类型1书籍 2专题
+				int type = modleinfo.getModleType();
+				List<HtmlModleDetail> detaillist= this.htmlModleDetailServiceImpl.gethtmlModleDetailByHtmlmodleId(modle.getId());
+				if(null!=detaillist){
+					List<HtmlModleDetailInfo> infolist = new ArrayList<HtmlModleDetailInfo>();
+					for(HtmlModleDetail htmlModleDetail:detaillist){
+						HtmlModleDetailInfo info = getHtmlModleDetailInfo(htmlModleDetail);
+						if(type==1){
+							Article article = this.articleServiceImpl.getArticleByArticleId(htmlModleDetail.getArticleID());
+							info.setArticle(article);
+						}
+						infolist.add(info);
+					}
+					modleinfo.setHtmlModleDetaillist(infolist);
+				}
+				htmlModleInfolist.add(modleinfo);
+			}
+		}
+		return htmlModleInfolist;
+	}
+	
+	@RequestMapping(value = "/articleCategory/{webchatId}")
+	public String articleCategory(@PathVariable long webchatId,HttpServletRequest request, HttpServletResponse response) {
+		logger.info("欢迎进入+user=" );
+		
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());    
+		
+		List<ArticleCategory> girllist = this.articleCategoryServiceImpl.getListByCategoryType(0);
+		List<ArticleCategory> boylist = this.articleCategoryServiceImpl.getListByCategoryType(1);
+		request.setAttribute("webchatId", webchatId);
+		request.setAttribute("list", girllist);
+		request.setAttribute("list", boylist);
+		return "home/read/bookstore/classify";
+	}
+	
+	@RequestMapping(value = "/search/{webchatId}")
+	public String search(@PathVariable long webchatId,HttpServletRequest request, HttpServletResponse response) {
+		logger.info("欢迎进入+user=" );
+		
+		Webchat chat = this.webchatServiceImpl.getWebchatById(webchatId);
+		if(null==chat){
+			return null;
+		}
+		logger.info("-----------------"+chat.toString());    
+		String key = request.getParameter("key");
+		if(null!=key && !"".equals(key) && !"null".equals(key)){
+			SearchLog log =new SearchLog();
+			log.setCreateTime(DateUtil.getStringNow());
+			log.setKeyword(key);
+			UserInfo user = (UserInfo) request.getSession().getAttribute("userinfo");
+			if(null!=user){
+				log.setUserId(user.getId());
+			}
+			this.searchlogServiceImpl.saveSearchLog(log);
+		}
+		List<Article> list = this.articleServiceImpl.getArticleByKey(key);
+		System.out.println(list.toString());
+//		UserInfo user = this.userinfoService.getUserInfoById(webchatId,userid);
+//		request.getSession().setAttribute("userinfo", user);
+		request.setAttribute("key", key);
+		request.setAttribute("list", list);
+		request.setAttribute("webchatId", webchatId);
+		return "home/read/bookstore/searchresult";
+	}
+	
+	 
+	@RequestMapping(value = "/token")
+	public void token(HttpServletRequest request, HttpServletResponse response) {
+		logger.info("token=="+request.getRemoteHost()+"=ip");
+		String signature = request.getParameter("signature");
+		String timestamp = request.getParameter("timestamp");
+		String nonce = request.getParameter("nonce");
+		String echostr = request.getParameter("echostr");
+		logger.info(signature+"="+timestamp+"="+nonce+"="+echostr);
+		 response(echostr,response);
+	}
+	
+	@RequestMapping(value = "/pay/notify")
+	public void notify(HttpServletRequest request, HttpServletResponse response) {
+		logger.info("notify=="+request.getRemoteHost()+"=ip");
+		String signature = request.getParameter("signature");
+		String timestamp = request.getParameter("timestamp");
+		String nonce = request.getParameter("nonce");
+		String echostr = request.getParameter("echostr");
+		logger.info(signature+"="+timestamp+"="+nonce+"="+echostr);
+		 response(echostr,response);
+	}
+	
+  
+    
+}

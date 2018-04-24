@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>基本信息</title>
+	<link rel="stylesheet" type="text/css" href="../css/ThunderBase.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/channelList.css"/>
+	<script src="../js/jquery-1.12.4.min.js"></script>
+</head>
+<body style="background: #fff;" onload="myTab()">
+	<div class="essentialInformationAll">
+		<div class="channelDetailsDeInfor clearfix">
+			<h2>基本信息</h2>
+		</div>
+		<div class="channelDetailsDeAll clearfix">
+			<ul>
+				<li class="clearfix">
+					<span>渠道ID</span>
+					<p>854712563</p>
+				</li>
+				<li class="clearfix">
+					<span>用户昵称</span>
+					<p>大耳朵不吐不快</p>
+				</li>
+				<li class="clearfix">
+					<span>微信号</span>
+					<p>857452145@qq.com</p>
+				</li>
+				<li class="clearfix">
+					<span>绑定手机</span>
+					<p>15478523654</p>
+				</li>
+				<li class="clearfix">
+					<span>注册时间</span>
+					<p>2017-12-12 09:12</p>
+				</li>
+				<li class="clearfix">
+					<span>是否关注</span>
+					<p>已关注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2017-12-02 09:12</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<script>
+		function CrbtOrders(){
+			//alert(this.document.body.scrollHeight); //弹出当前页面的高度
+			var obj = parent.document.getElementById("faker"); //取得父页面IFrame对象
+			//alert(obj.height); //弹出父页面中IFrame中设置的高度
+			obj.height = this.document.body.scrollHeight; //调整父页面中IFrame的高度为此页面的高度
+		}
+	</script>
+</body>
+</html>
